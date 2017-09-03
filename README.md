@@ -1,11 +1,11 @@
-# 《数据新闻》2016课程
+# 《数据新闻》2017课程
 
-南京大学新闻传播学院数据新闻2016课程
+南京大学新闻传播学院数据新闻2017课程
 
 
 | week          | topic         | note  |
 | ------------- |:-------------:| -----:|
-|1              | **数据新闻导论**             |    https://github.com/data-journalism/dj2016   |
+|1              | **数据新闻导论**             |    https://github.com/data-journalism/dj2017   |
 |2              | 课程简介与Github平台介绍	    |       |
 |3              | 数据新闻的未来、现在、过去	     |    |
 |4              | **数据获取导论**	                       |         |
@@ -29,14 +29,14 @@
 # 请选课的同学watch本页面
 点击页面右上角watch按钮即可，这样你可以收到最新的issues的邮件提醒。
 
-或者点击本链接：https://github.com/data-journalism/dj2016/subscription
+或者点击本链接：https://github.com/data-journalism/dj2017/subscription
 
 # 每周签到情况
-https://data-journalism.github.io/dj2016/attendance.htm
+https://data-journalism.github.io/dj2017/attendance.htm
 
 # 本周作业信息发布
 
-[https://github.com/data-journalism/dj2016/wiki/Homework](https://github.com/data-journalism/dj2016/wiki/Homework)
+[https://github.com/data-journalism/dj2017/wiki/Homework](https://github.com/data-journalism/dj2017/wiki/Homework)
 
 
 - 注意事项 不要提交word文档，以markdown文件提交，markdown文件的结尾是 `.md` 。关于markdown的格式介绍见: https://guides.github.com/features/mastering-markdown/
@@ -49,7 +49,7 @@ https://data-journalism.github.io/dj2016/attendance.htm
 
 #### 关于数据新闻案例分享、阅读+presentation、软件工具分享次序的安排
 
-[https://github.com/data-journalism/dj2016/wiki/](https://github.com/data-journalism/dj2016/wiki/)
+[https://github.com/data-journalism/dj2017/wiki/](https://github.com/data-journalism/dj2017/wiki/)
 
 
 # 资源推荐
@@ -64,7 +64,7 @@ https://data-journalism.github.io/dj2016/attendance.htm
 
 # 想要提问，点下面！
 
-[https://github.com/data-journalism/dj2016/issues](https://github.com/data-journalism/dj2016/issues)
+[https://github.com/data-journalism/dj2017/issues](https://github.com/data-journalism/dj2017/issues)
 
 
 
