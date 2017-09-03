@@ -1,0 +1,5 @@
+Rank	Country	GDP
+1	Liechtenstein	141100
+2	Qatar	104300
+3	Luxembourg	81100
+4	Bermuda	69900
