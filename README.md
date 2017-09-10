@@ -14,12 +14,12 @@
 |7              | **数据分析简介**	                   |      |
 |8              | **数据诠释与因果关系**	                   |     |
 |9              | **数据可视化**：概念、案例和方法     |       |
-|10             | 计算媒介：以processing为例 （上）|  https://vimeo.com/channels/introcompmedia/    |
-|11             | 计算媒介：以processing为例 （上）|  第四次作业     |
-|12             | H5和Javascript初步：HTML         |                    |
-|13             | H5和Javascript初步：CSS和JS      |       |
-|14             | H5和Javascript初步：D3简介              | 第八次作业：D3练习       |
-|15             | 数据可视化：echarts简介             | 第九次作业：echarts练习      |
+|10             | H5和Javascript初步：HTML         |                    |
+|11             | H5和Javascript初步：CSS和JS      |       |
+|12             | H5和Javascript初步：D3简介              | 第八次作业：D3练习       |
+|13             | 数据可视化：echarts简介             | 第九次作业：echarts练习      |
+|14             | 计算媒介：以processing为例 （上）|  https://vimeo.com/channels/introcompmedia/    |
+|15             | 计算媒介：以processing为例 （上）|  第四次作业     |
 |16             | 数据可视化：Tableau简介             | 第十次作业：Tableau练习      |
 |17             | 网络可视化: gephi的使用               |       |
 |18             | 学生作品展示	              |       |
