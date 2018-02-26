@@ -1,111 +1,326 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)#contact-2 -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <html>
+    <head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+      
+      
+      
+      
+      
+      
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="dj2017">
-    <meta name="author" content="cheng-jun wang">
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
 
-    <title>DJ2017</title>
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
 
-    <!-- Fonts -->
-    <link href="../assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="./netscix/css" rel="stylesheet" type="text/css">
-    <link href="./netscix/css(1)" rel="stylesheet" type="text/css">
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
 
-    <!-- Custom Theme CSS -->
-    <link href="./netscix/grayscale.css" rel="stylesheet">
-<script type="text/javascript" charset="UTF-8" src="./netscix/common.js"></script><script type="text/javascript" charset="UTF-8" src="./netscix/util.js"></script><script type="text/javascript" charset="UTF-8" src="./netscix/stats.js"></script></head>
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
 
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container" style="">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <span class="light">dj2017</span>
-                </a>
-            </div>
+.token.cdata {
+  color: #183691;
+}
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden active">
-                        <a href="#page-top"></a>
-                    </li>
-<li class="page-scroll">
-            <a href="#about">About</a>
-</li>
-<li class="page-scroll">
-            <a href="#agenda">Program</a>
-</li>
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
 
-              </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
 
-    <section class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h1 class="brand-heading"></h1>
-                        <h2 class="intro-date">Computational Communication</h2>
-                        <h1>DATA JOURNALISM</h1>
-                        <h2 class="intro-date">Autumn, 2017</h2>
-                        <h3>Nanjing University</h3>
-                        <h3>Nanjing, China</h3>
-                        <div class="page-scroll">
-                            <a href="#about" class="btn btn-circle">
-                                <i class="fa fa-angle-double-down animated"></i>
-                            </a>
-                        </div>
-    </div></div></div></div></section>
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
 
 
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
 
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
 
-<section class="content-section" id="about">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2"><p>
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
 
-</p><h1>Introduction</h1>
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
 
-<!--
-<center>
+code.language-yaml {
+  color: #183691;
+}
 
- <a href="http://www.ccs2017.org/" alt="CCS&#39;16 Website">
-     <img src="./netscix/logo_ccs.png" width="800px/"></a></center>
--->
-</br>
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
 
-<p style="text-align: left"></p>
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
 
-<p style="text-align: left">
-《数据新闻》是南京大学新闻传播学院新闻采写课程包系列中的核心课程之一，旨在为所有新闻专业和有志于从事新闻工作的同学提供数据新闻的知识和基本训练。数据新闻（data journalism）是指基于数据的抓取、挖掘、统计、分析和可视化呈现的新型新闻报道方式。本课程以《The Data Journalism Handbook》（2012）作为授课教材。通过本课程的同学应该具备基本的数据新闻素养，具体包括收集数据、清洗数据、分析数据、可视化数据的能力，能准确地运用数据语言报道新闻事实。
-</p>
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
 
-<p>Cheng-Jun Wang, School of Journalism & Communication, Nanjing University (Associate Professor). Cheng-Jun Wang is currently an associate professor in the School of Journalism and Communication, Nanjing University. He is the director of Ogilvy Data Science Lab, the associate director of Computational Communication Collaboratory，and a research member of Web Mining Lab. His research on computational communication appears in both SSCI and SCI indexed journals, such as Scientific Reports, PloS ONE, Physica A, Cyberpsychology. Computational Communication Collaboratory (CCC, C-Cube, or C3) was established in February 2015 by the Department of Journalism and Communication, Nanjing University.</p>
+.language-makefile .token.variable {
+  color: #183691;
+}
 
-<p>The Computational Communication Collaboratory (CCC, C-Cube, or C3) was established in February 2015 by the Department of Journalism and Communication, Nanjing University. The mission of the center is to uncover the computational gene of human communication behaviors. The center supplies a series of workshops, including Introduction to Computational Communication, Data Journalism, Computational Advertising, and Web Data Collection and Analysis. Email: <a href="mailto:computational.communication@gmail.com">computational.communication@gmail.com</a> © Computational Communication Collaboratory, Nanjing University.</p>
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
 
-</section>
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none} 
+       
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="&#x6570;&#x636E;&#x65B0;&#x95FB;2017&#x8BFE;&#x7A0B;">《数据新闻》2017课程</h1>
 
-<section class="content-section" id="agenda">
-
-<h1 class="mume-header" id="final-projects">Projects</h1>
+<p>南京大学新闻传播学院数据新闻2017课程</p>
+<table>
+<thead>
+<tr>
+<th>week</th>
+<th style="text-align:center">topic</th>
+<th style="text-align:right">note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center"><strong>数据新闻导论</strong></td>
+<td style="text-align:right"><a href="https://github.com/data-journalism/dj2017">https://github.com/data-journalism/dj2017</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">课程简介与Github平台介绍</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">数据新闻的未来、现在、过去</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center"><strong>数据获取导论</strong></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">数据科学的编程工具：Python语言简介</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">Python数据抓取简介</td>
+<td style="text-align:right">第六次作业：python抓取天气数据</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center"><strong>数据分析简介</strong></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:center"><strong>数据诠释与因果关系</strong></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:center"><strong>数据可视化</strong>：概念、案例和方法</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:center">H5和Javascript初步：HTML</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>11</td>
+<td style="text-align:center">H5和Javascript初步：CSS和JS</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>12</td>
+<td style="text-align:center">H5和Javascript初步：D3简介</td>
+<td style="text-align:right">第八次作业：D3练习</td>
+</tr>
+<tr>
+<td>13</td>
+<td style="text-align:center">数据可视化：echarts简介</td>
+<td style="text-align:right">第九次作业：echarts练习</td>
+</tr>
+<tr>
+<td>14</td>
+<td style="text-align:center">计算媒介：以processing为例 （上）</td>
+<td style="text-align:right"><a href="https://vimeo.com/channels/introcompmedia/">https://vimeo.com/channels/introcompmedia/</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td style="text-align:center">计算媒介：以processing为例 （上）</td>
+<td style="text-align:right">第四次作业</td>
+</tr>
+<tr>
+<td>16</td>
+<td style="text-align:center">数据可视化：Tableau简介</td>
+<td style="text-align:right">第十次作业：Tableau练习</td>
+</tr>
+<tr>
+<td>17</td>
+<td style="text-align:center">网络可视化: gephi的使用</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>18</td>
+<td style="text-align:center">学生作品展示</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+<h1 class="mume-header" id="final-projects">Final Projects</h1>
 
 <table>
+<thead>
+<tr>
+<th>Group</th>
+<th style="text-align:center">Title</th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>朱清华 彭雅琦</td>
@@ -153,22 +368,89 @@
 </tr>
 </tbody>
 </table>
+<h1 class="mume-header" id="&#x8BF7;&#x9009;&#x8BFE;&#x7684;&#x540C;&#x5B66;watch&#x672C;&#x9875;&#x9762;">请选课的同学watch本页面</h1>
 
-</section>
+<p>点击页面右上角watch按钮即可，这样你可以收到最新的issues的邮件提醒。</p>
+<p>或者点击本链接：<a href="https://github.com/data-journalism/dj2017/subscription">https://github.com/data-journalism/dj2017/subscription</a></p>
+<h1 class="mume-header" id="&#x6BCF;&#x5468;&#x7B7E;&#x5230;&#x60C5;&#x51B5;">每周签到情况</h1>
 
-<!-- Core JavaScript Files -->
-<script src="./netscix/jquery.min.js"></script>
-<script src="./netscix/bootstrap.min.js"></script>
-<script src="./netscix/jquery.easing.min.js"></script>
+<p><a href="https://data-journalism.github.io/dj2017/attendance.htm">https://data-journalism.github.io/dj2017/attendance.htm</a></p>
+<h1 class="mume-header" id="&#x672C;&#x5468;&#x4F5C;&#x4E1A;&#x4FE1;&#x606F;&#x53D1;&#x5E03;">本周作业信息发布</h1>
 
-<!-- Google Maps API Key - You will need to use your own API key to use the map feature -->
-<script type="text/javascript" src="./netscix/js"></script>
+<p><a href="https://github.com/data-journalism/dj2017/wiki/Homework">https://github.com/data-journalism/dj2017/wiki/Homework</a></p>
+<ul>
+<li>注意事项 不要提交word文档，以markdown文件提交，markdown文件的结尾是 <code>.md</code> 。关于markdown的格式介绍见: <a href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a></li>
+</ul>
+<h4 class="mume-header" id="&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x4F7F;&#x7528;markdown&#x8FDB;&#x884C;&#x5199;&#x4F5C;&#x7684;&#x8D44;&#x6599;">更多关于使用Markdown进行写作的资料</h4>
 
-<!-- Custom Theme JavaScript -->
-<script src="./netscix/grayscale.js"></script>
+<ul>
+<li>献给写作者的 Markdown 新手指南：<a href="http://www.jianshu.com/p/q81RER">http://www.jianshu.com/p/q81RER</a></li>
+<li>怎样引导新手使用 Markdown？：<a href="https://www.zhihu.com/question/20409634">https://www.zhihu.com/question/20409634</a></li>
+<li>这篇文末有常用的Markdown编辑器：<a href="http://www.markdown.cn">http://www.markdown.cn</a></li>
+<li>一个在线的Markdown编辑器：<a href="https://www.zybuluo.com/mdeditor">https://www.zybuluo.com/mdeditor</a></li>
+</ul>
+<h4 class="mume-header" id="&#x5173;&#x4E8E;&#x6570;&#x636E;&#x65B0;&#x95FB;&#x6848;&#x4F8B;&#x5206;&#x4EAB;-&#x9605;&#x8BFB;presentation-&#x8F6F;&#x4EF6;&#x5DE5;&#x5177;&#x5206;&#x4EAB;&#x6B21;&#x5E8F;&#x7684;&#x5B89;&#x6392;">关于数据新闻案例分享、阅读+presentation、软件工具分享次序的安排</h4>
 
+<p><a href="https://github.com/data-journalism/dj2017/wiki/">https://github.com/data-journalism/dj2017/wiki/</a></p>
+<h1 class="mume-header" id="&#x8D44;&#x6E90;&#x63A8;&#x8350;">资源推荐</h1>
 
+<ol>
+<li>Adobe免费正版PhotoShop CS2 <a href="http://soft.zol.com.cn/346/3467942.html">http://soft.zol.com.cn/346/3467942.html</a></li>
+<li>JavaScript Basics Udacity Open Course <a href="https://www.udacity.com/course/ud804">https://www.udacity.com/course/ud804</a> Or the Youtube playlist: <a href="https://www.youtube.com/playlist?list=PLAwxTw4SYaPmtf5v3hefG5seVynUtV9T8">https://www.youtube.com/playlist?list=PLAwxTw4SYaPmtf5v3hefG5seVynUtV9T8</a></li>
+<li>JavaScript入门 <a href="http://www.imooc.com/learn/36?from=itblog">http://www.imooc.com/learn/36?from=itblog</a></li>
+<li>JavaScript全栈教程－Nodejs－fs （分享自 @廖雪峰） <a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000">网页链接</a></li>
+<li>Datacamp <a href="https://www.datacamp.com/">https://www.datacamp.com/</a></li>
+<li>中国数据新闻工作坊培训手册 <a href="http://djchina.org/2015/09/01/china-data-journalism-training-content/">http://djchina.org/2015/09/01/china-data-journalism-training-content/</a></li>
+<li>Doing Journalism with Data: First Steps, Skills and Tools  by Paul Bradshaw, Alberto Cairo, Steve Doig, Simon Rogers, Nicolas Kayser-Bril <a href="http://learno.net/classroom/doing-journalism-with-data-first-steps-skills-and-tools/">http://learno.net/classroom/doing-journalism-with-data-first-steps-skills-and-tools/</a></li>
+<li>datajournalismhandbook <a href="http://datajournalismhandbook.org/1.0/en/">http://datajournalismhandbook.org/1.0/en/</a></li>
+</ol>
+<h1 class="mume-header" id="&#x60F3;&#x8981;&#x63D0;&#x95EE;&#x70B9;&#x4E0B;&#x9762;">想要提问，点下面！</h1>
 
+<p><a href="https://github.com/data-journalism/dj2017/issues">https://github.com/data-journalism/dj2017/issues</a></p>
 
-</body>
-</html>
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%96%B0%E9%97%BB2017%E8%AF%BE%E7%A8%8B">《数据新闻》2017课程</a></li>
+<li><a href="#final-projects">Final Projects</a></li>
+<li><a href="#%E8%AF%B7%E9%80%89%E8%AF%BE%E7%9A%84%E5%90%8C%E5%AD%A6watch%E6%9C%AC%E9%A1%B5%E9%9D%A2">请选课的同学watch本页面</a></li>
+<li><a href="#%E6%AF%8F%E5%91%A8%E7%AD%BE%E5%88%B0%E6%83%85%E5%86%B5">每周签到情况</a></li>
+<li><a href="#%E6%9C%AC%E5%91%A8%E4%BD%9C%E4%B8%9A%E4%BF%A1%E6%81%AF%E5%8F%91%E5%B8%83">本周作业信息发布</a><br>
+* <a href="#%E6%9B%B4%E5%A4%9A%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8markdown%E8%BF%9B%E8%A1%8C%E5%86%99%E4%BD%9C%E7%9A%84%E8%B5%84%E6%96%99">更多关于使用Markdown进行写作的资料</a><br>
+* <a href="#%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E6%96%B0%E9%97%BB%E6%A1%88%E4%BE%8B%E5%88%86%E4%BA%AB-%E9%98%85%E8%AF%BBpresentation-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB%E6%AC%A1%E5%BA%8F%E7%9A%84%E5%AE%89%E6%8E%92">关于数据新闻案例分享、阅读+presentation、软件工具分享次序的安排</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90">资源推荐</a></li>
+<li><a href="#%E6%83%B3%E8%A6%81%E6%8F%90%E9%97%AE%E7%82%B9%E4%B8%8B%E9%9D%A2">想要提问，点下面！</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>
