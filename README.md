@@ -8,7 +8,7 @@
 |  ------------- |:-------------:|
 |朱清华 彭雅琦     | [媒体报道中的高学历女性污名化情况](./group/allweeks/index.html)	     |
 |徐妙 冼芷卉 夏艺菡 | [你买得起房吗？](./group/bigdata/index.html)	     |
-|王一珺 叶霁萱 沈欣 | [国宝特攻带你走近国家宝藏](https://shen.netlify.com/) 【[附件](./group/grandpa-say/data/)】	|
+|王一珺 叶霁萱 沈欣 | [国宝特攻带你走近国家宝藏](./group/grandpa-say/index.html) 【[附件](https://shen.netlify.com/)】	|
 |张鑫宇 周琪 周围子| [基于经济状况的中国五大教基本情况分析——以CFPS中国家庭数据追踪调查2012年的数据为基础](./group/kaopu/index.html)	     |
 |贾聪 蔡兆钦 郑书遥 刘妍彤| [数据画像｜你会在婚恋网站上遇到什么样的TA？](./group/legend/index.html)	     |
 |岳琬琪 卞文钰 谢纯纯 | [中国各大高校校名流变](./group/mbadj/index.html)	     |
