@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '2010-2015届本科毕业生留学主要研究生专业类分布'
+    },
+    series: {
+        type: 'sankey',
+        layout:'none',
+        data: [{
+            name: '工程科学'
+        }, {
+            name: '工商管理学'
+        }, {
+            name: '计算机与信息科学'
+        }, {
+            name: '工程技术'
+        }, {
+            name: '数学与统计学'
+        }, {
+            name: '科学技术'
+        }, {
+            name: '社会科学'
+        }, { 
+            name: '外国语言文学'
+        }, {
+            name: '艺术学'
+        }, {
+            name: '教育学'
+        }, { 
+            name: '传播与新闻学'
+        }, {
+            name: '建筑学'
+        }, {
+            name: '法学与法律职业'
+        }, {
+            name: '2015'
+        }, {
+            name: '2014'
+        }, {
+            name: '2013'
+        }, {
+            name: '2012'
+        }, {
+            name: '2011'
+        }, {
+            name: '2010'
+        }],
+        
+        links: [{
+            source: '工程科学',
+            target: '2015',
+            value: 19.4
+        }, {
+            source: '工商管理学',
+            target: '2015',
+            value: 27
+        }, {
+            source: '计算机与信息科学',
+            target: '2015',
+            value: 11.4
+        }, {
+            source: '工程技术',
+            target: '2015',
+            value: 5.2
+        }, {
+            source: '数学与统计学',
+            target: '2015',
+            value: 3.7
+        }, {
+            source: '社会科学',
+            target: '2015',
+            value: 5.2
+        }, {
+            source: '外国语言文学',
+            target: '2015',
+            value: 2.6
+        }, {
+            source: '教育学',
+            target: '2015',
+            value: 3.6
+        }, {
+            source: '传播与新闻学',
+            target: '2015',
+            value: 3
+        },{
+            source: '建筑学',
+            target: '2015',
+            value: 2.4
+        },{
+            source: '工程科学',
+            target: '2014',
+            value: 26.6
+        },{
+            source: '工商管理学',
+            target: '2014',
+            value: 25.5
+         }, {
+            source: '计算机与信息科学',
+            target: '2014',
+            value: 9
+        }, {
+            source: '工程技术',
+            target: '2014',
+            value: 7.9
+        }, {
+            source: '数学与统计学',
+            target: '2014',
+            value: 2.7
+        }, {
+            source: '科学技术',
+            target: '2014',
+            value: 2.4
+        }, {
+            source: '社会科学',
+            target: '2014',
+            value: 2.4
+        }, {
+            source: '外国语言文学',
+            target: '2014',
+            value: 2.4
+        }, {
+            source: '艺术学',
+            target: '2014',
+            value: 2.4
+        }, {
+            source: '教育学',
+            target: '2014',
+            value:1.9
+        },{
+            source: '工程科学',
+            target: '2013',
+            value: 19.2
+        },{
+            source: '工商管理学',
+            target: '2013',
+            value: 28.3
+         }, {
+            source: '计算机与信息科学',
+            target: '2013',
+            value: 6.4
+        }, {
+            source: '工程技术',
+            target: '2013',
+            value: 7.1
+        }, {
+            source: '数学与统计学',
+            target: '2013',
+            value: 2.2
+        }, {
+            source: '社会科学',
+            target: '2013',
+            value: 4.7
+        }, {
+            source: '外国语言文学',
+            target: '2013',
+            value: 3.1
+        }, {
+            source: '教育学',
+            target: '2013',
+            value: 4
+        }, {
+            source: '传播与新闻学',
+            target: '2013',
+            value: 4.3
+        }, {
+            source: '建筑学',
+            target: '2013',
+            value: 4
+        }, {
+            source: '法学与法律职业',
+            target: '2013',
+            value: 3
+        }, {
+            source: '英语语言文学学',
+            target: '2013',
+            value: 1.7
+        },{
+            source: '工程科学',
+            target: '2012',
+            value: 12.5
+        },{
+            source: '工商管理学',
+            target: '2012',
+            value: 36.6
+         }, {
+            source: '计算机与信息科学',
+            target: '2012',
+            value: 6.1
+        }, {
+            source: '工程技术',
+            target: '2012',
+            value: 5.4
+        }, {
+            source: '数学与统计学',
+            target: '2012',
+            value: 2.9
+        }, {
+            source: '社会科学',
+            target: '2012',
+            value: 7.2
+        }, {
+            source: '外国语言文学',
+            target: '2012',
+            value: 3.9
+        }, {
+            source: '教育学',
+            target: '2012',
+            value: 5.7
+        }, {
+            source: '传播与新闻学',
+            target: '2012',
+            value: 2.5
+        }, {
+            source: '英国语言文学学',
+            target: '2012',
+            value: 2.2
+        },{
+            source: '工程科学',
+            target: '2011',
+            value: 10.3
+        },{
+            source: '工商管理学',
+            target: '2011',
+            value: 24.7
+         }, {
+            source: '计算机与信息科学',
+            target: '2011',
+            value: 6.7
+        }, {
+            source: '工程技术',
+            target: '2011',
+            value: 2.9
+        }, {
+            source: '数学与统计学',
+            target: '2011',
+            value: 3.4
+        }, {
+            source: '社会科学',
+            target: '2011',
+            value: 4.7
+        }, {
+            source: '外国语言文学',
+            target: '2011',
+            value: 3.6
+        }, {
+            source: '教育学',
+            target: '2011',
+            value: 4.5
+        }, {
+            source: '传播与新闻学',
+            target: '2011',
+            value: 6
+        }, {
+            source: '英语语言文学学',
+            target: '2011',
+            value: 2.9
+        },{
+            source: '工程科学',
+            target: '2010',
+            value: 13.5
+        },{
+            source: '工商管理学',
+            target: '2010',
+            value: 45.1
+         }, {
+            source: '计算机与信息科学',
+            target: '2010',
+            value: 4.4
+        }, {
+            source: '工程技术',
+            target: '2010',
+            value: 6
+        }, {
+            source: '数学与统计学',
+            target: '2010',
+            value: 1.9
+        }, {
+            source: '社会科学',
+            target: '2010',
+            value: 6.2
+        }, {
+            source: '外国语言文学',
+            target: '2010',
+            value: 1.2
+        }, {
+            source: '教育学',
+            target: '2010',
+            value: 2.5
+        }, {
+            source: '传播与新闻学',
+            target: '2010',
+            value: 4
+        }, {
+            source: '英语语言文学学',
+            target: '2010',
+            value: 1.4
+        }]
+    }
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

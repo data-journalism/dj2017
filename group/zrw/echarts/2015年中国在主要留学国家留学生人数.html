@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+
+var latlong = {};
+latlong.AU = {'latitude':-27, 'longitude':133};
+
+latlong.BE = {'latitude':50.8333, 'longitude':4};
+
+latlong.CA = {'latitude':54, 'longitude':-100};
+
+latlong.CH = {'latitude':47, 'longitude':8};
+
+latlong.DE = {'latitude':51, 'longitude':9};
+
+
+latlong.FR = {'latitude':46, 'longitude':2};
+
+latlong.GB = {'latitude':54, 'longitude':-2};
+
+
+
+latlong.JP = {'latitude':36, 'longitude':138};
+
+latlong.KR = {'latitude':37, 'longitude':127.5};
+
+latlong.NL = {'latitude':52.5, 'longitude':5.75};
+
+latlong.NZ = {'latitude':-41, 'longitude':174};
+
+
+latlong.RU = {'latitude':60, 'longitude':100};
+
+
+latlong.SE = {'latitude':62, 'longitude':15};
+latlong.SG = {'latitude':1.3667, 'longitude':103.8};
+latlong.SH = {'latitude':-15.9333, 'longitude':-5.7};
+
+latlong.US = {'latitude':38, 'longitude':-97};
+
+var mapData = [
+
+{'code':'AU' , 'name':'Australia', 'value':13.6, 'color':'#8aabb0'},
+
+{'code':'BE' , 'name':'Belgium', 'value':0.11, 'color':'#d8854f'},
+
+{'code':'CA' , 'name':'Canada', 'value':8.73, 'color':'#a7a737'},
+
+{'code':'FR' , 'name':'France', 'value':2.97, 'color':'#d8854f'},
+
+{'code':'DE' , 'name':'Germany', 'value':3.05, 'color':'#d8854f'},
+
+{'code':'JP' , 'name':'Japan', 'value':7.78, 'color':'#eea638'},
+
+{'code':'KR' , 'name':'Korea, Rep.', 'value':9.91, 'color':'#eea638'},
+
+{'code':'NL' , 'name':'Netherlands', 'value':0.66, 'color':'#d8854f'},
+
+{'code':'NZ' , 'name':'New Zealand', 'value':1.55, 'color':'#8aabb0'},
+
+{'code':'RU' , 'name':'Russia', 'value':2.5, 'color':'#d8854f'},
+
+{'code':'SG' , 'name':'Singapore', 'value':5, 'color':'#eea638'},
+
+{'code':'SE' , 'name':'Sweden', 'value':0.44, 'color':'#d8854f'},
+{'code':'CH' , 'name':'Switzerland', 'value':0.11, 'color':'#d8854f'},
+
+{'code':'GB' , 'name':'United Kingdom', 'value':9.29, 'color':'#d8854f'},
+{'code':'US' , 'name':'United States', 'value':30.4, 'color':'#a7a737'}
+]
+
+var max = -Infinity;
+var min = Infinity;
+mapData.forEach(function (itemOpt) {
+    if (itemOpt.value > max) {
+        max = itemOpt.value;
+    }
+    if (itemOpt.value < min) {
+        min = itemOpt.value;
+    }
+});
+
+option = {
+    backgroundColor: '#404a59',
+    title : {
+        text: '2015年中国在主要留学国家留学生人数',
+        subtext: '单位：万人',
+        left: 'center',
+        top: 'top',
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    
+    tooltip: {
+        trigger: 'item',
+        formatter: function (params) {
+            return params.name + ' : ' + params.value[2];
+        }
+    },
+    
+    visualMap: {
+        show: false,
+        min: 0,
+        max: max,
+        inRange: {
+            symbolSize: [6, 60]
+        }
+    },
+    geo: {
+        name: '中国留学生人数',
+        type: 'map',
+        map: 'world',
+        roam: true,
+        label: {
+            emphasis: {
+                show: false
+            }
+        },
+        itemStyle: {
+            normal: {
+                areaColor: '#323c48',
+                borderColor: '#111'
+            },
+            emphasis: {
+                areaColor: '#2a333d'
+            }
+        }
+    },
+    series : [
+        {
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            data: mapData.map(function (itemOpt) {
+                return {
+                    name: itemOpt.name,
+                    value: [
+                        latlong[itemOpt.code].longitude,
+                        latlong[itemOpt.code].latitude,
+                        itemOpt.value
+                    ],
+                    label: {
+                        emphasis: {
+                            position: 'right',
+                            show: false
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: itemOpt.color
+                        }
+                    }
+                };
+            })
+        }
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

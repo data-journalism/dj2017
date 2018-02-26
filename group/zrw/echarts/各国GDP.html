@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '各国GDP'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['中国','美国','英国','法国','德国','日本','韩国']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2010','2011','2012','2013','2014','2015']
+    },
+    yAxis: {
+        type: 'value',
+        name:'单位：亿美元',               //坐标轴名称
+        nameLocation:"end",       //坐标轴名称显示位置。可选：'start','middle','end'
+        nameGap:15,
+    },
+    series: [
+        {
+            name:'中国',
+            type:'line',
+            data:[60395.47, 74925.29, 84615.11, 94908.45, 103565.08, 113847.63]
+        },
+        {
+            name:'美国',
+            type:'line',
+            data:[149644, 155179.25, 161552.5, 166631.5, 173480.75, 179681.95]
+        },
+        {
+            name:'英国',
+            type:'line',
+            data:[24073.51,25934.52, 26238.25, 26783.84, 29500.39,28649.03,]
+        },
+        {
+            name:'法国',
+            type:'line',
+            data:[26517.72, 28653.04, 26829.01, 28111.28, 28336.87, 24226.49]
+        },
+        {
+            name:'德国',
+            type:'line',
+            data:[34234.66, 37611.42, 35415.75, 37464.88, 38744.37, 33710.03]
+        },
+        {
+            name:'日本',
+            type:'line',
+            data:[54987.19, 59089.88, 59572.49, 49195.89, 46023.67, 41162.42]
+        },
+        {
+            name:'韩国',
+            type:'line',
+            data:[10944.99, 12024.64, 12228.07, 13056.05, 14103.83, 13929.52]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

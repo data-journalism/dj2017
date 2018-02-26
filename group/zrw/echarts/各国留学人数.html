@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '各国留学人数'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data:['美国','日本','英国','韩国','新加坡','德国','法国']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data: ['2011','2012','2013','2014','2015']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            name:'单位：万人',               //坐标轴名称
+            nameLocation:"end",       //坐标轴名称显示位置。可选：'start','middle','end'
+            nameGap:15,
+            min:0,
+            max:650000
+        }
+    ],
+    series : [
+        {
+            name:'美国',
+            type:'bar',
+            stack: '总量',
+            barWidth : 15,
+            data:[157558, 194029, 235597, 274439, 304040]
+        },
+        {
+            name:'英国',
+            type:'bar',
+            stack: '总量',
+            barWidth : 10,
+            data:[67325, 78715, 83790, 87895, 89540]
+        },
+        {
+            name:'日本',
+            type:'bar',
+            stack: '总量',
+            barWidth : 10,
+            data:[87533, 86324, 97875, 94399, 94111]
+        },
+        {
+            name:'德国',
+            type:'bar',
+            barWidth : 10,
+            stack: '总量',
+            data:[22828, 23883, 25564, 28381, 30259]
+        },
+         {
+            name:'法国',
+            type:'bar',
+            stack: '总量',
+            barWidth : 10,
+            data:[29122, 29696, 30349, 30176, 30176]
+        },
+        {
+            name:'韩国',
+            type:'bar',
+            stack: '总量',
+            barWidth : 10,
+            data:[63059, 57798, 53251, 54345, 60934]
+            }
+        ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

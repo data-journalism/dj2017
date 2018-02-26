@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '留学回国人员目前所处的行业分布',
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: [ '人数占比']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        min:0,
+        max:25
+    },
+    yAxis: {
+        type: 'category',
+            name:'单位：%',               //坐标轴名称
+            nameLocation:"end",       //坐标轴名称显示位置。可选：'start','middle','end'
+            nameGap:15,
+        data: ['非营利机构/NGO/社会组织','生物/制药/医疗','新能源/新材料/节能环保','建筑/房地产/工地建设','贸易','传媒/娱乐/体育业/文化创意产业','咨询公司/法律/人力资源/会计师事务所/财务公司','IT/互联网/电子商务/科技','教育/国家机关/高校/研究院/事业单位','传统制造业（机械/电气设备/重工/轻工/化工/食品/交通/运输/物流）','金融业（银行/投资公司/证券/基金/保险/期贷）']
+    },
+    series: [
+        {
+            name: '人数占比',
+            type: 'bar',
+            barWidth: '50%',
+            data: [2, 3.4, 5, 5.9, 6.6, 7.9, 9.2, 9.6, 10.8,11.5, 19.4]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

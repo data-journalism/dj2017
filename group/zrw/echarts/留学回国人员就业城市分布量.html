@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var geoCoordMap = {
+    "青岛":[120.33,36.07],
+    "上海":[121.48,31.22],
+    "厦门":[118.1,24.46],
+    "广州":[113.23,23.16],
+    "深圳":[114.07,22.62],
+    "大连":[121.62,38.92],
+    "苏州":[120.62,31.32],
+    "长春":[125.35,43.88],
+    "成都":[104.06,30.67],
+    "西安":[108.95,34.27],
+    "重庆":[106.54,29.59],
+    "南京":[118.78,32.04],
+    "无锡":[120.29,31.59],
+    "北京":[116.46,39.92],
+    "杭州":[120.19,30.26],
+    "济南":[117,36.65],
+    "天津":[117.2,39.13],
+    "郑州":[113.65,34.76],
+    "长沙":[113,28.21],
+    "合肥":[117.27,31.86],
+    "武汉":[114.31,30.52]
+};
+
+var convertData = function (data) {
+    var res = [];
+    for (var i = 0; i < data.length; i++) {
+        var geoCoord = geoCoordMap[data[i].name];
+        if (geoCoord) {
+            res.push({
+                name: data[i].name,
+                value: geoCoord.concat(data[i].value)
+            });
+        }
+    }
+    return res;
+};
+
+option = {
+    backgroundColor: '#404a59',
+    title: {
+        text: '留学回国人员就业城市分布量',
+        subtext: '单位：%',
+        x:'center',
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: function (params) {
+            return params.name + ' : ' + params.value[2]+'%';
+        }
+    },
+    legend: {
+        orient: 'vertical',
+        y: 'bottom',
+        x:'right',
+        data:['pm2.5'],
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    visualMap: {
+        min: 0,
+        max: 30,
+        calculable: true,
+        inRange: {
+            color: ['#50a3ba', '#eac736', '#d94e5d']
+        },
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    geo: {
+        map: 'china',
+        label: {
+            emphasis: {
+                show: false
+            }
+        },
+        itemStyle: {
+            normal: {
+                areaColor: '#323c48',
+                borderColor: '#111'
+            },
+            emphasis: {
+                areaColor: '#2a333d'
+            }
+        }
+    },
+    series: [
+        {
+            name: '人数占比',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            data: convertData([
+                {name: "青岛", value: 1.2},
+                {name: "上海", value: 11.5},
+                {name: "厦门", value: 1.2},
+                {name: "广州", value: 6.1},
+                {name: "深圳", value: 4.5},
+                {name: "大连", value: 2},
+                {name: "苏州", value: 2.9},
+                {name: "长春", value: 1.2},
+                {name: "成都", value: 4.5},
+                {name: "西安", value: 2.9},
+                {name: "重庆", value: 1.6},
+                {name: "南京", value: 3.7},
+                {name: "无锡", value: 1.2},
+                {name: "北京", value: 29.1},
+                {name: "杭州", value: 3.3},
+                {name: "济南", value: 1.2},
+                {name: "天津", value: 2.5},
+                {name: "郑州", value: 1.2},
+                {name: "长沙", value: 1.6},
+                {name: "合肥", value: 1.2},
+                {name: "武汉", value: 3.7}
+            ]),
+            symbolSize: 15,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: false
+                }
+            },
+            itemStyle: {
+                emphasis: {
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }
+            }
+        }
+    ]
+};
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
