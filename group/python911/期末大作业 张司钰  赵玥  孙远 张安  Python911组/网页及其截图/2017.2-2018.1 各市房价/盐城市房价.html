@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '2017.2-2018.1 盐城市房价',
+        subtext: '盐城房产网'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['亭湖区','盐都区','大丰市','东台市','阜宁县','建湖县','射阳县','滨海县','响水县'],
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2月','3月','4月','5月','6月','7月','8月', '9月','10月','11月','12月','1月']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} 元'
+        }
+    },
+    series: [
+        {
+            name:'亭湖区',
+            type:'line',
+            data:[11857, 11435, 9895, 12128, 11889, 11120, 10446, 9824, 9047, 9116, 9137, 8995],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'盐都区',
+            type:'line',
+            data:[6355, 6355, , 10541, 10446, 10356, 10358, 10447, 10616, 10653, 10714, 10286],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'大丰市',
+            type:'line',
+            data:[,,,,,,,,3248, 4624, 5082, 6627, 7153],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'东台市',
+            type:'line',
+            data:[5476, 5476, 5476, 5476, 7183, 5589, 6133, 6347, 7386, 7904, 7644, 7278],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'阜宁县',
+            type:'line',
+            data:[4214, 4214, , , 8663, 8062, 8128, 5974, 4723, 4873, 4798, 4705],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'建湖县',
+            type:'line',
+            data:[4478, 4478, , , , , , , 8733, 8874, 8718, 8254],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+         {
+            name:'射阳县',
+            type:'line',
+            data:[4166,4166,,,,,,5408, 5878, 5950, 5821, 5761],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'滨海县',
+            type:'line',
+            data:[5591, 5591, ,,,,7426, 8258, 7664, 7766, 7643, 7742],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'响水县',
+            type:'line',
+            data:[,,,,,,,6594, 6509, 6591, 6405, 6419],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

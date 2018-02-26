@@ -25,6 +25,22 @@
 |18             | 学生作品展示	              |       |
 
 
+# Final Projects
+
+| Group          | Title         |
+|  ------------- |:-------------:|
+|朱清华 彭雅琦     | [媒体报道中的高学历女性污名化情况](./group/allweeks/index.html)	     |
+|徐妙 冼芷卉 夏艺菡 | [你买得起房吗？](./group/bigdata/index.html)	     |
+|王一珺 叶霁萱 沈欣 | [国宝特攻带你走近国家宝藏](https://shen.netlify.com/) 【[附件](./group/grandpa-say/data/)】	|
+|张鑫宇 周琪 周围子| [基于经济状况的中国五大教基本情况分析——以CFPS中国家庭数据追踪调查2012年的数据为基础](./group/kaopu/index.html)	     |
+|贾聪 蔡兆钦 郑书遥 刘妍彤| [数据画像｜你会在婚恋网站上遇到什么样的TA？](./group/legend/index.html)	     |
+|岳琬琪 卞文钰 谢纯纯 | [中国各大高校校名流变](./group/mbadj/index.html)	     |
+|刘树琦 刘晓濛 苟泽鹏 | [格莱美奖：从过去到未来](./group/nothing-is-correct/index.html)	     |
+|张司珏 孙远 赵玥 张安| [今年，你在江苏买的起房吗？](./group/python911/index.html)	     |
+|征梦婷 陈阳阳 贾威| [2007-2016: 一滴水的十年踪迹](./group/save-our-hairline/index.html)	     |
+|周旦烨 胡雪菲 罗昊| [八张图带你看清当代人们的阅读习惯和偏好](./group/sjxw/index.html)	     |
+|李铁薇            | [数据科学从业者画像 WHAT DO YOU KNOW ABOUT A DATA SCIENTIST?	](./group/tiewei/index.html)    |  
+
 
 # 请选课的同学watch本页面
 点击页面右上角watch按钮即可，这样你可以收到最新的issues的邮件提醒。
@@ -65,7 +81,3 @@ https://data-journalism.github.io/dj2017/attendance.htm
 # 想要提问，点下面！
 
 [https://github.com/data-journalism/dj2017/issues](https://github.com/data-journalism/dj2017/issues)
-
-
-
-

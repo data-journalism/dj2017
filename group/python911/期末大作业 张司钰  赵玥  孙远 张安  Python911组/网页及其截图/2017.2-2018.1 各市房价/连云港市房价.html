@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '2017.2-2018.1 连云港市房价',
+        subtext: '连云港房产网'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['连云区','海州区','赣榆区','东海县','灌云县','灌南县' ,'新浦区'],
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2月','3月','4月','5月','6月','7月','8月', '9月','10月','11月','12月','1月']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} 元'
+        }
+    },
+    series: [
+        {
+            name:'连云区',
+            type:'line',
+            data:[5165, 5509, 5645, 6017, 6307, 6627, 6523, 6595, 6829, 7080, 7233, 7096],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'海州区',
+            type:'line',
+            data:[6838, 7506, 7742, 8628, 9260, 9372, 9836, 10035, 10260, 10376, 10377, 10267],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'新浦区',
+            type:'line',
+            data:[7700, 8032, 8478, 9350, 9776, 9927, 10085, 10203, 10244, 10591, 10646, 10720],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'东海县',
+            type:'line',
+            data:[7127, 6454, 6937, 7254, 7986, 8356, 9790, 8933, 8231, 8092, 8171, 8106],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'赣榆区',
+            type:'line',
+            data:[4875, 5185, 5276, 5538, 5885, 6352, 6389, 6483, 6576, 6675, 6665, 6682],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'灌云县',
+            type:'line',
+            data:[5937, 5710, 6328, 6578, 6572, 7227, 6574, 6468, 6317, 6230, 6377, 6382],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+         {
+            name:'灌南县',
+            type:'line',
+            data:[4737, 4688, 4806, 4813, 4650, 4543, 4817, 5006, 5012, 5014, 5065, 5079],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

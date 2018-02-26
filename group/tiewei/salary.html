@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="not-ie" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>SUSPENSE</title>
+	  <meta name="description" content="SUSPENSE - Responsive HTML Template by entiri">
+	  <meta name="keywords" content="suspense, entiri, theme, template, corporate, clean, modern, bootstrap, creative, design">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicon -->
+    <link href="img/favicon.png" rel="icon" type="image/png">
+    <!-- Bootstrap style css -->
+    <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+    <!-- Flexslider style css -->
+    <link href="css/flexslider.css" rel="stylesheet">
+    <!-- Custom scrollbar style css -->
+    <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <!-- Pretty photo style css -->
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <!-- Font awesome style css -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Theme specific style css -->
+    <link href="css/style-custom.css" rel="stylesheet">
+    <!-- Bootstrap override css -->
+    <link href="css/bootstrap-override.css" rel="stylesheet">
+    <!-- Modernizr Js file -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/echarts-all-3.js"></script>
+    <script src="echarts.common.min.js"></script>
+
+    <!-- Google web fonts -->
+    <link href='http//fonts.googleapis.com/css?family=Caudex' rel='stylesheet' type='text/css'>
+    <link href='http//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+          <div class="row">
+              <div class="span6 head-logo">
+
+                  <img alt="lorem" src="img/240403-140H50K95132.jpg">
+
+                  <span class="logo-background"><a class="white" href="index-2.html">SUSPENSE</a></span>
+              </div>
+
+              <div class="span6">
+
+                  <div class="slider1 flexslider">
+                      <ul class="slides">
+                          <li class="head-logo">
+                              <!-- 1st image of the slider -->
+                              <img alt="lorem" src="img/600-520-2.png">
+
+                              <div class="logo-background-text">
+                                  <!-- Custom text over slider images -->
+                                  <p>数据科学从业者画像<br>
+                                  What Do You Know About<span class="custom-color"> a Data Scientist?</span><br>
+                                  </p>
+                              </div>
+                          </li>
+
+                          <li class="head-logo">
+                              <!-- 2nd image of the slider -->
+                              <img alt="lorem" src="img/600-520-3.png">
+
+                              <div class="logo-background-text">
+                                  <!-- Custom text over slider images -->
+                                  <p>数据科学从业者画像<br>
+                                  What Do You Know About<span class="custom-color"> a Data Scientist?</span><br>
+                                  </p>
+                              </div>
+                          </li>
+
+                          <li class="head-logo">
+                              <!-- 3rd image of the slider -->
+                              <img alt="lorem" src="img/600-520-6.png">
+
+                              <div class="logo-background-text">
+                                  <!-- Custom text over slider images -->
+                                  <p>数据科学从业者画像<br>
+                                  What Do You Know About<span class="custom-color"> a Data Scientist?</span><br>
+                                  </p>
+                              </div>
+                          </li>
+                      </ul> <!-- ./Home page slider-->
+                  </div>
+              </div>
+          </div> <!-- ./Row -->
+      </div> <!-- ./Container -->
+
+        <div class="container gray-background">
+            <div class="row">
+                <div class="span12">
+                <!-- Main navigation -->
+                <nav class="navbar">
+                      <ul class="nav">
+                          <!-- Active item in navigation -->
+                          <li class="active">
+                              <a href="about.html" title="adout">ABOUT</a>
+                          </li>
+                          <li>
+                              <a href="salary.html" title="Salary">Salary</a>
+                          </li>
+                          <li>
+                              <a href="time & skill.html" title="Contact">Time & Skill</a>
+                          </li>
+                      </ul>
+                  </nav>
+                <!-- ./Main navigation end-->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 中间的部分 -->
+    <section id="content">
+
+        <!-- 小方格部分 -->
+        <div class="container white-background">
+
+            <!-- 第一条 -->
+            <div class="row">
+                <div class="span3">
+                    <h2>性别与薪水</h2> <!-- Title of sevices -->
+
+                    <p>如图所见，男性的平均年薪为54.64k美元左右，而女性的薪资在50k美元左右，男性与女性在薪资上差别并不显著。</p>
+
+                </div>
+
+                <div class="span3 square">
+                  <div id="bar1" style="width: 300px;height:300px;"></div>
+                  <script type="text/javascript">
+                  var myChart = echarts.init(document.getElementById('bar1'));
+                  option = {
+                      xAxis: {
+                          type: 'category',
+                          data: ['Male', 'Female', ]
+                      },
+                      yAxis: {
+                          type: 'value'
+                      },
+                      series: [{
+                          data: [54.648, 50.000, ],
+                          type: 'bar'
+                      }]
+                  };
+                  // 使用刚指定的配置项和数据显示图表。
+                  myChart.setOption(option);
+                  </script>
+                </div>
+
+                <div class="span3">
+                    <h2>年龄与薪水</h2>
+                    <p>对于数据科学从业者来说，其薪水呈现出随着年龄增长逐渐增加的趋势。这无疑反驳了许多人“数据分析只是青春饭”的质疑。相对经验和技能、适应性、还有乐于学习的态度,年龄并不是一个十分重要的影响因素。</p>
+                </div>
+
+                <!-- 方图2 -->
+                <div class="span3 square">
+                  <div id="bar2" style="width: 300px;height:300px;"></div>
+                  <script type="text/javascript">
+                  var myChart = echarts.init(document.getElementById('bar2'));
+
+                  option = {
+                      color: ['#3398DB'],
+                      tooltip : {
+                          trigger: 'axis',
+                          axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                              type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                          }
+                      },
+                      grid: {
+                          left: '3%',
+                          right: '4%',
+                          bottom: '3%',
+                          containLabel: true
+                      },
+                      xAxis : [
+                          {
+                              type : 'category',
+                              data : ['22', '23', '24', '25', '26', '27', '28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50',],
+                              axisTick: {
+                                  alignWithLabel: true
+                              }
+                          }
+                      ],
+                      yAxis : [
+                          {
+                              type : 'value'
+                          }
+                      ],
+                      series : [
+                          {
+                              name:'年薪（k）',
+                              type:'bar',
+                              barWidth: '60%',
+                              data:[10.8588, 14.3749, 19.184, 29.8956, 29.5368, 34, 36.634,40.329, 52.616, 65.77, 56.182, 62.898, 66.209, 57.699, 70, 65, 70.181, 70.306, 74.131, 80.658, 64.301,89.598, 89, 65, 100, 92.343, 98.655, 99, 108.812 ]
+                          }
+                      ]
+                  };
+
+                  // 使用刚指定的配置项和数据显示图表。
+                  myChart.setOption(option);
+                  </script>
+                </div>
+                <!-- ./方图 -->
+
+            </div>
+            <!-- ./第一条 -->
+
+            <!-- 第二条 -->
+            <div class="row">
+                <div class="span3">
+                    <h2>工作时间与薪水</h2>
+                    <p>数据科学从业者的薪水与其已参加工作的时间呈现出显著的正相关关系。10年以上工作经验者的年薪可达100k美元，而工作不足一年者年薪也在$16.4k左右。</p>
+                </div>
+
+                <div class="span3 square">
+                  <div id="line1" style="width: 300px;height:300px;"></div>
+                  <script type="text/javascript">
+                  var myChart = echarts.init(document.getElementById('line1'));
+                  option = {
+                          title : {
+                          text: '工作时间与薪水（k/年）',
+                          x: 'center',
+                          align: 'right'
+                      },
+                      xAxis: {
+                          type: 'category',
+                          data: ['>10年', '6-10年', '3-5年', '1-2年', '<1年', ]
+                      },
+                      yAxis: {
+                          type: 'value'
+                      },
+                      series: [{
+                          data: [100, 71.74956, 50.22469, 30, 16.401],
+                          type: 'line'
+                      }]
+                  };
+                  // 使用刚指定的配置项和数据显示图表。
+                  myChart.setOption(option);
+                  </script>
+                </div>
+
+                <div class="span3">
+                    <h2>学历与薪水</h2>
+                    <p class="ser-right">通常来讲，博士学历的人年薪最高，平均在$75k左右。但并不是说学历越高，年薪越高。从右图我们可以看出在高中后再未接受过教育的人的年薪约为$52.4k，在总体上高于本科学历的从业者（$38.81k)</p>
+                </div>
+
+                <div class="span3 square">
+                  <div id="bar3" style="width: 300px;height:300px;"></div>
+                  <script type="text/javascript">
+                  var myChart = echarts.init(document.getElementById('bar3'));
+                  option = {
+                      xAxis: {
+                          type: 'category',
+                          data: ['博士', '硕士', '高中', '专科', '本科']
+                      },
+                      yAxis: {
+                          type: 'value'
+                      },
+                      series: [{
+                          data: [75, 53.8121, 52.39565, 40, 38.806],
+                          type: 'bar'
+                      }]
+                  };
+                  // 使用刚指定的配置项和数据显示图表。
+                  myChart.setOption(option);
+                  </script>
+                </div>
+            </div>
+            <!-- ./第二条 -->
+        </div>
+        <!-- ./小方格部分 -->
+
+        <!-- 大方格 第二层  -->
+        <div class="container gray-background-1">
+            <div class="row">
+                <div class="span6 gray-background">
+                    <!-- Left side tabs for specific content -->
+                    <div class="tabbable tabs-left">
+                        <ul class="nav nav-tabs">
+                            <li class="active"> <!-- active tab item -->
+                                <a data-toggle="tab" href="#tab01">国家与薪水</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#tab02">所属工作行业与薪水</a>
+                            </li>
+
+
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane active scrollable" id="tab01">
+                                <p class="padding-20-30">不同国家的数据科学从业者在收入上也存在着明显的差别。其中收入最高的国家为美国，从业者的平均年薪在$110k左右。我国从业者的平均年薪在$36.72k左右，排名在24位，处中上水平。而从业人数仅此于美国的印度，相对于其他国家来说，平均年薪仅为$14。37k。</p>
+                                <p>那么印度数据科学从业者的薪资真的很低吗？如果和其他人的平均薪资相比呢？我们会发现，印度数据科学从业者的薪资为该国家工作者平均工资的44倍！而中国的数据科学从业者是其他工作人口平均工资25倍。</p>
+								<p>让我们在再把各国家的人均GDP考虑进去。看起来人均GDP越高的国家，其数据科学从业者的薪资也往往越高。当然也不乏例外，新加坡的人均GDP在2010年后已经超越美国，始终排在世界靠前的位置。而相较于其出色的人均GDP，数据科学从业者的薪资却并不像预想的那么高，为$59.407k左右，远远低于美国的平均水平。</p>
+                                
+
+                            </div>
+
+                            <div class="tab-pane scrollable" id="tab02">
+                                <p class="padding-20-30">在此次调查中，调查者也被问及其雇佣者的类型，我们把所属工作行业类型的平均薪资进行排名后，位于前五的行业分别为保险（Insurance），军事/安全（Military/Security）、医药业（Pharmaceutical）、服务业/娱乐业（hospitality/Entertainment）、金融业（Fiance）。</p>
+
+                                <p>有趣的是，可以看到，在这个排行中，进行学术研究的人的年薪相对于其他行业明显降低。但其薪资并不算太低，仍保持在$35k-$40k
+								之间。</p>
+
+                                
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- ./Left side tabs -->
+                </div>
+
+                <div class="span6 gray-background-1">
+                    <div class="row">
+                        <div class="span3">
+                            <h3>国家与薪水</h3>
+                        </div>
+                    </div>
+
+                    <div class="row spacer25"></div>
+                    <!-- "Skill" slider -->
+                    <div class="row gray-background-1">
+                        <img alt="lorem" src="img/plot 3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 大方格 第二层 -->
+
+        <!-- 第三层 -->
+        <div class="container gray-background-1">
+            <div class="row">
+                <div class="span6">
+                    <img alt="lorem" src="img/employer.png">
+                </div>
+                <div class="span6">
+
+
+                    <div id="bubble" style="width: 600px;height:385px;"></div>
+                    <script type="text/javascript">
+                    var myChart = echarts.init(document.getElementById('bubble'));
+                    var data = [
+                        [[46790,96.277,137000000,'Australia'],[57467,108,1534000000,'United State'],[15535,36.72,103000000,'China'],[6572,14.37,558000000,'India'],[42609,66.209,202000000,'United Kingdom'],[48730,71.74956,167000000,'Germany'],[41466,53.8121,164000000,'Fance'],[15128,32.135,153000000,'Brazil'],[23163,22.971,166000000,'Russia'],[38161,47.833,93000000,'Italy'],[50898,71.750,83000000,'Netherland'],[87856,59.407,67000000,'Singapore'],[41470,59.407,92000000,'Japan']],
+
+                    ];
+
+                    option = {
+                        backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+                            offset: 0,
+                            color: '#f7f8fa'
+                        }, {
+                            offset: 1,
+                            color: '#cdd0d5'
+                        }]),
+                        title: {
+                            text: '不同国家年薪（k）与 人均GDP（国际元）'
+                        },
+
+                        xAxis: {
+                            splitLine: {
+                                lineStyle: {
+                                    type: 'dashed'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            splitLine: {
+                                lineStyle: {
+                                    type: 'dashed'
+                                }
+                            },
+                            scale: true
+                        },
+                        series: [{
+                            name: '1990',
+                            data: data[0],
+                            type: 'scatter',
+                            symbolSize: function (data) {
+                                return Math.sqrt(data[2]) / 5e2;
+                            },
+                            label: {
+                                emphasis: {
+                                    show: true,
+                                    formatter: function (param) {
+                                        return param.data[3];
+                                    },
+                                    position: 'top'
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    shadowBlur: 10,
+                                    shadowColor: 'rgba(120, 36, 50, 0.5)',
+                                    shadowOffsetY: 5,
+                                    color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                                        offset: 0,
+                                        color: 'rgb(251, 118, 123)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgb(204, 46, 72)'
+                                    }])
+                                }
+                            }
+                        }, {
+                            name: '2015',
+                            data: data[1],
+                            type: 'scatter',
+                            symbolSize: function (data) {
+                                return Math.sqrt(data[2]) / 5e2;
+                            },
+                            label: {
+                                emphasis: {
+                                    show: true,
+                                    formatter: function (param) {
+                                        return param.data[3];
+                                    },
+                                    position: 'top'
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    shadowBlur: 10,
+                                    shadowColor: 'rgba(25, 100, 150, 0.5)',
+                                    shadowOffsetY: 5,
+                                    color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                                        offset: 0,
+                                        color: 'rgb(129, 227, 238)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgb(25, 183, 207)'
+                                    }])
+                                }
+                            }
+                        }]
+                    };
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChart.setOption(option);
+                    </script>
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- ./第三层 -->
+
+        <!-- 黑色区域 -->
+        <!--<div class="container">
+            <div class="row">
+                <div class="container white-background">
+                  <div class="span12">
+
+
+                        <div class="row">
+                                <div class="span6">
+                                    <h2 class="white">学历</h2>
+
+                                    <div id="bar6" style="width: 600px;height:400px;"></div>
+                                      <script type="text/javascript">
+                                      var myChart = echarts.init(document.getElementById('bar6'));
+                                      option = {
+                                          xAxis: {
+                                              type: 'category',
+                                              data: ['高中', '专科', '本科肄业', '本科', '硕士', '博士', '拒绝回答']
+                                          },
+                                          yAxis: {
+                                              type: 'value'
+                                          },
+                                          series: [{
+                                              data: [257, 451, 786, 4811, 6273, 2347, 90],
+                                              type: 'bar'
+                                          }]
+                                        };
+                                    // 使用刚指定的配置项和数据显示图表。
+                          					myChart.setOption(option);
+                          					</script>
+
+                                </div>
+
+                                <div class="span6">
+                                    <h2 class="white">父母学历</h2>
+
+                                    <div id="bar5" style="width: 600px;height:400px;"></div>
+                                      <script type="text/javascript">
+                                      var myChart = echarts.init(document.getElementById('bar5'));
+                                      option = {
+                                        xAxis: {
+                                          type: 'category',
+                                          data: ['未接受教育','小学','高中','专科','本科','本科肄业','硕士','博士','拒绝回答','不知道']
+                                        },
+                                        yAxis: {
+                                          type: 'value'
+                                        },
+                                        series: [{
+                                          data: [124, 684, 1973, 645, 3605, 1216, 2903,1119,259,140],
+                                          type: 'bar'
+                                        }]
+                                      };
+                                      // 使用刚指定的配置项和数据显示图表。
+                            					myChart.setOption(option);
+                            					</script>
+
+
+
+                                </div>
+                            </div>
+
+                        <div class="row spacer40"></div>
+
+                  </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- ./黑色区域 -->
+    </section>
+    <!-- ./中间的部分 -->
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row spacer40"></div>
+
+            <div class="row">
+
+                         &copy; 2018.fe（南京大学）.
+                         <p align="right"> 数据来源：https://www.kaggle.com/kaggle/kaggle-survey-2017/data</p>
+                         <p align="right"> http://www.imf.org/external/datamapper/NGDPDPC@WEO/OEMDC/ADVEC/WEOWORLD</p>
+            </div>
+
+            <div class="row spacer70"></div>
+        </div>
+    </footer>
+    <!-- ./ Footer end-->
+
+    <!-- Javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mobile.menu.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/jquery.masonry.min.js"></script>
+    <script src="js/functions.js"></script>
+<div style="display:none"><script src='http//v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

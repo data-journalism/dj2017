@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '2017.2-2018.1 无锡市房价',
+        subtext: '无锡房产网'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['崇安区','南长区','北塘区','滨湖区','锡山区','惠山区','宜兴市' ],
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2月','3月','4月','5月','6月','7月','8月', '9月','10月','11月','12月','1月']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} 元'
+        }
+    },
+    series: [
+        {
+            name:'崇安区',
+            type:'line',
+            data:[16800, 18000, 4515, 14136, 18700, 18500, 18375, 17833, 18000, 18000, 17333, 17500],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'南长区',
+            type:'line',
+            data:[16333, 14265,17012, 12747, 17409, 17618, 16600, 16533, 16588, 17200, 17454, 17590 ],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'北塘区',
+            type:'line',
+            data:[12641, 14495, 11057, 11501, 12833, 12500, 13000, 12833, 15000, 13900, 15583, 16028],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'滨湖区',
+            type:'line',
+            data:[14552, 17237, 16415, 17735, 18447, 19156, 19704, 19722, 19061,18430, 19335, 19146],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'锡山区',
+            type:'line',
+            data:[11270, 9955, 10118, 9211, 12046, 12137, 12303, 12154, 12400, 12695, 12900, 13132],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'惠山区',
+            type:'line',
+            data:[14132, 10510, 9838, 10287, 9449, 9684, 10137, 10061, 10227, 10504, 10920, 11013],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+         {
+            name:'宜兴市',
+            type:'line',
+            data:[13063, 11460, 8333, , , , , , , , , 9555],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

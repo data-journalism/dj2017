@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var posList = [
+    'left', 'right', 'top', 'bottom',
+    'inside',
+    'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+    'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+];
+
+app.configParameters = {
+    rotate: {
+        min: -90,
+        max: 90
+    },
+    align: {
+        options: {
+            left: 'left',
+            center: 'center',
+            right: 'right'
+        }
+    },
+    verticalAlign: {
+        options: {
+            top: 'top',
+            middle: 'middle',
+            bottom: 'bottom'
+        }
+    },
+    position: {
+        options: echarts.util.reduce(posList, function (map, pos) {
+            map[pos] = pos;
+            return map;
+        }, {})
+    },
+    distance: {
+        min: 0,
+        max: 10000
+    }
+};
+
+app.config = {
+    rotate: 90,
+    align: 'left',
+    verticalAlign: 'middle',
+    position: 'insideBottom',
+    distance: 15,
+    onChange: function () {
+        var labelOption = {
+            normal: {
+                rotate: app.config.rotate,
+                align: app.config.align,
+                verticalAlign: app.config.verticalAlign,
+                position: app.config.position,
+                distance: app.config.distance
+            }
+        };
+        myChart.setOption({
+            series: [{
+                label: labelOption
+            }, {
+                label: labelOption
+            }, {
+                label: labelOption
+            }, {
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            },{
+                label: labelOption
+            }]
+        });
+    }
+};
+
+
+var labelOption = {
+    normal: {
+        show: true,
+        position: app.config.position,
+        distance: app.config.distance,
+        align: app.config.align,
+        verticalAlign: app.config.verticalAlign,
+        rotate: app.config.rotate,
+        formatter: '{c}  {name|{a}}',
+        fontSize: 15,
+        rich: {
+            name: {
+                textBorderColor: '#fff'
+            }
+        }
+    }
+};
+
+option = {
+    color: ['#003366', '#006699', '#4cabce', '#e5323e','#999','#123','#895','#378','#530','#238', '#155','#588','#234','#384'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['南京', '苏州', '昆山', '南通', '扬州','无锡','常州','泰州','镇江','徐州','盐城','连云港','淮安','沭阳','宿迁']
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            mark: {show: true},
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    calculable: true,
+    xAxis: [
+        {
+            type: 'category',
+            axisTick: {show: false},
+            data: ['2011','2012', '2013', '2014', '2015', '2016']
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    series: [
+        {
+            name: '南京',
+            type: 'bar',
+            barGap: 0,
+            label: labelOption,
+            data: [14442,14750,17313,18099,18697,24867]
+        },
+        {
+            name: '苏州',
+            type: 'bar',
+            label: labelOption,
+            data: [10000,10089,10941,10980,12251,16181]
+        },
+        {
+            name: '昆山',
+            type: 'bar',
+            label: labelOption,
+            data: [7153,7075,7467,7128,7488,10706]
+        },
+        {
+            name: '南通',
+            type: 'bar',
+            label: labelOption,
+            data: [9986,9408,8218,,8308,8716]
+        },
+         {
+            name: '扬州',
+            type: 'bar',
+            label: labelOption,
+            data: [8275,8366,8150,,8406,8579]
+        },
+         {
+            name: '无锡',
+            type: 'bar',
+            label: labelOption,
+            data: [7477,7336,7312,6979,6771,8300]
+        },
+        {
+            name: '常州',
+            type: 'bar',
+            label: labelOption,
+            data: [7638,5536,6222,7324,6560,8202]
+        },
+        {
+            name: '泰州',
+            type: 'bar',
+            label: labelOption,
+            data: [7777,7975,7838,,4651,7285]
+        },
+        {
+            name: '镇江',
+            type: 'bar',
+            label: labelOption,
+            data: [6860,6578,6663,,7304,7240]
+        },
+        {
+            name: '徐州',
+            type: 'bar',
+            label: labelOption,
+            data: [7477,7336,7312,6979,6771,8300]
+        },
+          {
+            name: '盐城',
+            type: 'bar',
+            label: labelOption,
+            data: [,,,,6514,6607]
+        },
+          {
+            name: '连云港',
+            type: 'bar',
+            label: labelOption,
+            data: [,,,,5964,6458]
+        },
+        {
+            name: '淮安',
+            type: 'bar',
+            label: labelOption,
+            data: [,,,,5580,5740]
+        },
+        {
+            name: '沭阳',
+            type: 'bar',
+            label: labelOption,
+            data: [,,,5500,5500]
+        },
+        {
+            name: '宿迁',
+            type: 'bar',
+            label: labelOption,
+            data: [,,,,4905,5085]
+        },
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

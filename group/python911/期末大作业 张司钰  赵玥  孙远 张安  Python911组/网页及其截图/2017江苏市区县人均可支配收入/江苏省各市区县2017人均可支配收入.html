@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+
+var geoCoordMap = {
+     '启东':[121.66,31.80],
+    '如东':[121.18,32.33],
+    '海门':[121.15,31.89],
+    '太仓':[121.10,31.45],
+    '南通':[120.86,32.01],
+    '昆山':[120.95,31.39],
+    '常熟':[120.74,31.64],
+    '吴江':[120.63,31.16],
+    '吴县':[120.62,31.32],
+    '苏州':[120.62,31.32],
+    '如皋':[120.56,32.396],
+    '沙洲':[119.46,35.42],
+    '海安':[120.45,32.57],
+    '大丰':[120.45,33.19],
+    '东台':[120.31,32.84],
+    '无锡':[120.29,31.59],
+    '射阳':[120.26,33.77],
+    '江阴':[120.26,31.91],
+    '靖江':[120.26,32.03],
+    '泰县':[120.15,32.51],
+    '盐城':[120.13,33.38],
+    '泰兴':[120.02,32.16],
+    '武进':[119.95,31.78],
+    '常州':[119.95,31.79],
+    '泰州':[119.90,32.49],
+    '滨海':[119.84,34.01],
+    '宜兴':[119.82,31.36],
+    '兴化':[119.82,32.93],
+    '扬中':[119.81,32.24],
+    '阜宁':[119.79,33.78],
+    '建湖':[119.77,33.46],
+    '响水':[119.56,34.20],
+    '金坛':[119.56,31.74],
+    '丹阳':[119.55,32.00],
+    '高邮':[119.45,32.78],
+    '镇江':[119.44,32.20],
+    '丹徒':[119.44,32.20],
+    '邗江':[119.42,32.39],
+    '扬州':[119.42,32.39],
+    '灌南':[119.36,34.09],
+    '宝应':[119.32,33.23],
+    '涟水':[119.26,33.77],
+    '灌云':[119.23,34.30],
+    '连云港':[119.16,34.59],
+    '句容':[119.16,31.95],
+    '仪征':[119.16,32.27],
+    '淮安':[119.15,33.50],
+    '赣榆':[119.11,34.83],
+    '淮阴':[119.02,33.62],
+    '金湖':[119.02,33.01],
+    '清江':[119.02,33.59],
+    '溧水':[119.02,31.65],
+    '洪泽':[118.85,33.28],
+    '江宁':[118.83,31.95],
+    '六合':[118.83,32.36],
+    '沭阳':[118.79,34.12],
+    '南京':[118.78,32.04],
+    '东海':[118.75,34.54],
+    '泗阳':[118.68,33.73],
+    '江浦':[118.62,32.07],
+    '新沂':[118.33,34.38],
+    '宿迁':[118.30,33.96],
+    '泗洪':[118.23,33.46],
+    '盱眙':[118.05,33.00],
+    '邳县':[117.97,34.30],
+    '睢宁':[117.94,33.89],
+    '铜山':[117.20,34.26],
+    '徐州':[117.20,34.26],
+    '沛县':[116.93,34.73],
+    '丰县':[116.57,34.79]
+};
+var data = [
+     {name: '启东', value: 4.0640},
+     {name: '如东', value: 4.0400},
+     {name: '海门', value: 4.4000},
+     {name: '太仓', value: 5.4145},
+     {name: '南通', value: 4.2661},
+     {name: '昆山', value: 5.0000},
+     {name: '常熟', value: 5.9015},
+     {name: '吴江', value: 5.8830},
+     {name: '吴中', value: 6.1000},
+     {name: '苏州', value: 5.8800},
+     {name: '如皋', value: 3.9700},
+     {name: '海安', value: 4.0616},
+     {name: '大丰', value: 2.1800},
+     {name: '东台', value: 3.5400},
+     {name: '无锡', value: 5.2659},
+     {name: '射阳', value: 2.9000},
+     {name: '靖江', value: 4.3248},
+     {name: '盐城', value: 5.64176},
+     {name: '泰兴', value: 3.9735},
+     {name: '武进', value: 4.2000},
+     {name: '常州', value: 4.1740},
+     {name: '泰州', value: 4.0069},
+     {name: '滨海', value: 2.8760},
+     {name: '宜兴', value: 4.9800},
+     {name: '兴化', value: 3.6539},
+     {name: '扬中', value: 4.97636},
+     {name: '阜宁', value: 2.7710},
+     {name: '建湖', value: 3.2067},
+     {name: '响水', value: 2.7763},
+     {name: '金坛', value: 4.6700},
+     {name: '丹阳', value: 4.5193},
+     {name: '高邮', value: 3.3944},
+     {name: '镇江', value: 4.5350},
+     {name: '丹徒', value: 4.4035},
+     {name: '邗江', value: 4.3602},
+     {name: '扬州', value: 3.8828},
+     {name: '灌南', value: 3.2538},
+     {name: '宝应', value: 2.9124},
+     {name: '涟水', value: 2.7320},
+     {name: '灌云', value: 2.5047},
+     {name: '连云港', value: 3.0293},
+     {name: '句容', value: 4.4031},
+     {name: '仪征', value: 3.9418},
+     {name: '淮安', value: 3.2800},
+     {name: '赣榆', value: 2.5200},
+     {name: '淮阴', value: 3.0665},
+     {name: '金湖', value: 1.7220},
+     {name: '溧水', value: 4.8093},
+     {name: '洪泽', value: 3.0500},
+     {name: '江宁', value: 2.92502},
+     {name: '六合', value: 2.7879},
+     {name: '沭阳', value: 2.4000},
+     {name: '南京', value: 4.8104},
+     {name: '东海', value: 2.9527},
+     {name: '泗阳', value: 2.5489},
+     {name: '新沂', value: 3.4291},
+     {name: '宿迁', value: 2.5652},
+     {name: '泗洪', value: 2.4900},
+     {name: '盱眙', value: 3.3130},
+     {name: '邳县', value: 3.1058},
+     {name: '睢宁', value: 2.5602},
+     {name: '铜山', value: 3.2061},
+     {name: '徐州', value: 3.9870},
+     {name: '沛县', value: 2.9680},
+     {name: '丰县', value: 2.2745}
+];
+
+var convertData = function (data) {
+    var res = [];
+    for (var i = 0; i < data.length; i++) {
+        var geoCoord = geoCoordMap[data[i].name];
+        if (geoCoord) {
+            res.push({
+                name: data[i].name,
+                value: geoCoord.concat(data[i].value)
+            });
+        }
+    }
+    return res;
+};
+
+option = {
+    backgroundColor: '#404a59',
+    title: {
+        text: '江苏省各市区县2017人均可支配收入',
+        subtext: 'data from 各地政府工作报告',
+        x:'center',
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: function (params) {
+            return params.name + ' : ' + params.value[2];
+        }
+    },
+    legend: {
+        orient: 'vertical',
+        y: 'bottom',
+        x:'right',
+        data:['人均可支配收入/万元'],
+        textStyle: {
+            color: '#fff'
+            
+        }
+    },
+    
+    visualMap: {
+        min: 0,
+        max: 7,
+        calculable: true,
+        inRange: {
+            color: ['#50a3ba', '#eac736', '#d94e5d']
+        },
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    geo: {
+        map: 'china',
+         left: '80',
+        right: '40%',
+        center: [118.98561551896913, 33.205000490896193],
+        zoom: 10,
+        label: {
+            emphasis: {
+                show: false
+            }
+        },
+        itemStyle: {
+            normal: {
+                areaColor: '#323c48',
+                borderColor: '#111'
+            },
+            emphasis: {
+                areaColor: '#2a333d'
+            }
+        }
+    },
+    series: [
+        {
+            name: '人均可支配收入/万元',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            data: convertData([
+                {name: '启东', value: 4.0640},
+     {name: '如东', value: 4.0400},
+     {name: '海门', value: 4.4000},
+     {name: '太仓', value: 5.4145},
+     {name: '南通', value: 4.2661},
+     {name: '昆山', value: 5.0000},
+     {name: '常熟', value: 5.9015},
+     {name: '吴江', value: 5.8830},
+     {name: '吴中', value: 6.1000},
+     {name: '苏州', value: 5.8800},
+     {name: '如皋', value: 3.9700},
+     {name: '海安', value: 4.0616},
+     {name: '大丰', value: 2.1800},
+     {name: '东台', value: 3.5400},
+     {name: '无锡', value: 5.2659},
+     {name: '射阳', value: 2.9000},
+     {name: '靖江', value: 4.3248},
+     {name: '盐城', value: 5.64176},
+     {name: '泰兴', value: 3.9735},
+     {name: '武进', value: 4.2000},
+     {name: '常州', value: 4.1740},
+     {name: '泰州', value: 4.0069},
+     {name: '滨海', value: 2.8760},
+     {name: '宜兴', value: 4.9800},
+     {name: '兴化', value: 3.6539},
+     {name: '扬中', value: 4.97636},
+     {name: '阜宁', value: 2.7710},
+     {name: '建湖', value: 3.2067},
+     {name: '响水', value: 2.7763},
+     {name: '金坛', value: 4.6700},
+     {name: '丹阳', value: 4.5193},
+     {name: '高邮', value: 3.3944},
+     {name: '镇江', value: 4.5350},
+     {name: '丹徒', value: 4.4035},
+     {name: '邗江', value: 4.3602},
+     {name: '扬州', value: 3.8828},
+     {name: '灌南', value: 3.2538},
+     {name: '宝应', value: 2.9124},
+     {name: '涟水', value: 2.7320},
+     {name: '灌云', value: 2.5047},
+     {name: '连云港', value: 3.0293},
+     {name: '句容', value: 4.4031},
+     {name: '仪征', value: 3.9418},
+     {name: '淮安', value: 3.2800},
+     {name: '赣榆', value: 2.5200},
+     {name: '淮阴', value: 3.0665},
+     {name: '金湖', value: 1.7220},
+     {name: '溧水', value: 4.8093},
+     {name: '洪泽', value: 3.0500},
+     {name: '江宁', value: 2.92502},
+     {name: '六合', value: 2.7879},
+     {name: '沭阳', value: 2.4000},
+     {name: '南京', value: 4.8104},
+     {name: '东海', value: 2.9527},
+     {name: '泗阳', value: 2.5489},
+     {name: '新沂', value: 3.4291},
+     {name: '宿迁', value: 2.5652},
+     {name: '泗洪', value: 2.4900},
+     {name: '盱眙', value: 3.3130},
+     {name: '邳县', value: 3.1058},
+     {name: '睢宁', value: 2.5602},
+     {name: '铜山', value: 3.2061},
+     {name: '徐州', value: 3.9870},
+     {name: '沛县', value: 2.9680},
+     {name: '丰县', value: 2.2745}
+            ]),
+            symbolSize: 12,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: false
+                }
+            },
+            itemStyle: {
+                emphasis: {
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }
+            }
+        }
+    ]
+    
+};
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

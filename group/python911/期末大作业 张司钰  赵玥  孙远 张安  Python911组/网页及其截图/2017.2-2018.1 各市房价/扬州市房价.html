@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '2017.2-2018.1 扬州市房价',
+        subtext: '扬州房产网'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['邗江区','维扬区','仪征市','江都市','高邮市','宝应县'],
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2月','3月','4月','5月','6月','7月','8月', '9月','10月','11月','12月','1月']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} 元'
+        }
+    },
+    series: [
+        {
+            name:'邗江区',
+            type:'line',
+            data:[9588, 9917, 10017, 10245, 10724, 10682, 11042, 11652, 12638, 12958, 12958, 11846],
+                 markPoint: {
+                     data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'维扬区',
+            type:'line',
+            data:[8813, 9200, 9568, 10152, 10600, 10880, 11199, 11111, 11275, 11415, 11654, 12002],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'仪征市',
+            type:'line',
+            data:[6008, 6104, 6137, 6348, 6714, 6628, 7611, 7972, 7675, 7731, 7618, 8097],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'江都市',
+            type:'line',
+            data:[7886, 7886, 7886, 7835, 8440, 8533, 7675, 8542, 9250, 8700, 8271, 8050],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+         {
+            name:'高邮市',
+            type:'line',
+            data:[5800, 5800, 5800, 5800, , , , , , , 5678, 5714],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+         {
+            name:'宝应县',
+            type:'line',
+            data:[7484, 7792, 7725, 7811, 7787, 7590, 7665, 7905, 8278, 8471, 8663, 8618],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+     ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

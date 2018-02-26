@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script src="echarts.js"></script>
+</head>
+<body>
+<div style=" padding-right: 20px; padding-left: 20px; line-height: 30px">
+<h1>基于经济状况的中国五大教基本情况分析</h1>
+<h3>——以CFPS中国家庭数据追踪调查2012年的数据为基础</h3>
+<p>费尔巴哈说过这样一句话：“宗教是人类精神之梦。”<br/>
+    <br/>
+现代社会的发展使得宗教不断扩大自己的影响力，逐渐成为与科技、政治并驾齐驱的影响世界的马车。巴以冲突由于耶路撒冷的归属问题一直无法解决，特朗普擅自将耶路撒冷归为以色列首都又再次挑拨着中东人民的神经，宗教活动对社会正常秩序的影响……我们不可否认，宗教已经在潜移默化中影响了整个世界。
+那么在中国，宗教对于它的信徒们又有着怎样的影响呢？</p>
+</div>
+<br/>
+<hr/>
+<div style=" padding-right: 40px; padding-left: 40px; line-height: 30px; text-indent: 2em" >
+    <p>根据2012年CFPS的调查数据显示，在中国约有10%的宗教信仰者。在中国十几亿的庞大人口基数下，这些宗教信徒们无疑成为了社会中具有特殊性的一个无法被大家忽视的群体。</p>
+<p>他们大部分信仰着佛教、道教、基督教、伊斯兰教和天主教。带有宗教色彩的他们如何进行经济活动则是本篇报道的研究重点，而经济活动影响下，他们的日常社会活动也将会有着特别之处。</p>
+<br/>
+<h2>【宗教在信徒心中的重要程度】</h2><br/>
+<p>我们先来看看，各个宗教的信徒们对于宗教重视程度如何！</p>
+<center>
+<div id="Chart9" style="width: 600px; height: 400px"></div>
+<script type="text/javascript">  
+        var myChart = echarts.init(document.getElementById('Chart9')); 
+        option = {
+    title : {
+        text: '宗教重要度',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} {b} :{d}%",
+         textStyle: {
+                    fontSize:14
+                }
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['不重要','有点重要','非常重要','不知道']
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    grid: [
+        {x: '7.5%',y: '65%', width: '88%', height: '30%'},
+    ],
+    xAxis: [
+        {gridIndex: 0,
+        type: 'category',
+            axisTick: {
+                alignWithLabel: true
+            },
+            data: ['天主教','伊斯兰教','基督教','道教']},
+    ],
+    yAxis: [
+        {gridIndex: 0,name:'年级',show:false
+        },
+    ],
+    series : [
+        {
+            name: '佛教',
+            type: 'pie',
+            //roseType:'radius',
+            radius : '40%',
+            center: ['50%', '33%'],
+            data:[
+                {value:2016, name:'不重要'},
+                {value:2188, name:'有点重要'},
+                {value:1130, name:'非常重要'},
+                /*{value:335, name:'3'},
+                {value:1548, name:'4'},
+                {value:1548, name:'5'}*/
+            ],
+            label: {
+            normal: {
+                position: 'outside',
+                formatter: '{a} :{b} {c}份',
+                 textStyle: {
+                    color: '',
+                    fontSize: 14
+                }
+            }
+        },
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(3, 0, 0, 0.5)'
+                }
+            }
+        },
+        {
+            name: '',
+            type: 'pie',
+            //roseType:'radius',
+            radius : '25%',
+            center: ['18%', '80.2%'],
+            data:[
+                {value:30, name:'不重要'},
+                {value:50, name:'有点重要'},
+                {value:42, name:'非常重要'},
+                /*{value:335, name:'3'},
+                {value:1548, name:'4'},
+                {value:1548, name:'5'}*/
+            ],
+            label: {
+            normal: {
+                position: 'inner',
+                formatter: '{c}份',
+                 textStyle: {
+                    color: '#ffffff',
+                    fontSize: 14
+                }
+            }
+        },
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        },
+        {
+            name: '',
+            type: 'pie',
+            radius : '25%',
+            center: ['40%', '81%'],
+            data:[
+                {value:11, name:'不重要'},
+                {value:32, name:'有点重要'},
+                {value:205, name:'非常重要'},
+                /*{value:335, name:'3'},
+                {value:1548, name:'4'}*/
+            ],
+            label: {
+            normal: {
+                position: 'inner',
+                formatter: '{c}份',
+                 offset: [,100],
+                 textStyle: {
+                    color: '#ffffff',
+                    fontSize: 14
+                }
+            }
+        },
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        },
+        {
+            name: '',
+            type: 'pie',
+            //roseType:'radius',
+            radius : '25%',
+            center: ['62%', '81%'],
+            data:[
+                {value:104, name:'不重要'},
+                {value:240, name:'有点重要'},
+                {value:305, name:'非常重要'},
+                /*{value:335, name:'3'},
+                {value:1548, name:'4'},
+                {value:1548, name:'5'}*/
+            ],
+            label: {
+            normal: {
+                position: 'inner',
+                formatter: '{c}份',
+                 textStyle: {
+                    color: '#ffffff',
+                    fontSize: 14
+                }
+            }
+        },
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        },
+        {
+            name: '',
+            type: 'pie',
+            //roseType:'radius',
+            radius : '25%',
+            center: ['84%', '81%'],
+            data:[
+                {value:138, name:'不重要'},
+                {value:142, name:'有点重要'},
+                {value:64, name:'非常重要'},
+                /*{value:335, name:'3'},
+                {value:1548, name:'4'},
+                {value:1548, name:'5'}*/
+            ],
+            label: {
+            normal: {
+                position: 'outside',
+                formatter: '{c}份',
+                 textStyle: {
+                    color: '',
+                    fontSize: 14
+                }
+            }
+        },
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        },
+    ]
+}; 
+myChart.setOption(option);            
+</script>  
+</center>
+<br/>
+    <p>伊斯兰教的大部分信徒认为信仰伊斯兰教对他们而已是非常重要的，看来他们都是虔诚的信徒呀。这种虔诚很多都体现在生活习惯上，伊斯兰教徒会定期做祷告，并且坚决不吃猪肉。基督教教徒可以说是第二虔诚的教徒了，几乎一半的人觉得基督教对他们而已非常重要。天主教教徒中认为宗教对他们比较重要的人也占了绝大部分。道教和佛教信徒对宗教的重视程度情况相类似，但是他们属于不是很虔诚的那一种。</p><br/>
+<h2>【经济收入】</h2><br/>
+<p>我们来看一下，各个宗教的收入情况。在这个利益化的社会中，有钱就相对于有了更多的话语权。</p>
+<center>
+<div id="Chart10" style="width: 600px; height: 400px"></div>
+<script type="text/javascript">  
+        var myChart = echarts.init(document.getElementById('Chart10')); 
+option = {
+    title: {
+        text: '信教人群工资收入统计'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        y:"bottom",
+        data:['佛教','道教','基督教','伊斯兰教','天主教']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '10%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['0-50000','50000-100000','100000-150000','150000-200000','200000-250000']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name:'佛教',
+            type:'line',
+            stack: '佛教',
+            data:[1108,67, 15, 4,3]
+        },
+        {
+            name:'道教',
+            type:'line',
+            stack: '道教',
+            data:[46, 3, 0, 0, 0]
+        },
+        {
+            name:'基督教',
+            type:'line',
+            stack: '基督教',
+            data:[158, 10, 7, 0,0]
+        },
+        {
+            name:'伊斯兰教',
+            type:'line',
+            stack: '伊斯兰教',
+            data:[24, 0, 0, 0, 0]
+        },
+        {
+            name:'天主教',
+            type:'line',
+            stack: '天主教',
+            data:[34, 1, 0,0,0]
+        }
+    ]
+};
+myChart.setOption(option);            
+</script> 
+</center>
+<p>我们不难看出每个宗教的信徒都经济状况都分别呈现出不同的特点。</p>
+<p>信仰伊斯兰教的无收入者在所有宗教中占比是最高的，但另一方面，他们整体的平均收入却又是最高的，这就说明伊斯兰教的信徒在收入上存在一个比较严重的两极分化现象。那些收入高的信徒表示，带不动啊！</p>
+<p>佛教信徒的收入标准差是最大的，说明其有收入者收入水平较为分散，同时又因为其无收入者占比非常低，所以导致了佛教信徒整体的平均收入排在第二位。看来信仰佛教的人都在老实本分地工作呢！</p>
+<p>道教信徒呢，游手好闲不干活的人是最少的，但是他们的平均收入仍旧不高，收入标准差也非常小，所以他们可能都从事着社会中下阶层的工作。</p>
+<p>再来看看基督教的收入水平，其实基督教信徒的收入水平情况与道教信徒的基本相同，但是非常有意思的是，信仰基督教的兄弟们普遍自我感觉良好，在自认社会地位构成的调查数据显示，他们自认为社会地位高的人数比例是最大的。心态好，才能活得好！</p>
+<p>最后是天主教，相比其他四个宗教，天主教的信徒人数是最少的，信徒们的平均收入也是最低的，和其他宗教比起来，差距非常大，可能就是欺负他们人少吧。</p><br/>
+<p>经过上述数据分析，我们不难发现，每个宗教都有自己独特的经济状况。因此我们根据他们各自的经济特点，与其他不同的基本信息进行了交叉分析，探求出了一些比较有意思的信息。</p><br/>
+<h2>【五教教徒的生活满意度】</h2>
+<center>
+<div id="Chart1" style="width: 600px; height: 400px"></div>
+<script type="text/javascript">  
+    	var myChart = echarts.init(document.getElementById('Chart1'));  
+	option = {
+    title : {
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        y:'bottom',
+        data:['佛教','道教','伊斯兰教','基督教','天主教']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['非常不满意','不太满意','一般','满意','非常满意']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'佛教',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0.027, 0.06, 0.305, 0.317, 0.287]
+        },
+        {
+            name:'道教',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0.023, 0.070, 0.273, 0.337, 0.297]
+        },
+        {
+            name:'伊斯兰教',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0.028, 0.056, 0.226, 0.230, 0.460]
+        },
+        {
+            name:'天主教',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0.041, 0.057, 0.344, 0.352, 0.205]
+        },
+        {
+            name:'基督教',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0.040, 0.055, 0.265, 0.328, 0.311]
+        },
+    ]
+};
+                    
+
+          myChart.setOption(option);            
+</script>  
+</center>
+<p>“万绿丛中一点红”！一眼就看到了伊斯兰教这个傲娇的上扬曲线！伊斯兰教徒对自己生活非常满意的人是最多的，因为他们整体的收入水平也是最高的呀！有钱生活自然是美滋滋呢！</p>
+<p>佛教、道教和基督教教徒对自己生活满意程度的情况大致相同，这里就不得不说基督教教徒的心态非常好了！要知道他们可是五大教教徒中收入水平最低的群体啊。真是心宽啥都过得去。</p>
+<p>反观天主教教徒，他们就比较悲观了，看来在他们眼中，自己的生活还有很多可以改善的地方。<br/>
+</p>
+<br/>
+<br/>
+<h2>【五教教徒的文化教育水平】</h2><br/>
+<center>
+<div id="Chart2" style="width: 400px; height: 300px"></div>
+<script type="text/javascript">  
+    	var myChart = echarts.init(document.getElementById('Chart2'));  
+	option = {
+    color : [
+        'rgba(255, 69, 0, 0.5)',
+        'rgba(255, 150, 0, 0.5)',
+        'rgba(255, 200, 0, 0.5)',
+        'rgba(155, 200, 50, 0.5)',
+        'rgba(55, 200, 100, 0.5)'
+    ],
+    title : {
+        text: '佛教',
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        y:'bottom',
+        data : ['文盲/半文盲','小学','初中','高中','大专及以上']
+    },
+    calculable : true,
+    series : [
+        {
+            name:'学历',
+            type:'funnel',
+            x: '10%',
+            width: '80%',
+            maxSize: '80%',
+            itemStyle: {
+                normal: {
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    label: {
+                        position: 'inside',
+                        formatter: '{c}%',
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                emphasis: {
+                    label: {
+                        position:'inside',
+                        formatter: '{b}实际 : {c}%'
+                    }
+                }
+            },
+            data:[
+                {value:31.9, name:'文盲/半文盲'},
+                {value:19.9, name:'小学'},
+                {value:23.3, name:'初中'},
+                {value:10, name:'高中'},
+                {value:5.6, name:'大专及以上'}
+            ]
+        }
+    ]
+};
+
+                    
+                    
+          myChart.setOption(option);            
+</script> 
+<br/>
+<div id="Chart3" style="width: 400px; height: 300px"></div>
+<script type="text/javascript">  
+    	var myChart = echarts.init(document.getElementById('Chart3'));  
+	option = {
+    color : [
+        'rgba(255, 69, 0, 0.5)',
+        'rgba(255, 150, 0, 0.5)',
+        'rgba(255, 200, 0, 0.5)',
+        'rgba(155, 200, 50, 0.5)',
+        'rgba(55, 200, 100, 0.5)'
+    ],
+    title : {
+        text: '道教',
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        y:'bottom',
+        data : ['文盲/半文盲','小学','初中','高中','大专及以上']
+    },
+    calculable : true,
+    series : [
+        {
+            name:'学历',
+            type:'funnel',
+            x: '10%',
+            width: '80%',
+            maxSize: '80%',
+            itemStyle: {
+                normal: {
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    label: {
+                        position: 'inside',
+                        formatter: '{c}%',
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                emphasis: {
+                    label: {
+                        position:'inside',
+                        formatter: '{b}实际 : {c}%'
+                    }
+                }
+            },
+            data:[
+                {value:45.6, name:'文盲/半文盲'},
+                {value:19.5, name:'小学'},
+                {value:18, name:'初中'},
+                {value:9.3, name:'高中'},
+                {value:2.3, name:'大专及以上'}
+            ]
+        }
+    ]
+};
+
+                    
+                    
+          myChart.setOption(option);            
+</script>  
+<br/>
+<div id="Chart4" style="width: 400px; height: 300px"></div>
+<script type="text/javascript">  
+    	var myChart = echarts.init(document.getElementById('Chart4'));  
+	option = {
+    color : [
+        'rgba(255, 69, 0, 0.5)',
+        'rgba(255, 150, 0, 0.5)',
+        'rgba(255, 200, 0, 0.5)',
+        'rgba(155, 200, 50, 0.5)',
+        'rgba(55, 200, 100, 0.5)'
+    ],
+    title : {
+        text: '伊斯兰教',
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        y:'bottom',
+        data : ['文盲/半文盲','小学','初中','高中','大专及以上']
+    },
+    calculable : true,
+    series : [
+        {
+            name:'学历',
+            type:'funnel',
+            x: '10%',
+            width: '80%',
+            maxSize: '80%',
+            itemStyle: {
+                normal: {
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    label: {
+                        position: 'inside',
+                        formatter: '{c}%',
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                emphasis: {
+                    label: {
+                        position:'inside',
+                        formatter: '{b}实际 : {c}%'
+                    }
+                }
+            },
+            data:[
+                {value:48.8, name:'文盲/半文盲'},
+                {value:11.3, name:'小学'},
+                {value:20.2, name:'初中'},
+                {value:9.3, name:'高中'},
+                {value:3.6, name:'大专及以上'}
+            ]
+        }
+    ]
+};
+
+                    
+                    
+          myChart.setOption(option);            
+</script>  
+<br/>
+<div id="Chart5" style="width: 400px; height: 300px"></div>
+<script type="text/javascript">  
+    	var myChart = echarts.init(document.getElementById('Chart5'));  
+	option = {
+    color : [
+        'rgba(255, 69, 0, 0.5)',
+        'rgba(255, 150, 0, 0.5)',
+        'rgba(255, 200, 0, 0.5)',
+        'rgba(155, 200, 50, 0.5)',
+        'rgba(55, 200, 100, 0.5)'
+    ],
+    title : {
+        text: '天主教',
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        y:'bottom',
+        data : ['文盲/半文盲','小学','初中','高中','大专及以上']
+    },
+    calculable : true,
+    series : [
+        {
+            name:'学历',
+            type:'funnel',
+            x: '10%',
+            width: '80%',
+            maxSize: '80%',
+            itemStyle: {
+                normal: {
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    label: {
+                        position: 'inside',
+                        formatter: '{c}%',
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                emphasis: {
+                    label: {
+                        position:'inside',
+                        formatter: '{b}实际 : {c}%'
+                    }
+                }
+            },
+            data:[
+                {value:37.7, name:'文盲/半文盲'},
+                {value:19.7, name:'小学'},
+                {value:23.8, name:'初中'},
+                {value:9.8, name:'高中'},
+                {value:5.7, name:'大专及以上'}
+            ]
+        }
+    ]
+};
+
+                    
+                    
+          myChart.setOption(option);            
+</script> 
+<br/>
+<div id="Chart6" style="width: 400px; height: 300px"></div>
+<script type="text/javascript">  
+        var myChart = echarts.init(document.getElementById('Chart6'));  
+    option = {
+    color : [
+        'rgba(255, 69, 0, 0.5)',
+        'rgba(255, 150, 0, 0.5)',
+        'rgba(255, 200, 0, 0.5)',
+        'rgba(155, 200, 50, 0.5)',
+        'rgba(55, 200, 100, 0.5)'
+    ],
+    title : {
+        text: '基督教',
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        y:'bottom',
+        data : ['文盲/半文盲','小学','初中','高中','大专及以上']
+    },
+    calculable : true,
+    series : [
+        {
+            name:'学历',
+            type:'funnel',
+            x: '10%',
+            width: '80%',
+            maxSize: '80%',
+            itemStyle: {
+                normal: {
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    label: {
+                        position: 'inside',
+                        formatter: '{c}%',
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                emphasis: {
+                    label: {
+                        position:'inside',
+                        formatter: '{b}实际 : {c}%'
+                    }
+                }
+            },
+            data:[
+                {value:32.8, name:'文盲/半文盲'},
+                {value:21.0, name:'小学'},
+                {value:25.4, name:'初中'},
+                {value:8.9, name:'高中'},
+                {value:5.5, name:'大专及以上'}
+            ]
+        }
+    ]
+};
+
+                    
+                    
+          myChart.setOption(option);            
+</script> 
+
+<br/>
+
+</center>
+<p>伊斯兰教和道教教徒的整体文化和受教育水平是最低的，他们中文盲、半文盲人数占比最多，但是高学历人数占比又是最少的。天主教、佛教、基督教教徒的文化水平情况相类似，大多数人只拥有高中及以下学历，只有很少部分的人文化水平较高。</p>
+<p>看来信教的同时也得注意加强自己的文化水平啊！</p><br/>
+<h2>【五教教徒城乡居住分布】</h2>
+<br/>
+<center>
+<div id="Chart8" style="width: 400px; height: 300px"></div>
+<script type="text/javascript">  
+    	var myChart = echarts.init(document.getElementById('Chart8')); 
+		option = {
+    title: {
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        x:'right',
+        data: ['乡村', '城市']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+    },
+    yAxis: {
+        type: 'category',
+        data: ['佛教','基督教','道教','伊斯兰教','天主教']
+    },
+    series: [
+        {
+            name: '乡村',
+            type: 'bar',
+            data: [2824, 365, 214, 94, 66]
+        },
+        {
+            name: '城市',
+            type: 'bar',
+            data: [2504, 357, 129, 141, 56]
+        }
+    ]
+};
+ myChart.setOption(option);            
+</script> 
+</center>
+<p>道教和佛教的大部分信徒都分布在乡村，这也就说明了这两种宗教在乡村更流行。</p>
+<p>基督教的城乡分布人数几乎持平，但是天主教却出人意料地是在乡村更为流行。</p>
+<p>伊斯兰教是唯一一个教徒更多地分布在城市的宗教。这也在一定程度上解释了为什么伊斯兰教教徒的平均收入是位列五大教之首的。无疑城市的经济发展水平比绝大部分乡村要更突出。<br/>
+</p>
+<br/>
+<h2>【捐赠、政府补贴】</h2>
+<br/>
+<p>宗教在我国是受到一定管理的，但是这并非等同于限制。对于合理合法的宗教活动，政府给予了充分的自由，并且在经济上给予了一定的补贴支持。</p>
+<center>
+    <div id="Chart11" style="width: 400px; height: 300px"></div>
+<script type="text/javascript">  
+        var myChart = echarts.init(document.getElementById('Chart11')); 
+option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data:['接受过捐赠','没接受过捐赠']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['佛教','道教','伊斯兰教','基督教','天主教']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'接受过捐赠',
+            type:'bar',
+            data:[45, 22, 30, 18, 15]
+        },
+        {
+            name:'没接受过捐赠',
+            type:'bar',
+            data:[2156, 47, 31, 355, 90]
+        },
+    ]
+};
+ myChart.setOption(option);            
+</script>
+    </center>
+<p>除了官方的支持，社会上也有很多或以组织、或以个人的名义对宗教活动的开展进行支持。</p>
+<center>
+        <div id="Chart12" style="width: 400px; height: 300px"></div>
+<script type="text/javascript">  
+        var myChart = echarts.init(document.getElementById('Chart12')); 
+option = {
+    title : {
+        text: '其他捐赠',
+    },
+    angleAxis: {
+        type: 'category',
+        data: ['佛教', '道教', '伊斯兰教', '基督教', '天主教'],
+        z: 10
+    },
+    radiusAxis: {
+    },
+    polar: {
+    },
+    series: [{
+        type: 'bar',
+        data: [80, 64, 67, 16, 28],
+        coordinateSystem: 'polar',
+        name: '亲戚给的钱',
+        stack: 'a'
+    }, {
+        type: 'bar',
+        data: [84, 31, 13, 7, 8],
+        coordinateSystem: 'polar',
+        name: '其他人给的钱',
+        stack: 'a'
+    }, {
+        type: 'bar',
+        data: [24, 4, 6, 1, 3],
+        coordinateSystem: 'polar',
+        name: '社捐',
+        stack: 'a'
+    }],
+    legend: {
+        y:"bottom",
+        show: true,
+        data: ['亲戚给的钱', '其他人给的钱', '社捐']
+    }
+};
+ myChart.setOption(option);            
+</script>
+    </center>
+<h2>【结语】</h2>
+<p>宗教在意识形态上对于一个国家的发展起着重要作用。</p>
+<p>当前在我国，信教表现日益入世，宗教与经济、政治、文化等都有着十分紧密的关系。而宗教组织也已经成为表中各类组织中排在共产党、共青团、工会组织之后第四大组织，暨第一大社会组织，部分地区宗教组织成员人数甚至超过工会会员人员。</p>
+<p>因此对宗教信徒们进行及时性的调查研究，对于我国各类宗教的良好发展有着重要的价值。在这其中，收入问题又是社会稳定因素中的重要部分，只有切实德了解到他们的经济状况和需求，才能展开有针对性的政策制定。</p>
+<br/><br/>
+<hr/>
+<center>
+    <h4>数据来源：2014年中国家庭追踪调查（CFPS）<br/>贼靠谱组：张鑫宇 周琪 周围子</h4>
+    </center>
+</body>
+</html>

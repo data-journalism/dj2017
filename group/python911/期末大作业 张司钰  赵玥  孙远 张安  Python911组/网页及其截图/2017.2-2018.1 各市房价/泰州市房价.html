@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '2017.2-2018.1 泰州市房价',
+        subtext: '泰州房产网'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['高港区','兴化市','姜堰市','泰兴市','靖江市'],
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2月','3月','4月','5月','6月','7月','8月', '9月','10月','11月','12月','1月']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} 元'
+        }
+    },
+    series: [
+        {
+            name:'高港区',
+            type:'line',
+            data:[5863,5957,5753,5185,5895,7525,7862,6432,5908,6430,6667,6834],
+                 markPoint: {
+                     data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'兴化市',
+            type:'line',
+            data:[5742, 5742, 5742, 5742, 5742, 5742, 5716, 5691, 5691, 5691, 5792, 5730],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'姜堰市',
+            type:'line',
+            data:[5770, 5968, 6045, 6245, 6535, 6561, 6871, 7145, 7575, 7834, 8087, 8386],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'靖江市',
+            type:'line',
+            data:[7033, 7033, 7033, 7033, 7033, 7033, 7033, 7160, 7160, 7160, 7160, 7160],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+         {
+            name:'泰兴市',
+            type:'line',
+            data:[6703, 6703, 6703, 6703, 6703, 6703, 6703, 6703, 6703, 6770, 7046, 7046],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+         {
+            name:'宝应县',
+            type:'line',
+            data:[7484, 7792, 7725, 7811, 7787, 7590, 7665, 7905, 8278, 8471, 8663, 8618],
+             markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+     ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

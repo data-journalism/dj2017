@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!-- 引入 ECharts 文件 -->
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="./js/echarts-all-3.js"></script>
+	<script type="text/javascript" src="./js/world.js"></script>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+	<script type="text/javascript" src="./js/china.js"></script>
+	<script type="text/javascript" src="./js/bmap.min.js"></script>
+	<script type="text/javascript" src="./js/dataTool.min.js"></script>
+	<script src="./js/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" href="./js/bootstrap.min.css" />
+	<style>
+		#scatter div {
+			width: 1000px!important;
+		}
+	</style>
+
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+</head>
+<style type="text/css">
+    .float-ul{}
+	.float-ul li{}
+</style>
+<body>
+	
+	<body style="width:1000px;margin:0 auto;">
+		<div id="home" class="banner">
+			<div class="banner-agileinfo">
+						<br></br>
+						<h1 style="text-align: center">2007-2016: 一滴水的十年踪迹</h1>
+						<br></br>
+						<div style="text-align: right;"><h4>——关于我国十年来水资源情况考察&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h4></div>
+					
+						<br></br>
+
+						<div style="text-align:left;line-height:25px;width:980px;margin:10px 0;margin-left: 10px">每个中国人都知道这样的事实：我们的祖国地大物博，但从人均占有量看，我们的资源数量并不令人骄傲。</div>
+					  	<div style="text-align:left;line-height:25px;width:980px;margin:10px 0;margin-left: 10px">中国的水资源总量名列世界第五，但人均水资源占有量仅有2000立方米，世界排名第88名。不仅人均水资源少，还有严重的地域分布不均。占全国土地面积36.5%的南方拥有80%以上的水资源，而占据面积占全国土地面积63.5%的北方只有剩下的20%。针对这一状况，多年来国家出台了一系列政策，包括启动“南水北调”战略工程、修建北方大型水库、宣传节约用水、出台法律法规、建设“海绵城市”等。那么，中国近10年来的水资源状况如何？这些水都被用到了哪儿？又造成了多少污染？反映出了哪些变化？与世界上其他国家相比，中国是否能够有所借鉴？</div>
+					  	<div style="text-align:left;line-height:25px;width:980px;margin:10px 0;margin-left: 10px">我们将通过分析2007-2016年中国水资源总量、用量、污染情况及包括英、美在内的9个其他国家水资源情况，从较为宏观的层面探究以上问题，并试图对中国未来水资源利用与保护提出建议与展望。
+						</div>
+
+						<br></br>
+			</div>
+		</div>
+		<div id="myTabs">
+
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">各分区水资源总量</a></li>
+				<li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">各地区各行业用水量变化</a></li>
+				<li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">中国水质情况和水污染状况</a></li>
+				<li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">全球典型国家行业用水占比情况</a></li>
+				<li role="presentation"><a href="#end" aria-controls="end" role="tab" data-toggle="tab">结束语</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="tab1" style="padding-bottom: 15px;border-bottom: 2px solid gray;">
+					<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">一. 2007年至2016年中国各分区水资源总量</div>
+
+
+					<br></br>
+					<div id="pic_1_1" style="width: 100%;height:300px;"></div>
+
+					<div style="text-align:center;line-height:25px;width:100%;margin:10px 0;">2007-2016年全国各流域水资源总量对比及变化情况（单位：亿／m2）</div>
+
+
+					<br></br>
+					<div style="width:100%; height: 300px">
+
+						
+
+						<div id="h22" style="height:300px;width:30%;float:left;">
+							
+						</div>
+
+						<div id="h33" style="height:300px;width:40%;float:left;">
+							<p style="text-align: center; "><img src="./pic.png" style="width: 100%; " /></p>
+						</div>
+
+						<div id="h22" style="height:300px;width:30%;float:right;">
+							
+						</div>
+
+					</div>
+
+						<br></br>
+
+					<div id="h11" style="width:100%;">
+							<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">按照国家标准分法和统计方式，将全国水资源按流域分为长江区、黄河区、淮河区、松花江区、辽河区、海河区等11个区，上图直观展现2007-2016年十年间各流域水资源总量对比及变化情况（单位：亿／m2）。我们可以看到，区域之间的水资源总量差异还是比较明显的，水资源总量在不同区域不同年份间也呈现不同水平。大体也可以看出我国水资源在空间分配上的特点：东多西少，南多北少。</div>
+						</div>
+					
+
+				</div>
+
+
+				<div role="tabpanel" class="tab-pane" id="tab2" style="padding-bottom: 15px;border-bottom: 2px solid gray;">
+					<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">二. 2007-2016年中国各地区各行业用水量变化</div>
+
+					<br></br> 
+					<div id="pic_2_1" style="width: 1000px;height:300px;"></div>
+				
+					<br></br>
+					<div id="pic_2_2" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div id="pic_2_3" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div id="pic_2_4" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div id="pic_2_5" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div id="pic_2_6" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div id="pic_2_7" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div id="pic_2_8" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div id="pic_2_9" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div id="pic_2_10" style="width: 1000px;height:300px;"></div>
+
+					<br></br>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">将2007-2016年十年间我国各区域各行业用水量的变化通过折线图展现，包括用水总量、农业、工业和生活用水量，我们可以找出用水量在不同地区不同行业之间的差异。整体来看，10年间各区域各行业的用水总量有整体上升的趋势，但是各地区各行业的用水量比重没有发生大的变化，只是在某些细节上有变动。可以看出来的是，十年间，几乎所有分区的农业用水量均大于工业用水量大于生活用水量，这也可以看出我国水资源使用的行业比重，在我国产业结构优化的背景下，针对这个数据可以更有对策地对某一行业进行节水行动。</div>
+
+					
+				</div>
+
+
+				<div role="tabpanel" class="tab-pane" id="tab3" style="padding-bottom: 15px;border-bottom: 2px solid gray;">
+					<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">三. 2007-2016年中国水质情况和水污染状况</div>
+
+					<br></br>
+					<div style="width: 1000px; height:500px">
+						<div id="pic_3_1" style="width: 500px;height:500px;float: left"></div>
+						<div id="pic_3_2" style="width: 500px;height:500px;float: left"></div>
+					</div>
+
+					<br></br>
+					<div style="width: 1000px; height:500px">
+						<div id="pic_3_3" style="width: 500px;height:500px;float: left"></div>
+						<div id="pic_3_4" style="width: 500px;height:500px;float: left"></div>
+					</div>
+
+
+					<br></br>
+					<div style="width: 1000px; height:500px">
+						<div id="pic_3_5" style="width: 500px;height:500px;float: left"></div>
+						<div id="pic_3_6" style="width: 500px;height:500px;float: left"></div>
+					</div>
+
+
+					<br></br>
+					<div style="width: 1000px; height:500px">
+						<div id="pic_3_7" style="width: 500px;height:500px;float: left"></div>
+						<div id="pic_3_8" style="width: 500px;height:500px;float: left"></div>
+					</div>
+
+
+					<br></br>
+					<div style="width: 1000px; height:500px">
+						<div id="pic_3_9" style="width: 500px;height:500px;float: left"></div>
+						<div id="pic_3_10" style="width: 500px;height:500px;float: left"></div>
+					</div>
+
+					<br></br>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">上面展示的是2007到2016年中国水质情况和水污染情况统计。我国水质检测和水污染情况将水质分为5类，分别为1类、2类、3类、4类、5类和劣5类。从饼状图中我们可以清晰地看出这10年来我国水质情况得到了一定程度上的改善，总体1、2、3类水质比重变大，4、5和劣5类比重减少。我国主要水系的水质环境和水污染正在得到有效的治理。
+					</div>
+
+				</div>
+
+				<div role="tabpanel" class="tab-pane" id="tab4" style="padding-bottom: 15px;border-bottom: 2px solid gray;">
+					<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">四. 2007-2016年中国水质情况和水污染状况</div>
+
+					<br></br>
+					<div style="width: 1000px; height:300">
+						<div id="pic_4_1" style="width: 333px;height:300px;float: left"></div>
+						<div id="pic_4_2" style="width: 333px;height:300px;float: left"></div>
+						<div id="pic_4_3" style="width: 333px;height:300px;float: left"></div>
+					</div>
+
+					<div style="width: 1000px; height:300px">
+						<div id="pic_4_4" style="width: 333px;height:300px;float: left"></div>
+						<div id="pic_4_5" style="width: 333px;height:300px;float: left"></div>
+						<div id="pic_4_6" style="width: 333px;height:300px;float: left"></div>
+					</div>
+
+					<div style="width: 1000px; height:300px">
+						<div id="pic_4_7" style="width: 333px;height:300px;float: left"></div>
+						<div id="pic_4_8" style="width: 333px;height:300px;float: left"></div>
+						<div id="pic_4_9" style="width: 333px;height:300px;float: left"></div>
+					</div>
+
+					<br>&nbsp</br>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">根据官网显示最新数据，对美英中澳印等九国各行业用水量进行统计，以饼图形式呈现不同经济发展水平、地理环境等多方面因素对用水量造成的影响。发达国家如美国等，工业用水量占比较大，发展中国家如印度、南非等在农业方面大量用水，这体现不同国家经济发展水平下用水量的变化。同时考虑到气候，地理环境等因素，英国、澳大利亚等虽为发达国家，但也因地制宜发展农业、畜牧业，亦为经济带来增长。
+					</div>
+
+				</div>
+
+				<div role="tabpanel" class="tab-pane" id="end" style="padding-bottom: 15px;border-bottom: 2px solid gray;">
+					<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">五. 结束语</div>
+
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">中国幅员辽阔、人口众多，但水资源分布不均，人均水资源也远低于世界平均水平。但通过我们对全国具体水源和用量进行调查，并对其他国家进行横向对比后，发现中国缺水只是表面，生活用水量远没有农业、工业用水量多，而这又牵扯到经济实力、科技实力和地理环境等多方面因素。发达国家往往在工业方面大量用水，而发展中国家则大力发展农业，科技因素也影响着同一行业的用水量多寡，节水技术，水污染处理技术等是解决全球水资源短缺问题的重要途径。就中国而言，除了南水北调等工程来缓解国内缺水现状以外，还应大力推进经济结构转型，提高我国科技水平。
+					分析全球其它国家先进的节水措施，我们发现如何更有效地节约、保护、开发水资源，杜绝浪费、污染和水事纠纷，已成为人类共同关心的重大课题。美国十分重视水利建设，建设调水工程，且具有专业的水权和水法。在科技上，目前，整个美国灌溉面积中已有一半采用了喷灌、滴灌，比重还在不断提高；另一半中的多数也采用了节水措施。美国的粮食作物大多用时针式、平移式和卷盘式大型喷灌机灌溉。美国的灌溉是节水结合农作物施肥、施药的灌溉。以色列也非常重视水资源的管理，制定了《水法》、《量水法》、《水井控制法》等法规，对用水权、用水额、水费征收、水质控制等作了详细规定。以色列对地表水和地下水实行联合调度、统一使用。而且对不同的用水实行不同的水价，农业、工业和生活用水的价格不同。世界上许多国家的先进用水经验值得我们学习。概而言之，中国水资源缺乏并不那么准确，如何提高水资源利用率，不浪费每一滴水，才是最应该关心最应该做好的。
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script>
+					$('#myTabs a').click(function (e) {
+						e.preventDefault()
+						$(this).tab('show')
+					})
+		</script>
+
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">数据来源：</div>
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">1.World Bank Open Data；（https://data.worldbank.org/indicator/SH.H2O.SAFE.ZS）</div>
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">2.全国环境统计公报. 中华人民共和国环境部；（http://58.68.130.147 国家地表水水质自动监测实时数据发布）</div>
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">3.中国水资源公报. 中华人民共和国水利部；（http://www.mwr.gov.cn/sj/tjgb/szygb/201707/t20170711_955305.html）</div>
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">指导老师：王成军</div>
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">制作：征梦婷 151070099&nbsp&nbsp&nbsp&nbsp陈阳阳 161050010&nbsp&nbsp&nbsp&nbsp贾 威 161050031</div>
+
+
+
+
+
+
+</body>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_1_1");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	app.title = '堆叠条形图';
+
+	option = {
+	    tooltip : {
+	        trigger: 'axis',
+	        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+	            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+	        }
+	    },
+	    legend: {
+	        data: ['2007', '2008','2009','2010','2011','2012','2013','2014','2015','2016']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    xAxis:  {
+	        type: 'value'
+	    },
+	    yAxis: {
+	        type: 'category',
+	        data: ['松花江区','辽河区','海河区','黄河区','淮河区','长江区','太湖流域','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    series: [
+	        {
+	            name: '2007',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [927.7,381.9,247.8,655.3,1365.9,8807.8,176.6,1799.8,3985.9,5739.1,1343.9]
+	        },
+	        {
+	            name: '2008',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [982.7,393.9,294.5,559,1047.2,9457.2,199.4,1735.2,5696.8,5944.4,1323.4]
+	        },
+	        {
+	            name: '2009',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [1488.1,276.3,285.2,656.9,799.8,8732.4,249.4,1619.6,4075.1,5042,1204.9,]
+	        },
+	        {
+	            name: '2010',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [1640,812.8,307.2,679.8,962.9,11264.1,209.8,2869,4936.1,5787.7,1646.7]
+	        },
+	        {
+	            name: '2011',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [1177.4,410,297.9,739.4,892.6,7837.6,193.8,1423,3692.2,5386,1400.6]
+	        },
+	         {
+	            name: '2012',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [1537.2,716.9,436.7,771.8,746.2,10807,233.3,2749.4,5077.2,5256.2,1430.4]
+	        },
+	          {
+	            name: '2013',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [2725.2,632.7,356.3,683,671.2,8797.1,160.5,1912,5303.2,5437.6,1439.4]
+	        },
+	        {
+	            name: '2014',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [1613.5,239.7,216.2,653.7,748,10150.3,228.9,2222.2,4786.4,5449.5,1187.4]
+	        },
+	        {
+	            name: '2015',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [1480.2,303.6,260.3,541,854.2,10329.7,342.4,2548.2,5337,5014.3,1294]
+	        },
+	        {
+	            name: '2016',
+	            type: 'bar',
+	            stack: '总量',
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'insideRight'
+	                }
+	            },
+	            data: [1484,489.8,387.9,601.8,1009.5,11947.1,439.2,3113.4,5928.9,5884.3,1619.8]
+	        },
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+</script>
+
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_1");
+	var myChart = echarts.init(dom);
+	$('.chart').resize(function () {
+	    myChart.resize();
+	});
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2007年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','农业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[5818.7, 400.7,204.3 , 385.1, 381.1, 554.4, 1939.6,338,879.9,108.7,626.9]
+	        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3598.5, 288.2, 140.4, 269.3, 274.5, 370,932.7,163.9,502.4,90.8,566.4]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1404.1, 78.7, 29.7, 52, 61.5, 99.6,728.6, 118.4,210.8,7.7,17.1]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[710.4, 31.4, 31.2, 56.3, 39.9, 78.4, 245.8,47.1,154.6,9.9,15.8]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+
+	}
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_2");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	  title: {
+	      text: '2008年全国各区域各行业用水量'
+	  },
+	  tooltip: {
+	      trigger: 'axis'
+	  },
+	  legend: {
+	      data:['用水总量','农业用水量','工业用水量','农业用水量','生活用水量']
+	  },
+	  grid: {
+	      left: '3%',
+	      right: '4%',
+	      bottom: '3%',
+	      containLabel: true
+	  },
+	  toolbox: {
+	      feature: {
+	          saveAsImage: {}
+	      }
+	  },
+	  xAxis: {
+	      type: 'category',
+	      boundaryGap: false,
+	      data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	  },
+	  yAxis: {
+	      type: 'value'
+	  },
+	  series: [
+	      {
+	          name:'用水总量',
+	          type:'line',
+	          stack: '用水总量',
+	          data:[5909.9, 411.1,202.6 , 371.5, 384.2, 611.2, 1951.5,343.6,881.2,111.8,641.3]
+	      },
+	      {
+	          name:'农业用水量',
+	          type:'line',
+	          stack: '农业用水量',
+	          data:[3663.4, 294.2, 137.1, 254, 277.2, 421.7,948.1,162.6,502.3,91.2,575.1]
+	      },
+	      {
+	          name:'工业用水量',
+	          type:'line',
+	          stack: '工业用水量',
+	          data:[1397.1, 79.21, 30.4, 51.3, 60.8, 98.6, 718, 119.8,210.3,8.3,20.43]
+	      },
+	      {
+	          name:'生活用水量',
+	          type:'line',
+	          stack: '生活用水量',
+	          data:[729.2, 33.4, 31.7, 57.1, 39.8, 81.9, 250.5,49.5,155.7,11.9,17.6]
+	      },
+	  ]
+	};
+	;
+	if (option && typeof option === "object") {
+	  myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_3");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2009年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','农业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[5965.2, 439.1,204.7 , 370, 385.7, 639.7, 1970.4,338.2,876.8,104.3,636.2]
+	        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3723.1, 317.3, 128.4, 253.3, 278.7, 449.2,970.4,162.7,495.5,83.2,574.5]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1390.9, 81.8, 30.7, 49.2, 56.9, 97.9,720.3, 116.7,212,8.6,16.8]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[748.2, 33.1, 31.5, 57.5, 43.3, 84.2, 260.1,50.7,155.1,12.1,20.2]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_4");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2010年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','农业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[6022, 456.6,208.9 , 368.3, 392.3, 639.3, 1983.1,342.5,883.5,108,639.5]
+	        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3689.1, 331.4, 136.7, 247.6, 277.6, 445.5,948.2,157.8,489.2,85.7,569.4]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1447.3, 82.5, 34.8, 50.8, 61.5, 98.8, 746.6, 121.8,222.6,9.7,18.4]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[765.8, 34.4, 33.3, 59, 44, 85.9, 268.5,53.1,157.4,12.3,18]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_5");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2011年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','农业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[6107.2, 495.5,207.4 , 369.1, 404.4, 658.3, 2010,346.1,876.8,107.8,631.6]
+	        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3743.6, 364.6, 132.9, 238.6, 281.4, 451.6,973.1,157.4,485.3,83.8,575]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1461.8, 79.4, 34.8, 55, 65.5, 103.8, 746.8, 128.2,216.6,10.5,21.1]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[789.9, 36.3, 34.2, 62.7, 48, 88.1, 273.4,55.4,159.6,13.1,19]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_6");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2012年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','农业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[6131.2, 503.5,205.8 , 371.4, 388.6, 647.7, 2002.8,337,864.7,108,701.3]
+	        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3902.5, 391.2, 137.5, 245.7, 272.9, 449.4, 1007.5,150.3,509.1,87.5,651.4]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1380.7, 68.9, 33.6, 55.2, 61.4, 104.3, 707.1, 119.9,197,11.1,22.2]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[739.7, 27.5, 29, 56.7, 42.4, 79.1, 271.8,60.2,148.4,9,15.5]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_7");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2013年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[6183.4, 509.9, 203.9, 370.9, 397.2, 640.3, 2057.3,339.1,859.3,105.7,699.9]
+	        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3921.5, 407.1, 134.9, 242.3, 282.3, 445.2, 1019.7,152,502.6,86,649.5]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1406.4, 60.4, 33.6, 55.5, 62.4, 104.2, 742.7,117.3,198.9,9.8,21.5]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[750.1, 28.6, 29.3, 58.1, 42.1, 80.6, 275,62.7,149.1,9.4,15.2]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_8");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2014年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区',]
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[6095, 507.9, 204.8, 370.4, 387.5, 617.4, 2012.7, 336.6, 861.6, 103.8, 692.2]        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3896, 414.7, 135.7, 239.5, 274.5, 421, 1002.6,150.2,504.6,84.6,641.5]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1356, 54.7, 32.6, 54, 58.6, 105.9, 708.2,115.1,196.1,10,21]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[767, 29.8, 30.2,59.3,43.1,81.2, 282.2,63.9,152.6,8.6,15.8]
+	        }
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}			
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_9");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2015年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[6103.2, 501.5, 203.4, 368.5, 395.5, 607.1, 2054.6,326.5,857.2,102.6,686.2]
+	        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3852.2, 412.4, 134.4, 236.7, 281.5, 420.1, 997.7,147.2,503.7,83.6,634.9]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1334.8, 45.9, 30.7, 49.3, 57, 92.5, 734.6,107.2,189,9.1,19.5]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[793.5, 28.3, 30.7, 60.6, 44.2, 82.4, 301.3,64.4,155.9,9.1,16.7]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_2_10");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title: {
+	        text: '2016年全国各区域各行业用水量'
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['用水总量','农业用水量','工业用水量','生活用水量']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['全国','松花江区','辽河区','海河区','黄河区','淮河区','长江区','东南诸河区','珠江区','西南诸河区','西北诸河区']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'用水总量',
+	            type:'line',
+	            stack: '用水总量',
+	            data:[6040.2, 500.7, 197.3, 363.1, 390.4, 620.4, 2038.6,312.2,838.1,102.4,677]
+	        },
+	        {
+	            name:'农业用水量',
+	            type:'line',
+	            stack: '农业用水量',
+	            data:[3768, 416, 130.8, 226, 272.7, 424.4, 968.3,136.4,491.6,82,619.7]
+	        },
+	        {
+	            name:'工业用水量',
+	            type:'line',
+	            stack: '工业用水量',
+	            data:[1308, 40.8,27.6,48, 55.6,92.1,735.3,101.9,179.2,8.8,18.7]
+	        },
+	        {
+	            name:'生活用水量',
+	            type:'line',
+	            stack: '生活用水量',
+	            data:[821.6, 29, 31.2, 63.2, 46.5, 87.2, 312,66.4,157.9,10.5,17.7]
+	        }
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_1");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2007年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类、2类、3类','4类、5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'水污染等级',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:47.9, name:'1类、2类、3类'},
+	                {value:27.1, name:'4类、5类'},
+	                {value:25, name:'劣5类'},
+	            ]
+	        },
+	       
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}				
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_2");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2008年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类、2类、3类','4类、5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'水污染等级',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:52, name:'1类、2类、3类'},
+	                {value:26.1, name:'4类、5类'},
+	                {value:22, name:'劣5类'},
+	            ]
+	        },
+	       
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_3");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2009年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类、2类、3类','4类、5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'水污染等级',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:54, name:'1类、2类、3类'},
+	                {value:26.1, name:'4类、5类'},
+	                {value:20, name:'劣5类'},
+	            ]
+	        },
+	       
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_4");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2010年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类、2类、3类','4类、5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'水污染等级',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:57, name:'1类、2类、3类'},
+	                {value:25.1, name:'4类、5类'},
+	                {value:18, name:'劣5类'},
+	            ]
+	        },
+	       
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_5");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2011年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类、2类、3类','4类、5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'水污染等级',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:60, name:'1类、2类、3类'},
+	                {value:27, name:'4类、5类'},
+	                {value:13, name:'劣5类'},
+	            ]
+	        },
+	       
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_6");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2012年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类、2类、3类','4类、5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'水污染等级',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:68.9, name:'1类、2类、3类'},
+	                {value:20.9, name:'4类、5类'},
+	                {value:10.2, name:'劣5类'},
+	            ]
+	        },
+	       
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_7");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2013年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类、2类、3类','4类、5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'水污染等级',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:71.7, name:'1类、2类、3类'},
+	                {value:19.3, name:'4类、5类'},
+	                {value:9.0, name:'劣5类'},
+	            ]
+	        },
+	       
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_8");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2014年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类','2类','3类','4类','5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:2.8, name:'1类'},
+	                {value:36.9, name:'2类'},
+	                {value:31.5, name:'3类'},
+	                {value:15, name:'4类'},
+	                {value:4.8, name:'5类'},
+	                {value:9, name:'劣5类'},
+	            ]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}						
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_9");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2015年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类','2类','3类','4类','5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:2.8, name:'1类'},
+	                {value:31.4, name:'2类'},
+	                {value:30.3, name:'3类'},
+	                {value:21.1, name:'4类'},
+	                {value:5.6, name:'5类'},
+	                {value:8.8, name:'劣5类'},
+	            ]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_3_10");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    title : {
+	        text: '2016年中国水质情况',
+	        subtext: '',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        x : 'center',
+	        y : 'bottom',
+	        data:['1类','2类','3类','4类','5类','劣5类']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {
+	                show: true,
+	                type: ['pie', 'funnel']
+	            },
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    series : [
+	        {
+	            name:'',
+	            type:'pie',
+	            radius : [25, 200],
+	            center : ['50%', '50%'],
+	            roseType : 'radius',
+	            label: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            lableLine: {
+	                normal: {
+	                    show: false
+	                },
+	                emphasis: {
+	                    show: true
+	                }
+	            },
+	            data:[
+	                {value:2.4, name:'1类'},
+	                {value:37.5, name:'2类'},
+	                {value:27.9, name:'3类'},
+	                {value:16.8, name:'4类'},
+	                {value:6.9, name:'5类'},
+	                {value:8.6, name:'劣5类'},
+	            ]
+	        },
+	    ]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_1");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '中国各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:23.13, name:'工业'},
+	                {value:64.53, name:'农业'},
+	                {value:12.34, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_2");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '美国各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:51.15, name:'工业'},
+	                {value:36.06, name:'农业'},
+	                {value:12.79, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_3");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '英国各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:14.01, name:'工业'},
+	                {value:12.77, name:'农业'},
+	                {value:71.41, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_4");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '印度各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:2.234, name:'工业'},
+	                {value:90.41, name:'农业'},
+	                {value:7.359, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_5");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '南非各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:10.48, name:'工业'},
+	                {value:62.52, name:'农业'},
+	                {value:27, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_6");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '俄罗斯各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:59.82, name:'工业'},
+	                {value:19.94, name:'农业'},
+	                {value:20.24, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_7");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '巴西各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:17, name:'工业'},
+	                {value:60, name:'农业'},
+	                {value:23, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_8");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '澳大利亚各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:12.75, name:'工业'},
+	                {value:65.67, name:'农业'},
+	                {value:21.56, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_9");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '埃及各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:2.564, name:'工业'},
+	                {value:85.9, name:'农业'},
+	                {value:11.54, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+<script type="text/javascript">
+	var dom = document.getElementById("pic_4_10");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    backgroundColor: '#2c343c',
+
+	    title: {
+	        text: '埃及各行业用水量统计',
+	        left: 'center',
+	        top: 20,
+	        textStyle: {
+	            color: '#ccc'
+	        }
+	    },
+
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c}%"
+	    },
+
+	    visualMap: {
+	        show: false,
+	        min: 0,
+	        max: 100,
+	        inRange: {
+	            colorLightness: [0, 1]
+	        }
+	    },
+	    series : [
+	        {
+	            name:'用水量百分比',
+	            type:'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:2.564, name:'工业'},
+	                {value:85.9, name:'农业'},
+	                {value:11.54, name:'畜牧业'}
+	            ].sort(function (a, b) { return a.value - b.value; }),
+	            roseType: 'radius',
+	            label: {
+	                normal: {
+	                    textStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    lineStyle: {
+	                        color: 'rgba(255, 255, 255, 0.3)'
+	                    },
+	                    smooth: 0.2,
+	                    length: 10,
+	                    length2: 20
+	                }
+	            },
+	            itemStyle: {
+	                normal: {
+	                    color: '#c23531',
+	                    shadowBlur: 200,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            },
+
+	            animationType: 'scale',
+	            animationEasing: 'elasticOut',
+	            animationDelay: function (idx) {
+	                return Math.random() * 200;
+	            }
+	        }
+	    ]
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}					
+</script>
+
+
+</html>

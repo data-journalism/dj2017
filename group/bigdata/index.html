@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#F7F2C1";>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+	table{
+		margin:10px auto;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<h1 color="#403321">你买得起房吗？</h1>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+<body>
+	<div style="margin: auto;width: 80%">
+	要使耕者有其田，要使居者有其屋，是中国人百年来社会革命的理想。然而自从进入千禧年以来，买房越来越成为人们可望而不可即的愿景。
+	</div>
+
+	<div style="margin: auto;width: 80%">
+	全球房价市场在近十年间历经的剧变，改变甚至是型塑了当代年轻人的生活方式和生活理念。透析房价问题，我们能读到的或许不仅是货币市场上的风云变幻，更是这个时代下为生存而奔命的青年人们与时代同呼吸的命运。<br/>单单研究房价这一个维度的变化，或许不能让读者对它与每个公民个体之间的关系有直观感受。因此我们在此次研究报告中选取了房价收入比这一指标为主要的解读维度。
+	</div>
+  <br></br>
+
+<hr style="margin: auto;width: 80%"/>
+<br></br>
+
+	<h4 style="margin: auto;width: 80%">*房价收入比</h2>
+	<p bgcolor="#48ba95" style="margin: auto;width: 80%"><i>房价收入比，是指住房价格与城市居民家庭年收入之比，其标准值在4到6之间。它可以反映的是在某一收入水平下，房价对居民的购房压力大小。</i></p>
+  <br></br>
+
+<hr style="margin: auto;width: 80%"/>
+</body>
+
+<body>
+	<h2 align="center">“水深火热”的房价</h2>
+</body>
+
+<!DOCTYPE html>
+<html style="height: 70%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0";>
+       <div id="main" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("main");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+	
+	backgroundColor:'#FFE3B0',
+
+    title: {
+        text: '房价收入比TOP5'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['俄罗斯','黑山共和国','白俄罗斯','巴基斯坦','摩洛哥']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2010','2011','2012','2013','2014','2015','2016','2017']
+    },
+    yAxis: {
+        type: 'value',
+         axislabel:{
+         	formatter:'{value}'
+         }
+    },
+    series: [
+        {
+            name:'俄罗斯',
+            type:'line',
+            data:[28.58, 33.8, 14, 12, 14.67, 14.6, 12.84, 13.55]
+        },
+        {
+            name:'黑山共和国',
+            type:'line',
+            data:[30, 30, 19.28, 15.12, 16.03, 16.07, 15.61, 15.27]
+        },
+        {
+            name:'白俄罗斯',
+            type:'line',
+            data:[40, 16.96, 21.51, 24.17, 16.81, 16.35, 21.06, 18.73]
+        },
+        {
+            name:'巴基斯坦',
+            type:'line',
+            data:[40.63, 17.79, 16.68, 18.34, 13.92, 14.32, 15.27, 12.09]
+        },
+        {
+            name:'摩洛哥',
+            type:'line',
+            data:[67.5, 18.32, 23.83, 19.83, 17.57, 16.12, 14.66, 14.4]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+
+
+<body>
+	<p align="center">
+		<i>图一展示了2010年房价收入比最高的五个国家近八年的房价收入比发展趋势。光标移动可查看具体数据</i>
+	</p>
+	<li style="margin: auto;width: 80%">2010年，全球房价收入比最高的五个国家分别是摩洛哥、巴基斯坦、白俄罗斯、黑山共和国、俄罗斯。</li>
+	<p style="margin: auto;width: 80%">其中摩洛哥的数据尤为惊人，高达67.5。粗略地理解这个数据，相当于摩洛哥工作者在全年无支出的情况下，需67.5年才能购得起一套房屋。这个数据偏离了最高标准值十倍有余。<br/>根据搜狐新闻报道，自2005年以来，随着城市现代化建设步伐的加快和旅居海外的摩洛哥人纷纷回国置业，摩洛哥大中城市的房价无一例外地“高歌猛进”，年涨幅高达20％至30％。摩通社外事局长迪贾尼·哈希德年薪十几万迪拉姆（1摩洛哥道拉姆=0.6898人民币），夫人在联合国驻当地机构工作，收入也相当可观。他们住在位于市中心的哈桑区，3个孩子都还小。哈希德对目前居住的两室两厅不太满意，一直想购买一套150平方米左右的新房，但看了几处楼盘后，最终决定还是面对现实，从长计议。<br/>但经历了2010年的惊人“巅峰”过后，摩洛哥的房价收入比在后续7年中逐渐回归正常轨道。自2012年起，数值稳定下降，2017年数值为14.4，从2010年的全球第1位下降为全球第14位。且除摩洛哥外，2010年时居于前五的其余四个国家也都在后继七年中排位后移。</p>
+  <br/>
+</body>
+
+
+<!DOCTYPE html>
+<html style="height: 70%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="last" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("last");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+
+	backgroundColor:'#FFE3B0',
+
+    title: {
+        text: '房价收入比LAST5'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['美国','多米尼加','智利','瑞典','比利时']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2010','2011','2012','2013','2014','2015','2016']
+    },
+    yAxis: {
+        type: 'value'
+       
+    },
+    series: [
+        {
+            name:'美国',
+            type:'line',
+            data:[2.68, 2.82, 2.87, 2.16, 2.43, 2.62, 3.37, 3.26]
+        },
+        {
+            name:'多米尼加',
+            type:'line',
+
+            data:[3.54, 4.87, 5.44, 11.04, 10.3, 11.45, 12.06, 12.6]
+        },
+        {
+            name:'智利',
+            type:'line',
+
+            data:[4.06, 3.48, 9.4, 9.25, 9.45, 10.84, 9.88, 10.67]
+        },
+        {
+            name:'瑞典',
+            type:'line',
+
+            data:[4.19, 9.2, 8.4, 8.44, 9.41, 9.25, 11.19, 11.77]
+        },
+        {
+            name:'比利时',
+            type:'line',
+
+            data:[4.28, 5.89, 6.05, 6.75, 5.98, 6.49, 6.58, 6.96]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+
+<body>
+	<p align="center">
+		<i>图二展示了2010年房价收入比最低的五个国家近八年的房价收入比发展趋势。光标移动可查看具体数据</i>
+	</p>
+	<li style="margin: auto;width: 80%">相比之下，2010年全球房价收入比最低的五个国家分别是比利时、瑞典、智利、多米尼加共和国和美国。</li>
+	<p style="margin: auto;width: 80%">其中美国连续八年位列全球房价收入比中最低值，2010-2017年间，美国房价收入比的最高值也仅为3.37。在居民购买住房最容易的国家排行榜中，美国从2010-2017连续七年占据第一位。<br/>根据报道，23岁的美国华裔安德鲁-侯在华盛顿大学毕业前，已准备好在西雅图置业。他父母住在一车程的地方，他也在亚马逊总部找到软件工程师的工作。今年8月他开始看房子时，已储到5万元首期。他最终以47万元购入2060平方尺、有三卧两卫浴的房屋。他获得信用合作社30年低利率房贷，仅支付10%首期。他说：“我对新房子非常满意，我可以安装新橱柜、重新油漆、开派对…… 这是很好的。”<br/>在这五个国家当中，除美国和比利时变化幅度较小外，瑞典、智利和多米尼加共和国均在2010年后经历了倍增。以瑞典为例，2010年时它以4.19的房价收入比排全球61位，而到2017年，它已以11.77的数据变成全球第27位。</p>
+</body>
+
+
+<body>
+	<h2 align="center">你所关心的地区在发生着什么？</h2>
+</body>
+
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="labal" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("labal");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var posList = [
+    'left', 'right', 'top', 'bottom',
+    'inside',
+    'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+    'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+];
+
+app.configParameters = {
+    rotate: {
+        min: -90,
+        max: 90
+    },
+    align: {
+        options: {
+            left: 'left',
+            center: 'center',
+            right: 'right'
+        }
+    },
+    verticalAlign: {
+        options: {
+            top: 'top',
+            middle: 'middle',
+            bottom: 'bottom'
+        }
+    },
+    position: {
+        options: echarts.util.reduce(posList, function (map, pos) {
+            map[pos] = pos;
+            return map;
+        }, {})
+    },
+    distance: {
+        min: 0,
+        max: 100
+    }
+};
+
+app.config = {
+    rotate: 90,
+    align: 'left',
+    verticalAlign: 'middle',
+    position: 'insideBottom',
+    distance: 15,
+    onChange: function () {
+        var labelOption = {
+            normal: {
+                rotate: app.config.rotate,
+                align: app.config.align,
+                verticalAlign: app.config.verticalAlign,
+                position: app.config.position,
+                distance: app.config.distance
+            }
+        };
+        myChart.setOption({
+            series: [{
+                label: labelOption
+            }, {
+                label: labelOption
+            }, {
+                label: labelOption
+            }, {
+                label: labelOption
+            }]
+        });
+    }
+};
+
+
+var labelOption = {
+    normal: {
+        show: true,
+        position: app.config.position,
+        distance: app.config.distance,
+        align: app.config.align,
+        verticalAlign: app.config.verticalAlign,
+        rotate: app.config.rotate,
+        formatter: '{c}  {name|{a}}',
+        fontSize: 16,
+        rich: {
+            name: {
+                textBorderColor: '#fff'
+            }
+        }
+    }
+};
+
+option = {
+    color: ['#003366', '#006699', '#4cabce', '#e5323e'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['2014', '2015', '2016', '2017']
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            mark: {show: true},
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    calculable: true,
+    xAxis: [
+        {
+            type: 'category',
+            axisTick: {show: false},
+            data: ['中国', '美国', '日本', '英国', '印度']
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    series: [
+        {
+            name: '2014',
+            type: 'bar',
+            barGap: 0,
+            label: labelOption,
+            data: [14.76, 2.43, 8.34, 7.74, 10.16]
+        },
+        {
+            name: '2015',
+            type: 'bar',
+            label: labelOption,
+            data: [14.58, 2.62, 9.24, 8.63, 10.06]
+        },
+        {
+            name: '2016',
+            type: 'bar',
+            label: labelOption,
+            data: [14.05, 3.37, 20.17, 9.28, 10.54]
+        },
+        {
+            name: '2017',
+            type: 'bar',
+            label: labelOption,
+            data: [14.43, 3.26, 12.68, 10, 10.28]
+        }
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+
+
+
+<body>
+	<p align="center">
+		<i>图三展示了五个大国（中国、美国、日本、印度、英国）近四年的房价收入比对比</i>
+	</p>
+
+	<li style="margin: auto;width: 80%">从对比图中可以看出，在五个大国之中，整体房价收入比最高的是中国，最低的是美国，而房价收入比变动最大的是日本。除日本外，其他四国近四年的房价收入比相对较稳定。</li>
+
+	<p style="margin: auto;width: 80%">在五个大国中，中国与印度近四年的房价收入比稳定，基本在14和10左右，也就是说，中国的中等收入家庭需要攒14年钱才能买得起一间房，而印度中等收入家庭则需要10年。相较之下，美国中等收入家庭只需要2～3年就能拥有一套自己的房子。资料显示，2015年，日本央行继续实施QQE（超级量化宽松政策），受到经济政策的影响，日本在2016年房价创新高，房屋收入比高达20.17。与此同时，英国的房价收入比也受到经济政策的影响，呈现缓步上升的趋势。</p>
+</body>
+
+
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="maple" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("maple");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '中华地区房价收入比对比';
+
+option = {
+    angleAxis: {
+        type: 'category',
+        data: ['2011', '2012', '2013', '2014', '2015', '2016', '2017'],
+        z: 10
+    },
+    radiusAxis: {
+    },
+    polar: {
+    },
+    series: [{
+        type: 'bar',
+        data: [29.59, 29.78, 25, 26.13, 26.42, 24.98, 23.29],
+        coordinateSystem: 'polar',
+        name: '中国大陆',
+
+    }, {
+        type: 'bar',
+        data: [29.25, 23.49, 23.65, 27.06, 30.09, 37.57, 36.15],
+        coordinateSystem: 'polar',
+        name: '中国香港',
+
+    }, {
+        type: 'bar',
+        data: [19.86, 17.87, 15.51, 17.33, 24.97, 22.72, 12.87],
+        coordinateSystem: 'polar',
+        name: '中国台湾',
+
+    }],
+    legend: {
+        show: true,
+        data: ['中国大陆', '中国香港', '中国台湾']
+    }
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+
+<body>
+	<p align="center">
+		<i>图四展示了中华地区（中国大陆、中国香港、中国台湾）近年的房价收入比对比</i>
+	</p>
+
+	<li style="margin: auto;width: 80%">中华地区的房价收入比差距并不明显，香港地区的整体房价收入比最高，台湾最低。</li>
+
+	<p style="margin: auto;width: 80%">受到经济发展程度和区域面积的影响，香港的房价高企，数据显示，香港中等收入家庭如果想拥有一套属于自己的房子，需要辛苦奋斗20～30年才能实现。相比之下，大陆和台湾的房价收入比相对较低。</p>
+  <br/>
+</body>
+
+
+<hr style="margin: auto;width: 80%"/>
+
+
+<body>
+	<h2 align="center">你是不是出生在好国家？</h2>
+</body>
+
+	<!DOCTYPE html>
+<html style="height: 80%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+
+var latlong = {};
+latlong.AD = {'latitude':42.5, 'longitude':1.5};
+latlong.AE = {'latitude':24, 'longitude':54};
+latlong.AF = {'latitude':33, 'longitude':65};
+latlong.AG = {'latitude':17.05, 'longitude':-61.8};
+latlong.AI = {'latitude':18.25, 'longitude':-63.1667};
+latlong.AL = {'latitude':41, 'longitude':20};
+latlong.AM = {'latitude':40, 'longitude':45};
+latlong.AN = {'latitude':12.25, 'longitude':-68.75};
+latlong.AO = {'latitude':-12.5, 'longitude':18.5};
+latlong.AP = {'latitude':35, 'longitude':105};
+latlong.AQ = {'latitude':-90, 'longitude':0};
+latlong.AR = {'latitude':-34, 'longitude':-64};
+latlong.AS = {'latitude':-14.3333, 'longitude':-170};
+latlong.AT = {'latitude':47.3333, 'longitude':13.3333};
+latlong.AU = {'latitude':-27, 'longitude':133};
+latlong.AW = {'latitude':12.5, 'longitude':-69.9667};
+latlong.AZ = {'latitude':40.5, 'longitude':47.5};
+latlong.BA = {'latitude':44, 'longitude':18};
+latlong.BB = {'latitude':13.1667, 'longitude':-59.5333};
+latlong.BD = {'latitude':24, 'longitude':90};
+latlong.BE = {'latitude':50.8333, 'longitude':4};
+latlong.BF = {'latitude':13, 'longitude':-2};
+latlong.BG = {'latitude':43, 'longitude':25};
+latlong.BH = {'latitude':26, 'longitude':50.55};
+latlong.BI = {'latitude':-3.5, 'longitude':30};
+latlong.BJ = {'latitude':9.5, 'longitude':2.25};
+latlong.BM = {'latitude':32.3333, 'longitude':-64.75};
+latlong.BN = {'latitude':4.5, 'longitude':114.6667};
+latlong.BO = {'latitude':-17, 'longitude':-65};
+latlong.BR = {'latitude':-10, 'longitude':-55};
+latlong.BS = {'latitude':24.25, 'longitude':-76};
+latlong.BT = {'latitude':27.5, 'longitude':90.5};
+latlong.BV = {'latitude':-54.4333, 'longitude':3.4};
+latlong.BW = {'latitude':-22, 'longitude':24};
+latlong.BY = {'latitude':53, 'longitude':28};
+latlong.BZ = {'latitude':17.25, 'longitude':-88.75};
+latlong.CA = {'latitude':54, 'longitude':-100};
+latlong.CC = {'latitude':-12.5, 'longitude':96.8333};
+latlong.CD = {'latitude':0, 'longitude':25};
+latlong.CF = {'latitude':7, 'longitude':21};
+latlong.CG = {'latitude':-1, 'longitude':15};
+latlong.CH = {'latitude':47, 'longitude':8};
+latlong.CI = {'latitude':8, 'longitude':-5};
+latlong.CK = {'latitude':-21.2333, 'longitude':-159.7667};
+latlong.CL = {'latitude':-30, 'longitude':-71};
+latlong.CM = {'latitude':6, 'longitude':12};
+latlong.CN = {'latitude':35, 'longitude':105};
+latlong.CO = {'latitude':4, 'longitude':-72};
+latlong.CR = {'latitude':10, 'longitude':-84};
+latlong.CU = {'latitude':21.5, 'longitude':-80};
+latlong.CV = {'latitude':16, 'longitude':-24};
+latlong.CX = {'latitude':-10.5, 'longitude':105.6667};
+latlong.CY = {'latitude':35, 'longitude':33};
+latlong.CZ = {'latitude':49.75, 'longitude':15.5};
+latlong.DE = {'latitude':51, 'longitude':9};
+latlong.DJ = {'latitude':11.5, 'longitude':43};
+latlong.DK = {'latitude':56, 'longitude':10};
+latlong.DM = {'latitude':15.4167, 'longitude':-61.3333};
+latlong.DO = {'latitude':19, 'longitude':-70.6667};
+latlong.DZ = {'latitude':28, 'longitude':3};
+latlong.EC = {'latitude':-2, 'longitude':-77.5};
+latlong.EE = {'latitude':59, 'longitude':26};
+latlong.EG = {'latitude':27, 'longitude':30};
+latlong.EH = {'latitude':24.5, 'longitude':-13};
+latlong.ER = {'latitude':15, 'longitude':39};
+latlong.ES = {'latitude':40, 'longitude':-4};
+latlong.ET = {'latitude':8, 'longitude':38};
+latlong.EU = {'latitude':47, 'longitude':8};
+latlong.FI = {'latitude':62, 'longitude':26};
+latlong.FJ = {'latitude':-18, 'longitude':175};
+latlong.FK = {'latitude':-51.75, 'longitude':-59};
+latlong.FM = {'latitude':6.9167, 'longitude':158.25};
+latlong.FO = {'latitude':62, 'longitude':-7};
+latlong.FR = {'latitude':46, 'longitude':2};
+latlong.GA = {'latitude':-1, 'longitude':11.75};
+latlong.GB = {'latitude':54, 'longitude':-2};
+latlong.GD = {'latitude':12.1167, 'longitude':-61.6667};
+latlong.GE = {'latitude':42, 'longitude':43.5};
+latlong.GF = {'latitude':4, 'longitude':-53};
+latlong.GH = {'latitude':8, 'longitude':-2};
+latlong.GI = {'latitude':36.1833, 'longitude':-5.3667};
+latlong.GL = {'latitude':72, 'longitude':-40};
+latlong.GM = {'latitude':13.4667, 'longitude':-16.5667};
+latlong.GN = {'latitude':11, 'longitude':-10};
+latlong.GP = {'latitude':16.25, 'longitude':-61.5833};
+latlong.GQ = {'latitude':2, 'longitude':10};
+latlong.GR = {'latitude':39, 'longitude':22};
+latlong.GS = {'latitude':-54.5, 'longitude':-37};
+latlong.GT = {'latitude':15.5, 'longitude':-90.25};
+latlong.GU = {'latitude':13.4667, 'longitude':144.7833};
+latlong.GW = {'latitude':12, 'longitude':-15};
+latlong.GY = {'latitude':5, 'longitude':-59};
+latlong.HK = {'latitude':22.25, 'longitude':114.1667};
+latlong.HM = {'latitude':-53.1, 'longitude':72.5167};
+latlong.HN = {'latitude':15, 'longitude':-86.5};
+latlong.HR = {'latitude':45.1667, 'longitude':15.5};
+latlong.HT = {'latitude':19, 'longitude':-72.4167};
+latlong.HU = {'latitude':47, 'longitude':20};
+latlong.ID = {'latitude':-5, 'longitude':120};
+latlong.IE = {'latitude':53, 'longitude':-8};
+latlong.IL = {'latitude':31.5, 'longitude':34.75};
+latlong.IN = {'latitude':20, 'longitude':77};
+latlong.IO = {'latitude':-6, 'longitude':71.5};
+latlong.IQ = {'latitude':33, 'longitude':44};
+latlong.IR = {'latitude':32, 'longitude':53};
+latlong.IS = {'latitude':65, 'longitude':-18};
+latlong.IT = {'latitude':42.8333, 'longitude':12.8333};
+latlong.JM = {'latitude':18.25, 'longitude':-77.5};
+latlong.JO = {'latitude':31, 'longitude':36};
+latlong.JP = {'latitude':36, 'longitude':138};
+latlong.KE = {'latitude':1, 'longitude':38};
+latlong.KG = {'latitude':41, 'longitude':75};
+latlong.KH = {'latitude':13, 'longitude':105};
+latlong.KI = {'latitude':1.4167, 'longitude':173};
+latlong.KM = {'latitude':-12.1667, 'longitude':44.25};
+latlong.KN = {'latitude':17.3333, 'longitude':-62.75};
+latlong.KP = {'latitude':40, 'longitude':127};
+latlong.KR = {'latitude':37, 'longitude':127.5};
+latlong.KW = {'latitude':29.3375, 'longitude':47.6581};
+latlong.KY = {'latitude':19.5, 'longitude':-80.5};
+latlong.KZ = {'latitude':48, 'longitude':68};
+latlong.LA = {'latitude':18, 'longitude':105};
+latlong.LB = {'latitude':33.8333, 'longitude':35.8333};
+latlong.LC = {'latitude':13.8833, 'longitude':-61.1333};
+latlong.LI = {'latitude':47.1667, 'longitude':9.5333};
+latlong.LK = {'latitude':7, 'longitude':81};
+latlong.LR = {'latitude':6.5, 'longitude':-9.5};
+latlong.LS = {'latitude':-29.5, 'longitude':28.5};
+latlong.LT = {'latitude':55, 'longitude':24};
+latlong.LU = {'latitude':49.75, 'longitude':6};
+latlong.LV = {'latitude':57, 'longitude':25};
+latlong.LY = {'latitude':25, 'longitude':17};
+latlong.MA = {'latitude':32, 'longitude':-5};
+latlong.MC = {'latitude':43.7333, 'longitude':7.4};
+latlong.MD = {'latitude':47, 'longitude':29};
+latlong.ME = {'latitude':42.5, 'longitude':19.4};
+latlong.MG = {'latitude':-20, 'longitude':47};
+latlong.MH = {'latitude':9, 'longitude':168};
+latlong.MK = {'latitude':41.8333, 'longitude':22};
+latlong.ML = {'latitude':17, 'longitude':-4};
+latlong.MM = {'latitude':22, 'longitude':98};
+latlong.MN = {'latitude':46, 'longitude':105};
+latlong.MO = {'latitude':22.1667, 'longitude':113.55};
+latlong.MP = {'latitude':15.2, 'longitude':145.75};
+latlong.MQ = {'latitude':14.6667, 'longitude':-61};
+latlong.MR = {'latitude':20, 'longitude':-12};
+latlong.MS = {'latitude':16.75, 'longitude':-62.2};
+latlong.MT = {'latitude':35.8333, 'longitude':14.5833};
+latlong.MU = {'latitude':-20.2833, 'longitude':57.55};
+latlong.MV = {'latitude':3.25, 'longitude':73};
+latlong.MW = {'latitude':-13.5, 'longitude':34};
+latlong.MX = {'latitude':23, 'longitude':-102};
+latlong.MY = {'latitude':2.5, 'longitude':112.5};
+latlong.MZ = {'latitude':-18.25, 'longitude':35};
+latlong.NA = {'latitude':-22, 'longitude':17};
+latlong.NC = {'latitude':-21.5, 'longitude':165.5};
+latlong.NE = {'latitude':16, 'longitude':8};
+latlong.NF = {'latitude':-29.0333, 'longitude':167.95};
+latlong.NG = {'latitude':10, 'longitude':8};
+latlong.NI = {'latitude':13, 'longitude':-85};
+latlong.NL = {'latitude':52.5, 'longitude':5.75};
+latlong.NO = {'latitude':62, 'longitude':10};
+latlong.NP = {'latitude':28, 'longitude':84};
+latlong.NR = {'latitude':-0.5333, 'longitude':166.9167};
+latlong.NU = {'latitude':-19.0333, 'longitude':-169.8667};
+latlong.NZ = {'latitude':-41, 'longitude':174};
+latlong.OM = {'latitude':21, 'longitude':57};
+latlong.PA = {'latitude':9, 'longitude':-80};
+latlong.PE = {'latitude':-10, 'longitude':-76};
+latlong.PF = {'latitude':-15, 'longitude':-140};
+latlong.PG = {'latitude':-6, 'longitude':147};
+latlong.PH = {'latitude':13, 'longitude':122};
+latlong.PK = {'latitude':30, 'longitude':70};
+latlong.PL = {'latitude':52, 'longitude':20};
+latlong.PM = {'latitude':46.8333, 'longitude':-56.3333};
+latlong.PR = {'latitude':18.25, 'longitude':-66.5};
+latlong.PS = {'latitude':32, 'longitude':35.25};
+latlong.PT = {'latitude':39.5, 'longitude':-8};
+latlong.PW = {'latitude':7.5, 'longitude':134.5};
+latlong.PY = {'latitude':-23, 'longitude':-58};
+latlong.QA = {'latitude':25.5, 'longitude':51.25};
+latlong.RE = {'latitude':-21.1, 'longitude':55.6};
+latlong.RO = {'latitude':46, 'longitude':25};
+latlong.RS = {'latitude':44, 'longitude':21};
+latlong.RU = {'latitude':60, 'longitude':100};
+latlong.RW = {'latitude':-2, 'longitude':30};
+latlong.SA = {'latitude':25, 'longitude':45};
+latlong.SB = {'latitude':-8, 'longitude':159};
+latlong.SC = {'latitude':-4.5833, 'longitude':55.6667};
+latlong.SD = {'latitude':15, 'longitude':30};
+latlong.SE = {'latitude':62, 'longitude':15};
+latlong.SG = {'latitude':1.3667, 'longitude':103.8};
+latlong.SH = {'latitude':-15.9333, 'longitude':-5.7};
+latlong.SI = {'latitude':46, 'longitude':15};
+latlong.SJ = {'latitude':78, 'longitude':20};
+latlong.SK = {'latitude':48.6667, 'longitude':19.5};
+latlong.SL = {'latitude':8.5, 'longitude':-11.5};
+latlong.SM = {'latitude':43.7667, 'longitude':12.4167};
+latlong.SN = {'latitude':14, 'longitude':-14};
+latlong.SO = {'latitude':10, 'longitude':49};
+latlong.SR = {'latitude':4, 'longitude':-56};
+latlong.ST = {'latitude':1, 'longitude':7};
+latlong.SV = {'latitude':13.8333, 'longitude':-88.9167};
+latlong.SY = {'latitude':35, 'longitude':38};
+latlong.SZ = {'latitude':-26.5, 'longitude':31.5};
+latlong.TC = {'latitude':21.75, 'longitude':-71.5833};
+latlong.TD = {'latitude':15, 'longitude':19};
+latlong.TF = {'latitude':-43, 'longitude':67};
+latlong.TG = {'latitude':8, 'longitude':1.1667};
+latlong.TH = {'latitude':15, 'longitude':100};
+latlong.TJ = {'latitude':39, 'longitude':71};
+latlong.TK = {'latitude':-9, 'longitude':-172};
+latlong.TM = {'latitude':40, 'longitude':60};
+latlong.TN = {'latitude':34, 'longitude':9};
+latlong.TO = {'latitude':-20, 'longitude':-175};
+latlong.TR = {'latitude':39, 'longitude':35};
+latlong.TT = {'latitude':11, 'longitude':-61};
+latlong.TV = {'latitude':-8, 'longitude':178};
+latlong.TW = {'latitude':23.5, 'longitude':121};
+latlong.TZ = {'latitude':-6, 'longitude':35};
+latlong.UA = {'latitude':49, 'longitude':32};
+latlong.UG = {'latitude':1, 'longitude':32};
+latlong.UM = {'latitude':19.2833, 'longitude':166.6};
+latlong.US = {'latitude':38, 'longitude':-97};
+latlong.UY = {'latitude':-33, 'longitude':-56};
+latlong.UZ = {'latitude':41, 'longitude':64};
+latlong.VA = {'latitude':41.9, 'longitude':12.45};
+latlong.VC = {'latitude':13.25, 'longitude':-61.2};
+latlong.VE = {'latitude':8, 'longitude':-66};
+latlong.VG = {'latitude':18.5, 'longitude':-64.5};
+latlong.VI = {'latitude':18.3333, 'longitude':-64.8333};
+latlong.VN = {'latitude':16, 'longitude':106};
+latlong.VU = {'latitude':-16, 'longitude':167};
+latlong.WF = {'latitude':-13.3, 'longitude':-176.2};
+latlong.WS = {'latitude':-13.5833, 'longitude':-172.3333};
+latlong.YE = {'latitude':15, 'longitude':48};
+latlong.YT = {'latitude':-12.8333, 'longitude':45.1667};
+latlong.ZA = {'latitude':-29, 'longitude':24};
+latlong.ZM = {'latitude':-15, 'longitude':30};
+latlong.ZW = {'latitude':-20, 'longitude':30};
+
+var mapData = [
+{'code':'AF' , 'name':'Afghanistan', 'value':0, 'color':'#eea638'},
+{'code':'AL' , 'name':'Albania', 'value':14.43, 'color':'#d8854f'},
+{'code':'DZ' , 'name':'Algeria', 'value':21.76, 'color':'#de4c4f'},
+{'code':'AO' , 'name':'Angola', 'value':0, 'color':'#de4c4f'},
+{'code':'AR' , 'name':'Argentina', 'value':12.07, 'color':'#86a965'},
+{'code':'AM' , 'name':'Armenia', 'value':14.29, 'color':'#d8854f'},
+{'code':'AU' , 'name':'Australia', 'value':9.24, 'color':'#8aabb0'},
+{'code':'AT' , 'name':'Austria', 'value':9.66, 'color':'#d8854f'},
+{'code':'AZ' , 'name':'Azerbaijan', 'value':20.35, 'color':'#d8854f'},
+{'code':'BH' , 'name':'Bahrain', 'value':0, 'color':'#eea638'},
+{'code':'BD' , 'name':'Bangladesh', 'value':12.89, 'color':'#eea638'},
+{'code':'BY' , 'name':'Belarus', 'value':18.73, 'color':'#d8854f'},
+{'code':'BE' , 'name':'Belgium', 'value':6.96, 'color':'#d8854f'},
+{'code':'BJ' , 'name':'Benin', 'value':0, 'color':'#de4c4f'},
+{'code':'BT' , 'name':'Bhutan', 'value':0, 'color':'#eea638'},
+{'code':'BO' , 'name':'Bolivia', 'value':9.65, 'color':'#86a965'},
+{'code':'BA' , 'name':'Bosnia and Herzegovina', 'value':11.35, 'color':'#d8854f'},
+{'code':'BW' , 'name':'Botswana', 'value':0, 'color':'#de4c4f'},
+{'code':'BR' , 'name':'Brazil', 'value':16.69, 'color':'#86a965'},
+{'code':'BN' , 'name':'Brunei', 'value':0, 'color':'#eea638'},
+{'code':'BG' , 'name':'Bulgaria', 'value':9.07, 'color':'#d8854f'},
+{'code':'BF' , 'name':'Burkina Faso', 'value':0, 'color':'#de4c4f'},
+{'code':'BI' , 'name':'Burundi', 'value':0, 'color':'#de4c4f'},
+{'code':'KH' , 'name':'Cambodia', 'value':24.32, 'color':'#eea638'},
+{'code':'CM' , 'name':'Cameroon', 'value':0, 'color':'#de4c4f'},
+{'code':'CA' , 'name':'Canada', 'value':6.4, 'color':'#a7a737'},
+{'code':'CV' , 'name':'Cape Verde', 'value':0, 'color':'#de4c4f'},
+{'code':'CF' , 'name':'Central African Rep.', 'value':0, 'color':'#de4c4f'},
+{'code':'TD' , 'name':'Chad', 'value':0, 'color':'#de4c4f'},
+{'code':'CL' , 'name':'Chile', 'value':10.67, 'color':'#86a965'},
+{'code':'CN' , 'name':'China', 'value':23.29, 'color':'#eea638'},
+{'code':'CO' , 'name':'Colombia', 'value':19.43, 'color':'#86a965'},
+{'code':'KM' , 'name':'Comoros', 'value':0, 'color':'#de4c4f'},
+{'code':'CD' , 'name':'Congo, Dem. Rep.', 'value':0, 'color':'#de4c4f'},
+{'code':'CG' , 'name':'Congo, Rep.', 'value':0, 'color':'#de4c4f'},
+{'code':'CR' , 'name':'Costa Rica', 'value':8.52, 'color':'#a7a737'},
+{'code':'CI' , 'name':'Cote d\'Ivoire', 'value':0, 'color':'#de4c4f'},
+{'code':'HR' , 'name':'Croatia', 'value':10.91, 'color':'#d8854f'},
+{'code':'CU' , 'name':'Cuba', 'value':0, 'color':'#a7a737'},
+{'code':'CY' , 'name':'Cyprus', 'value':5.21, 'color':'#d8854f'},
+{'code':'CZ' , 'name':'Czech Rep.', 'value':10.7, 'color':'#d8854f'},
+{'code':'DK' , 'name':'Denmark', 'value':8.2, 'color':'#d8854f'},
+{'code':'DJ' , 'name':'Djibouti', 'value':0, 'color':'#de4c4f'},
+{'code':'DO' , 'name':'Dominican Rep.', 'value':12.6, 'color':'#a7a737'},
+{'code':'EC' , 'name':'Ecuador', 'value':0, 'color':'#86a965'},
+{'code':'EG' , 'name':'Egypt', 'value':10.66, 'color':'#de4c4f'},
+{'code':'SV' , 'name':'El Salvador', 'value':0, 'color':'#a7a737'},
+{'code':'GQ' , 'name':'Equatorial Guinea', 'value':0, 'color':'#de4c4f'},
+{'code':'ER' , 'name':'Eritrea', 'value':0, 'color':'#de4c4f'},
+{'code':'EE' , 'name':'Estonia', 'value':10.54, 'color':'#d8854f'},
+{'code':'ET' , 'name':'Ethiopia', 'value':0, 'color':'#de4c4f'},
+{'code':'FJ' , 'name':'Fiji', 'value':0, 'color':'#8aabb0'},
+{'code':'FI' , 'name':'Finland', 'value':7.6, 'color':'#d8854f'},
+{'code':'FR' , 'name':'France', 'value':11.58, 'color':'#d8854f'},
+{'code':'GA' , 'name':'Gabon', 'value':0, 'color':'#de4c4f'},
+{'code':'GM' , 'name':'Gambia', 'value':0, 'color':'#de4c4f'},
+{'code':'GE' , 'name':'Georgia', 'value':12.35, 'color':'#d8854f'},
+{'code':'DE' , 'name':'Germany', 'value':7.46, 'color':'#d8854f'},
+{'code':'GH' , 'name':'Ghana', 'value':0, 'color':'#de4c4f'},
+{'code':'GR' , 'name':'Greece', 'value':8.33, 'color':'#d8854f'},
+{'code':'GT' , 'name':'Guatemala', 'value':8.05, 'color':'#a7a737'},
+{'code':'GN' , 'name':'Guinea', 'value':0, 'color':'#de4c4f'},
+{'code':'GW' , 'name':'Guinea-Bissau', 'value':0, 'color':'#de4c4f'},
+{'code':'GY' , 'name':'Guyana', 'value':0, 'color':'#86a965'},
+{'code':'HT' , 'name':'Haiti', 'value':0, 'color':'#a7a737'},
+{'code':'HN' , 'name':'Honduras', 'value':0, 'color':'#a7a737'},
+{'code':'HK' , 'name':'Hong Kong, China', 'value':36.15, 'color':'#eea638'},
+{'code':'HU' , 'name':'Hungary', 'value':11.2, 'color':'#d8854f'},
+{'code':'IS' , 'name':'Iceland', 'value':6.15, 'color':'#d8854f'},
+{'code':'IN' , 'name':'India', 'value':10.28, 'color':'#eea638'},
+{'code':'ID' , 'name':'Indonesia', 'value':21.03, 'color':'#eea638'},
+{'code':'IR' , 'name':'Iran', 'value':13.5, 'color':'#eea638'},
+{'code':'IQ' , 'name':'Iraq', 'value':7.79, 'color':'#eea638'},
+{'code':'IE' , 'name':'Ireland', 'value':7.02, 'color':'#d8854f'},
+{'code':'IL' , 'name':'Israel', 'value':10.87, 'color':'#eea638'},
+{'code':'IT' , 'name':'Italy', 'value':12.89, 'color':'#d8854f'},
+{'code':'JM' , 'name':'Jamaica', 'value':0, 'color':'#a7a737'},
+{'code':'JP' , 'name':'Japan', 'value':12.68, 'color':'#eea638'},
+{'code':'JO' , 'name':'Jordan', 'value':7.69, 'color':'#eea638'},
+{'code':'KZ' , 'name':'Kazakhstan', 'value':12.38, 'color':'#eea638'},
+{'code':'KE' , 'name':'Kenya', 'value':0, 'color':'#de4c4f'},
+{'code':'KP' , 'name':'Korea, Dem. Rep.', 'value':12.38, 'color':'#eea638'},
+{'code':'KR' , 'name':'Korea, Rep.', 'value':0, 'color':'#eea638'},
+{'code':'KW' , 'name':'Kuwait', 'value':11.82, 'color':'#eea638'},
+{'code':'KG' , 'name':'Kyrgyzstan', 'value':0, 'color':'#eea638'},
+{'code':'LA' , 'name':'Laos', 'value':0, 'color':'#eea638'},
+{'code':'LV' , 'name':'Latvia', 'value':10.39, 'color':'#d8854f'},
+{'code':'LB' , 'name':'Lebanon', 'value':13.95, 'color':'#eea638'},
+{'code':'LS' , 'name':'Lesotho', 'value':0, 'color':'#de4c4f'},
+{'code':'LR' , 'name':'Liberia', 'value':0, 'color':'#de4c4f'},
+{'code':'LY' , 'name':'Libya', 'value':3.9, 'color':'#de4c4f'},
+{'code':'LT' , 'name':'Lithuania', 'value':14.19, 'color':'#d8854f'},
+{'code':'LU' , 'name':'Luxembourg', 'value':13.93, 'color':'#d8854f'},
+{'code':'MK' , 'name':'Macedonia, FYR', 'value':14.67, 'color':'#d8854f'},
+{'code':'MG' , 'name':'Madagascar', 'value':0, 'color':'#de4c4f'},
+{'code':'MW' , 'name':'Malawi', 'value':0, 'color':'#de4c4f'},
+{'code':'MY' , 'name':'Malaysia', 'value':9.53, 'color':'#eea638'},
+{'code':'ML' , 'name':'Mali', 'value':0, 'color':'#de4c4f'},
+{'code':'MR' , 'name':'Mauritania', 'value':0, 'color':'#de4c4f'},
+{'code':'MU' , 'name':'Mauritius', 'value':0, 'color':'#de4c4f'},
+{'code':'MX' , 'name':'Mexico', 'value':6.94, 'color':'#a7a737'},
+{'code':'MD' , 'name':'Moldova', 'value':15.5, 'color':'#d8854f'},
+{'code':'MN' , 'name':'Mongolia', 'value':15.77, 'color':'#eea638'},
+{'code':'ME' , 'name':'Montenegro', 'value':15.27, 'color':'#d8854f'},
+{'code':'MA' , 'name':'Morocco', 'value':14.4, 'color':'#de4c4f'},
+{'code':'MZ' , 'name':'Mozambique', 'value':0, 'color':'#de4c4f'},
+{'code':'MM' , 'name':'Myanmar', 'value':0, 'color':'#eea638'},
+{'code':'NA' , 'name':'Namibia', 'value':8.2, 'color':'#de4c4f'},
+{'code':'NP' , 'name':'Nepal', 'value':0, 'color':'#eea638'},
+{'code':'NL' , 'name':'Netherlands', 'value':8.52, 'color':'#d8854f'},
+{'code':'NZ' , 'name':'New Zealand', 'value':8.14, 'color':'#8aabb0'},
+{'code':'NI' , 'name':'Nicaragua', 'value':0, 'color':'#a7a737'},
+{'code':'NE' , 'name':'Niger', 'value':0, 'color':'#de4c4f'},
+{'code':'NG' , 'name':'Nigeria', 'value':0, 'color':'#de4c4f'},
+{'code':'NO' , 'name':'Norway', 'value':7.9, 'color':'#d8854f'},
+{'code':'OM' , 'name':'Oman', 'value':0, 'color':'#eea638'},
+{'code':'PK' , 'name':'Pakistan', 'value':12.09, 'color':'#eea638'},
+{'code':'PA' , 'name':'Panama', 'value':12.25, 'color':'#a7a737'},
+{'code':'PG' , 'name':'Papua New Guinea', 'value':0, 'color':'#8aabb0'},
+{'code':'PY' , 'name':'Paraguay', 'value':0, 'color':'#86a965'},
+{'code':'PE' , 'name':'Peru', 'value':16.46, 'color':'#86a965'},
+{'code':'PH' , 'name':'Philippines', 'value':16.91, 'color':'#eea638'},
+{'code':'PL' , 'name':'Poland', 'value':10.12, 'color':'#d8854f'},
+{'code':'PT' , 'name':'Portugal', 'value':8.85, 'color':'#d8854f'},
+{'code':'PR' , 'name':'Puerto Rico', 'value':5.11, 'color':'#a7a737'},
+{'code':'QA' , 'name':'Qatar', 'value':6.19, 'color':'#eea638'},
+{'code':'RO' , 'name':'Romania', 'value':10.79, 'color':'#d8854f'},
+{'code':'RU' , 'name':'Russia', 'value':13.55, 'color':'#d8854f'},
+{'code':'RW' , 'name':'Rwanda', 'value':0, 'color':'#de4c4f'},
+{'code':'SA' , 'name':'Saudi Arabia', 'value':2.85, 'color':'#eea638'},
+{'code':'SN' , 'name':'Senegal', 'value':0, 'color':'#de4c4f'},
+{'code':'RS' , 'name':'Serbia', 'value':17.87, 'color':'#d8854f'},
+{'code':'SL' , 'name':'Sierra Leone', 'value':0, 'color':'#de4c4f'},
+{'code':'SG' , 'name':'Singapore', 'value':21.63, 'color':'#eea638'},
+{'code':'SK' , 'name':'Slovak Republic', 'value':0, 'color':'#d8854f'},
+{'code':'SI' , 'name':'Slovenia', 'value':9.85, 'color':'#d8854f'},
+{'code':'SB' , 'name':'Solomon Islands', 'value':0, 'color':'#8aabb0'},
+{'code':'SO' , 'name':'Somalia', 'value':0, 'color':'#de4c4f'},
+{'code':'ZA' , 'name':'South Africa', 'value':3.58, 'color':'#de4c4f'},
+{'code':'ES' , 'name':'Spain', 'value':8.26, 'color':'#d8854f'},
+{'code':'LK' , 'name':'Sri Lanka', 'value':17.49, 'color':'#eea638'},
+{'code':'SD' , 'name':'Sudan', 'value':0, 'color':'#de4c4f'},
+{'code':'SR' , 'name':'Suriname', 'value':0, 'color':'#86a965'},
+{'code':'SZ' , 'name':'Swaziland', 'value':0, 'color':'#de4c4f'},
+{'code':'SE' , 'name':'Sweden', 'value':11.77, 'color':'#d8854f'},
+{'code':'CH' , 'name':'Switzerland', 'value':14.04, 'color':'#d8854f'},
+{'code':'SY' , 'name':'Syria', 'value':37.76, 'color':'#eea638'},
+{'code':'TW' , 'name':'Taiwan', 'value':12.87, 'color':'#eea638'},
+{'code':'TJ' , 'name':'Tajikistan', 'value':0, 'color':'#eea638'},
+{'code':'TZ' , 'name':'Tanzania', 'value':0, 'color':'#de4c4f'},
+{'code':'TH' , 'name':'Thailand', 'value':24.43, 'color':'#eea638'},
+{'code':'TG' , 'name':'Togo', 'value':0, 'color':'#de4c4f'},
+{'code':'TT' , 'name':'Trinidad and Tobago', 'value':0, 'color':'#a7a737'},
+{'code':'TN' , 'name':'Tunisia', 'value':12.53, 'color':'#de4c4f'},
+{'code':'TR' , 'name':'Turkey', 'value':8.87, 'color':'#d8854f'},
+{'code':'TM' , 'name':'Turkmenistan', 'value':0, 'color':'#eea638'},
+{'code':'UG' , 'name':'Uganda', 'value':0, 'color':'#de4c4f'},
+{'code':'UA' , 'name':'Ukraine', 'value':22.87, 'color':'#d8854f'},
+{'code':'AE' , 'name':'United Arab Emirates', 'value':5.6, 'color':'#eea638'},
+{'code':'GB' , 'name':'United Kingdom', 'value':10, 'color':'#d8854f'},
+{'code':'US' , 'name':'United States', 'value':3.26, 'color':'#a7a737'},
+{'code':'UY' , 'name':'Uruguay', 'value':19.7, 'color':'#86a965'},
+{'code':'UZ' , 'name':'Uzbekistan', 'value':0, 'color':'#eea638'},
+{'code':'VE' , 'name':'Venezuela', 'value':202.07, 'color':'#86a965'},
+{'code':'PS' , 'name':'West Bank and Gaza', 'value':0, 'color':'#eea638'},
+{'code':'VN' , 'name':'Vietnam', 'value':26.76, 'color':'#eea638'},
+{'code':'YE' , 'name':'Yemen, Rep.', 'value':0, 'color':'#eea638'},
+{'code':'ZM' , 'name':'Zambia', 'value':0, 'color':'#de4c4f'},
+{'code':'ZW' , 'name':'Zimbabwe', 'value':0, 'color':'#de4c4f'}];
+
+var max = -Infinity;
+var min = Infinity;
+mapData.forEach(function (itemOpt) {
+    if (itemOpt.value > max) {
+        max = itemOpt.value;
+    }
+    if (itemOpt.value < min) {
+        min = itemOpt.value;
+    }
+});
+
+option = {
+    backgroundColor: '#404a59',
+    title : {
+        text: 'World Price To Income Ratio (2017)',
+        subtext: 'From Gapminder',
+        left: 'center',
+        top: 'top',
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter : function (params) {
+            var value = params.value[2]
+            return params.seriesName + '<br/>' + params.name + ' : ' + value;
+        }
+    },
+    visualMap: {
+        show: false,
+        min: 0,
+        max: max,
+        inRange: {
+            symbolSize: [6, 60]
+        }
+    },
+    geo: {
+        name: 'World Price To Income (2017)',
+        type: 'map',
+        map: 'world',
+        roam: true,
+        label: {
+            emphasis: {
+                show: false
+            }
+        },
+        itemStyle: {
+            normal: {
+                areaColor: '#323c48',
+                borderColor: '#111'
+            },
+            emphasis: {
+                areaColor: '#2a333d'
+            }
+        }
+    },
+    series : [
+        {
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            data: mapData.map(function (itemOpt) {
+                return {
+                    name: itemOpt.name,
+                    value: [
+                        latlong[itemOpt.code].longitude,
+                        latlong[itemOpt.code].latitude,
+                        itemOpt.value
+                    ],
+                    label: {
+                        emphasis: {
+                            position: 'right',
+                            show: true
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: itemOpt.color
+                        }
+                    }
+                };
+            })
+        }
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+
+
+
+	</body>
+</html>
+
+</hr>
+
+<body>
+	<p align="center">
+		<i>图五展示了2017年各国房价收入比数据。光标移动可查看具体数据</i>
+	</p>
+
+	<p style="margin: auto;width: 80%">“安得广厦千万间，大庇天下寒士尽欢颜。”千年前杜甫的兴叹还恍在耳边，时至今日，却仍是有人安享高楼独栋，有人孤苦攒钱买房。不同的国家，也有属于自己的“房价故事”。
+    <br></br>
+
+	<li style="margin: auto;width: 80%"><b>新加坡</b></li>
+		<p style="margin: auto;width: 80%">新加坡国立大学东亚研究所研究员杨沐在采访中表示，新加坡国立大学的毕业生，现在月收入起薪是3000块钱左右，新加坡的polytechnic（专科学校）, 就是比中国的中专要强一点，比大专要弱一点的学校，他们拿的是一般的文凭证书，在人才市场上很容易找到工作，一个月工资收入是2000元，如果组成家庭，夫妇两人一共是4000元，他们的40%的公积金补贴就是1600元，连五房式的房子都可以买得起。换言之，在新加坡，只要你有工作就能买得起房子。</p>
+    <br/>
+
+	<div align="center"><img src="http://tp.4000156651.com/uploads/products/Travel_ZZ/2014-05/3089/b/20140507021038814.jpg" height="500" width="800"/></div>
+  <br/>
+
+	<p></p>
+
+	<li style="margin: auto;width: 80%"><b>乌克兰</b></li>
+	<p style="margin: auto;width: 80%">根据《中国日报》的报道，来自中国海南的留学生小符毕业以后留在了乌克兰的一家旅游公司工作，最初作为一个小白领，每个月的收入也就是4000格里左右，“两个月不吃不喝，才能买得起一平方米的房子，这个压力也已经非常大了”。当然小符也承认，相比同样与作为首都的北京，基辅人还算是幸福的，与上海、广州、深圳等一线城市相比，基辅的房价也是完全能够接受的。“我回国的同学告诉我，在深圳好像一个月收入六七千元钱也很普遍，但也许半年的收入也很难买得起一平方米的房子。在我的老家海南，当地人的收入也不高，但海口和三亚的房价也是很贵.说句玩笑话，就冲这一点，我也宁愿留在基辅不回去了。”</p>
+  <br/>
+
+	<div align="center"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1518603840834&di=2f87aaf6ad7348ac4ef13b987439b735&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D91bfce240055b31988f48a362bc0e853%2Feac4b74543a98226f180a9028082b9014a90eb56.jpg"  height="500" width="800"/></div>
+  <br/>
+
+	<p></p>
+
+	<li style="margin: auto;width: 80%"><b>俄罗斯</b></li>
+	<p style="margin: auto;width: 80%">2011年，俄罗斯成为世界上房价收入比最高的国家。咨询机构Finexpertiza公司利用俄罗斯联邦统计机构提供的数据进行了计算，在俄罗斯每个公民用月工资平均可买到0.64平米房，它相当于小学一年级学生课桌所占的面积。<br/>“要想购买一套54平米的公寓，如果仅靠一个人的工资需要积攒84.3个月，也就是大约7年。如果想在莫斯科购买一套同样平米数的公寓，则需要积攒138.46个月，也就是大约11.5年。”分析机构FinExpertiza专家达利亚•罗日科夫说道。</p>
+  <br/>
+
+	<div align="center"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1518593949&di=842f334379b670653ac2f137ea6881b4&src=http://a4.att.hudong.com/65/58/300000764046131520588954338_950.jpg"  height="500" width="800"/></div>
+
+	<p></p>
+
+	<li style="margin: auto;width: 80%"><b>印度尼西亚</b></li>
+	<p style="margin: auto;width: 80%">以印尼盾计算，在过去三年中，雅加达市中心的乙级商业地产每平方英尺（约合0.09平方米）的租金大约翻了一番，甲级商业地产的租金则差不多提高了两倍。房地产经纪人和开发商表示，这种势头还没有显现出减弱的迹象。<br/>“当获悉只有那么少的人买得起房子时，我们是何等的悲痛。”财政部长斯丽·穆利娅妮称，只有40%的居民买得起房子。其余40%依赖政府的帮助；20%是极贫困群体，没有能力拥有住所。<br/>当被问及印尼急速膨胀的房地产市场时，该国贸易部长吉塔·维亚万(Gita Wirjawan)用右手做出了一个急剧上升的动作，像飞机冲天而起。他说，“很可怕，不是吗？”</p>
+  <br/>
+
+	<div align="center"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1518604127271&di=f107556c7290628ae965c7bd637124d1&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D5a84ea06ba7eca80060831a4f94afda8%2F64380cd7912397dd49d1d4215382b2b7d0a2876f.jpg"  height="500" width="800"/></div>
+
+	<p></p>
+	<p></p>
+	<p></p>
+
+	<p style="margin: auto;width: 80%">在房价急遽飙升的当下，它不可避免地与千千万万个家庭的生活有着深刻的关联。当无数赤手空拳的年轻人为了一套房奋斗成青丝绕头时，其幸耶，其不幸耶？房价，从来不只是商业领域内的问题，它更是政治理念的体现，也是国家福利的检验。一代人要承担一代人的时代使命，这或许是我们这代人要为历史背负的沉重压力。</p>
+
+
+<hr style="margin: auto;width: 80%"/>
+
+	<p align="center">数据来源：NUMBEO</p>
+	<p align="center">制作：Big Data小组（徐妙，冼芷卉，夏艺菡）</p>
+
+
+</body>

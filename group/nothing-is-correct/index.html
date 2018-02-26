@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin:0">
+   	<style type="text/css">
+   		
+   		*{ font-family: "微软雅黑"; }
+   		h2{ font-size: 36px;}
+   		.a2{ width: 100%; color: #333; max-width: 1000px; margin: auto; line-height: 30px; text-align: center;  }
+   		.a3{ text-align:center; padding:0px 40px; border-top: 1px solid #fff; height: 400px; background:url(images/未标题-7-01.png) center center no-repeat; background-size: cover;color: #fff;  }
+   		p{ }
+   		.a2 p{ text-indent: 30px;    text-align: left; }
+   		canvas{        padding: 16px; }
+   		#div6,#div5,#div4,#div3,#div2,#Div1,img{ box-shadow: 0 0 10px #e8d5dd; padding: 10px; }
+   		footer {
+    width: 100%;
+   
+    padding: 20px 0PX;
+    margin: 100px 0 0 0;
+    background-color: #ececec;
+}
+footer p {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    color: #525252;
+    text-align: center;
+    letter-spacing: .1rem;
+}
+   	</style>
+   	<div class="a2">
+   		<div class="a3">
+   <h1 style="margin-top: 160px;">格莱美奖：从过去到未来</h1> 
+		<p>格莱美奖是美国录音界乃至世界音乐界的至高奖项，受到全世界音乐爱好者的广泛关注，到现在已经走过了60届。今天我们要用数据解析格莱美，并展示出格莱美的变化趋势。</p>
+		<p style="text-align: center;">---- 刘树琦 刘晓濛 苟泽鹏----</p>
+       </div> 
+        
+        <hr/>
+		<h2>一. 走进格莱美</h2>
+       <h3> 1.你了解格莱美奖的奖项吗？</h3>
+		<p>&nbsp;</p>
+       <div id="div4" style="width: 100%;height: 500px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("div4");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '格莱美奖奖项数量变化趋势',
+    },
+    xAxis: {
+        type: 'category',
+        data: ['1958', '1959', '1960', '1961', '1962', '1963', '1964','1965','1966','1967','1968','1969','1970','1971','1972','1973','1974','1975','1976','1977','1978','1979','1980','1981','1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: [15,10,17,15,10,11,14,17,12,13,12,12,14,14,14,13,13,10,13,13,14,16,16,18,21,60,64,66,65,67,72,72,72,74,75,76,83,87,88,91,93,96,98,102,102,105,107,108,107,110,111,108,108,77,81,82,83,82,84,84],
+        type: 'line'
+    }]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+ 
+       </script>
+       <p>格莱美奖奖项的数量不是固定的。通过对60届格莱美奖中每一届颁发奖项数量的统计我们发现，前25届格莱美奖颁奖数量均在20项以下，但是这一数目在第26届时一跃飞升至60，而后逐年上升，在第51届格莱美时达到顶峰111项。51届之后有所下降，截至目前第60届时稳定在84项左右。</p>
+	   <div id="div2" style="width: 100%;height: 500px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("div2");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '环形图';
+
+option = {
+    title : {
+        text: '格莱美奖项分布',
+        subtext: '数据来源：格莱美官方网站',
+        x: 'center',
+        align: 'right'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['专辑和唱片','演出演奏','歌手','录制','单曲','作曲编曲','新人和制作人','其他']
+    },
+    series: [
+        {
+            name:'奖项类型',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:1430, name:'专辑和唱片'},
+                {value:960, name:'演出演奏'},
+                {value:805, name:'歌手'},
+                {value:405, name:'录制'},
+                {value:254, name:'单曲'},
+                {value:172, name:'作曲编曲'},
+                {value:129, name:'新人和制作人'},
+                {value:149, name:'其他'},
+            ]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}       
+
+       </script> 
+            <p>不同的奖项类别在格莱美中所占的比例也不同。我们将所有的具体奖项分成八个大类，分别为专辑和唱片类、演出演奏类、歌手类、录制类、单曲类、作曲编曲类及新人和制作人类。这其中占据比重最大的是专辑和唱片类，其次是演出演奏类，最小的是新人和制作人类。</p>
+          <h3> 2. 格莱美奖之“最”</h3>
+                      <div id="div6" style="width: 100%;height: 500px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("div6");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '格莱美最多提名和最多获奖者'
+    },
+    tooltip: {},
+    legend: {
+        data: ['最多提名', '最多获奖']
+    },
+    radar: {
+        // shape: 'circle',
+        name: {
+            textStyle: {
+                color: '#fff',
+                backgroundColor: '#999',
+                borderRadius: 3,
+                padding: [3, 5]
+           }
+        },
+        indicator: [
+           { name: 'Quincy Johns', max: 80},
+           { name: 'Georg Sulti', max:80},
+           { name: 'Jay-Z', max: 80},
+           { name: 'Chick Corea', max:80},
+           { name: 'John Williams', max:80},
+           { name: 'Beyonce', max:80}
+        ]
+    },
+    series: [{
+        name: '最多提名 vs 最多获奖',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data : [
+            {
+                value : [27, 31, 21, 22, 22, 20],
+                name : '最多获奖'
+            },
+             {
+                value : [79, 74, 64, 61, 61, 53],
+                name : '最多提名'
+            }
+        ]
+    }]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+<p> 在格莱美的获奖历史上，有很多歌手曾经一人包揽若干奖项或提名。在对这一榜单进行排名时最终发现，Quincy Johnson是被提名次数最多的歌手，总共被提名79次，但最终只有21次获奖。而以74项提名稍逊于他的George Solti才是格莱美史上获奖最多的歌手，总共坐拥31座奖杯。</p>
+
+
+<h2>二. 格莱美奖的现状：性别与种族</h2>
+     <img src=http://chuantu.biz/t6/230/1518685634x-1404817730.jpg /> 
+     <img src=http://chuantu.biz/t6/230/1518685738x1822611419.jpg />
+    <p> 在第六十届格莱美奖颁奖典礼上，许多女星都佩戴着象征女权运动的白玫瑰出席，然而今年格莱美提名的女性比例依然很少，在主要奖项中，只有21岁的加拿大女歌手Alessia Cara获得了“最佳新人”的提名。2011年，格莱美取消了各奖项的性别划分，似乎在顺社会历史发展潮流而行，同时也符合美国主流价值观。然而这一奖项的调整实际上使得被提名人在奖项角逐上更加激烈，但这并不能作为男女平权的一种象征。在统计1960-2015年格莱美“年度制作”、“年度专辑”和“年度新人”三大奖项额获奖情况来看，不难看出格莱美获奖人一直以来都呈现出：白人、中青年、男性这几大特征。格莱美获奖情况可以明显地反映出性别不平等在音乐领域的呈现。</p>
+     <h2>三. 格莱美奖的趋势:流媒体转向</h2>
+     <h3>1.被动的转向：收视困境</h3>
+            <div id="Div1" style="width: 100%;height: 500px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+           var dom = document.getElementById("Div1");
+           var myChart = echarts.init(dom);
+           var app = {};
+           option = null;
+           option = {
+               title: {
+                   text: '美国不同格式专辑销量趋势对比',
+                   subtext: '数据来源：尼尔森   单位：百万',
+               },
+               legend: {
+                   data: ['CD', '付费下载', '音乐流媒体']
+               },
+               xAxis: {
+                   type: 'category',
+                   data: ['2011', '2012', '2013', '2014', '2015', '2016']
+               },
+               yAxis: {
+                   type: 'value'
+               },
+               series: [
+                   {
+                       name: 'CD',
+                       type: 'line',
+                       data: [223.5, 193.4, 165.4, 140.9, 125.6, 104.8],
+                       smooth: true
+                   },
+               {
+                   name: '付费下载',
+                   type: 'line',
+                   data: [103.1, 117.68, 117.58, 106.47, 103.33, 82.2],
+                   smooth: true
+               },
+               {
+                   name: '音乐流媒体',
+                   type: 'line',
+                   data: [, , 53, 109.7, 211.5, 287.8],
+                   smooth: true
+               }
+               ]
+           };
+           ;
+           if (option && typeof option === "object") {
+               myChart.setOption(option, true);
+           }
+       </script>
+	   <div id="div5" style="width: 100%;height: 500px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("div5");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '格莱美颁奖典礼收视率（2000-2018）'
+    },
+    tooltip: {},
+    legend: {
+        data:['收视率（万人）']
+    },
+    xAxis: {
+        data: ["2000","2001","2002","2003","2004","2005",'2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018']
+    },
+    yAxis: {},
+    series: [{
+        name: '收视率（万人）',
+        type: 'bar',
+        data: [2779,2665,1896,2482,2629,1880,1700,2005,1718,1904,2580,2655,3991,2837,2851,2530,2495,2605,1760]
+    }]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+<p>随着网络数字产品迈进爆发的黄金期，传统唱片业同时受到严重冲击。而此时向来不以榜单成绩论英雄的格莱美颁奖典礼，收视率从2004年一直下降到2009年。直到格莱美意识到社交网络对音乐之大时，他们才开始转变态度，更加重视起YouTube等流媒体上的宣传，同时在颁奖典礼上找一些网络红人唱歌。经过几年的努力，格莱美终于在2010年后迎来了收视率和关注度的高潮。
+</p>
+
+<h3>2.提名的流媒体转向</h3>
+<h4>第48届到第60届格莱美年度制作和年度歌曲的YouTube播放量</h4>
+       <div id="container" style="width: 100%;height: 500px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var datarecordoftheyear = [
+    [49,0.9906,"Be Without You"],
+    [49,2,"You're Beautiful"],
+    [49,0.2106,"Not Ready To Make Nice"],
+    [49,0.0962,"Crazy"],
+    [49,0.0365,"Put Your Records On"],
+    [50,2.8,"Irreplaceable"],
+    [50,2.7,"The Pretender"],
+    [50,3.8,"Umbrella"],
+    [50,2.6,"What Goes Around…Comes Around"],
+    [50,1.8,"Rehab"],
+    [51,1.2,"Chasing Pavements"],
+    [51,4.7,"Viva La Vida"],
+    [51,1.4,"Bleeding Love"],
+    [51,1.2,"Paper Planes"],
+    [51,0.0113,"Please Read The Letter"],
+    [52,6,"Halo"],
+    [52,3.3,"I Gotta Feeling"],
+    [52,1.8,"use somebody"],
+    [52,8,"you belong with me"],
+    [52,4.9,"pokerface"],
+    [53,2.2,"Nothin' On You"],
+    [53,14,"Love The Way You Lie"],
+    [53,0.0295,"F*** You"],
+    [53,0.1425,"Empire State Of Mind"],
+    [53,2.2,"Need You Now"],
+    [54,12,"rolling in the deep"],
+    [54,0.4834,"Holocene"],
+    [54,7.4,"grenade"],
+    [54,0.1127,"the cave"],
+    [54,10,"firework"],
+    [55,0.7562,"lonely boy"]
+    [55,2.6,"stranger"],
+    [55,5.4,"we are young"],
+    [55,10,"somebody that I used to know"],
+    [55,0.1221,"thinkin bout you"],
+    [55,5,"we are never ever getting back together"],
+    [56,3.3,"get lucky"],
+    [56,8.2,"radioactive"],
+    [56,6.9,"royals"],
+    [56,5,"locked out of heaven"],
+    [56,5.1,"blurred lines"],
+    [57,8.4,"fancy"],
+    [57,17,"chanderlier"],
+    [57,8.5,"stay with me"],
+    [57,25,"shake it off"],
+    [57,21,"all about that bass"],
+    [58,0.0573,"really love"],
+    [58,29,"uptown funk"],
+    [58,21,"thinking out loud"],
+    [58,22,"blank space"],
+    [58,8.7,"can‘t feel my face"],
+    [59,22,"hello"],
+    [59,0.9629,"formation"],
+    [59,6.3,"7 years"],
+    [59,9.7,"work"],
+    [59,12,"stressed out"],
+    [60,9.4,"24k magic "],
+    [60,1.9,"red bone"],
+    [60,44,"despecito"],
+    [60,0.5941,"the story of oj"],
+    [60,4.4,"humble"],
+];
+
+var datasongoftheyear = [
+    [49,0.9906,"Be Without You"],
+    [49,2,"You're Beautiful"],
+    [49,0.2106,"Not Ready To Make Nice"],
+    [49,0.4870,"Jesus, Take The Wheel"],
+    [49,0.0365,"Put Your Records On"],
+    [50,0.9498,"Before He Cheats"],
+    [50,0.4533,"Hey There Delilah"],
+    [50,3.8,"Umbrella"],
+    [50,0.1382,"Like A Star"],
+    [50,1.8,"Rehab"],
+    [51,1.2,"Chasing Pavements"],
+    [51,4.7,"Viva La Vida"],
+    [51,0.5627,"Like A Star"],
+    [51,3.7,"I'm Yours"],
+    [51,0.8374,"Love Song"],
+    [52,0.4162,"Pretty Wings"],
+    [52,6.3,"single ladies"],
+    [52,1.8,"use somebody"],
+    [52,8,"you belong with me"],
+    [52,4.9,"pokerface"],
+    [53,19,"Beg Steal Or Borrow"],
+    [53,14,"Love The Way You Lie"],
+    [53,0.0295,"F*** You"],
+    [53,0.4244,"The House That Built Me"],
+    [53,2.2,"Need You Now"],
+    [54,12,"rolling in the deep"],
+    [54,0.4834,"Holocene"],
+    [54,7.4,"grenade"],
+    [54,0.1127,"the cave"],
+    [54,1.8,"all of the lights"],
+    [55,2.6,"the a team"]
+    [55,2.6,"stranger"],
+    [55,5.4,"we are young"],
+    [55,0.8176,"adorn"],
+    [55,10,"call me maybe"],
+    [56,7.8,"just give a reason"],
+    [56,24,"roar"],
+    [56,6.9,"royals"],
+    [56,1.9,"same love"],
+    [56,1.9,"locked out of heaven"],
+    [57,2,"take me to church"],
+    [57,17,"chanderlier"],
+    [57,8.5,"stay with me"],
+    [57,25,"shake it off"],
+    [57,21,"all about that bass"],
+    [58,0.9994,"alright"],
+    [58,1,"girl crush"],
+    [58,21,"thinking out loud"],
+    [58,22,"blank space"],
+    [58,33,"seeyou again"],
+    [59,22,"hello"],
+    [59,0.9629,"formation"],
+    [59,6.3,"7 years"],
+    [59,9.1,"I took a pill in ibisa"],
+    [59,13,"love yourself"],
+    [60,11,"that‘s what I like"],
+    [60,0.1193,"4:44"],
+    [60,44,"despecito"],
+    [60,1.3,"issuses"],
+    [60,2,"18002738255"],
+];
+
+var schema = [
+    {name: 'date', index: 0, text: '届'},
+    {name: 'AQIindex', index: 1, text: 'youtube播放量'},
+];
+
+var itemStyle = {
+    normal: {
+        opacity: 0.8,
+        shadowBlur: 10,
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+    }
+};
+
+option = {
+    backgroundColor: '#404a59',
+    color: [
+        '#dd4444', '#fec42c', '#80F1BE'
+    ],
+    legend: {
+        y: 'top',
+        data: ['record of the year', 'song of the year'],
+        textStyle: {
+            color: '#fff',
+            fontSize: 16
+        }
+    },
+    grid: {
+        x: '10%',
+        x2: 150,
+        y: '18%',
+        y2: '10%'
+    },
+    tooltip: {
+        padding: 10,
+        backgroundColor: '#222',
+        borderColor: '#777',
+        borderWidth: 1,
+        formatter: function (obj) {
+            var value = obj.value;
+            return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
+                + obj.seriesName + ' ' + value[0] + '届：'
+                + value[2]
+                + '</div>'
+                + schema[1].text + '：' + value[1] + '亿次'+'<br>'
+        }
+    },
+    xAxis: {
+        type: 'value',
+        name: '届数',
+        nameGap: 16,
+        nameTextStyle: {
+            color: '#fff',
+            fontSize: 14
+        },
+        max: 60,
+		min: 48,
+        splitLine: {
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#eee'
+            }
+        }
+    },
+    yAxis: {
+        type: 'value',
+        name: 'YouTube播放量/亿次',
+        nameLocation: 'end',
+        nameGap: 20,
+        nameTextStyle: {
+            color: '#fff',
+            fontSize: 16
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#eee'
+            }
+        },
+        splitLine: {
+            show: false
+        }
+    },
+    visualMap: [
+        {
+            left: 'right',
+            top: '10%',
+            dimension: 1,
+            min: 0,
+            max: 50,
+            itemWidth: 30,
+            itemHeight: 120,
+            calculable: true,
+            precision: 0.1,
+            text: ['圆形大小：播放量'],
+            textGap: 30,
+            textStyle: {
+                color: '#fff'
+            },
+            inRange: {
+                symbolSize: [10, 70]
+            },
+            outOfRange: {
+                symbolSize: [10, 70],
+                color: ['rgba(255,255,255,.2)']
+            },
+            controller: {
+                inRange: {
+                    color: ['#c23531']
+                },
+                outOfRange: {
+                    color: ['#444']
+                }
+            }
+        },
+      
+    ],
+    series: [
+        {
+            name: 'record of the year',
+            type: 'scatter',
+            itemStyle: itemStyle,
+            data: datarecordoftheyear
+        },
+        {
+            name: 'song of the year',
+            type: 'scatter',
+            itemStyle: itemStyle,
+            data: datasongoftheyear
+        }
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+
+       </script>
+   <p> 十年前是网络数字时代的黄金期，Billboard榜单统计规则于 2005年正式更改，标志着下载时代的到来，此后，流媒体对格莱美奖的贡献越来越大。尤其是自第57届格莱美以来，主要奖项提名的流媒体数据都非常可观，在今年的第60届格莱美奖中，《despacito》在YouTube上的播放量更是达到了44亿。格莱美奖呈现出向流媒体靠拢的趋势。这反映了试图解决此前所遭到的批评—与流行音乐脱节，同时也是为挽救收视率而作出的举动。</p>
+     <p> 除此之外，从散点图中，我们可以看到一个现象，record of the year 的提名歌曲整体上的流媒体数据大于song of the year。</p>
+     
+     </div>
+     
+     
+     <footer>
+    <p>---- 刘树琦 刘晓濛 苟泽鹏----</p>
+   
+    <p>数据来源：格莱美官网、YouTube、尼尔森官网</p>
+  </footer>
+     
+</body>
+</html>

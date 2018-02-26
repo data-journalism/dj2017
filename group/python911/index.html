@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="./js/echarts-all-3.js"></script>
+    <script type="text/javascript" src="./js/world.js"></script>
+    <!-- <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script> -->
+    <script type="text/javascript" src="./js/china.js"></script>
+    <script type="text/javascript" src="./js/bmap.min.js"></script>
+    <script type="text/javascript" src="./js/dataTool.min.js"></script>
+    <link rel="stylesheet" href="./js/bootstrap.min.css" />
+    <style>
+    #scatter div {
+        width: 1000px!important;
+    }
+    </style>
+</head>
+
+<body>
+
+    <body style="width:1000px;margin:0 auto;">
+        <a href="#title" style="position:fixed;bottom:10px;margin-left:1020px;">返回顶部</a>
+        <div style="text-align:center;line-height:100px;width:100%;font-size:46px;" id="title">今年，你在江苏买的起房吗？</div>
+        <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+        	房价————一个谈起来让人心惊肉跳的词。南京的房价一年之内蹭蹭涨了20%，建邺区转眼就破五破六；50万北京东三环内一个卫生间的梗也变成了昨日传说，因为现在不止50万了。这些涨涨涨的东西要么填满要么掏空你的腰包，当然填满的自然是少数，大多还是被掏空了。江苏省作为经济发展大省，虽比不得上海北京寸土寸金，但在房价“变动”上的实力也不容小觑。房价的增长也不是空穴来风，本文将通过展现江苏省近几年的房价变化和人均收入之间的各种要素的比较，来为未来房价的变化提供一些可预估要素。也为关注房价的人提供一些信息。
+        </div>
+        <div id="myTabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">一、江苏省各市近年来房价变化</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">二、各市2017年房价与收入的比对分析</a></li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">三、展现形式呈现及结论</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home" style="padding-bottom: 15px;border-bottom: 2px solid gray;">
+                    <div style="text-align:left;line-height:50px;width:100%;font-size:24px;">江苏省各市近年来房价变化</div>
+                    <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	江苏省各市房价近年来持续稳定增长。值得注意江苏省一线城市如南京、苏州的房价水平一直远远高出江苏省其他城市，且与其他城市的差距在持续变大，其在 2011-2015年这段时间房价增长速度变化不大，呈匀速增长态势。2016年，南京、苏州的房价较2015年呈现猛增态势，昆山也渐渐加入一线城市房价高速增长的行列。相反，除以上提及的三座城市以外的其他城市，房价普遍增长缓慢，几乎停滞不动，甚至像南通2016年房价较2011年不增反降。
+                    </div>
+                    <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	可见江苏省各城市房价发展逐渐呈现两极化趋势。少数一线城市增速越来越快，而其他大多数城市房价几乎没有变动，两者间差距不断拉大，逐渐形成两极化趋势。
+                    </div>
+                    <!--pie0-->
+                    <div id="pie0" style="width: 100%;height:300px;"></div>
+                    <div style="text-align:center;line-height:25px;width:100%;margin:10px 0;">图:2011—2016年江苏各市房价变化图</div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile" style="padding-bottom: 15px;border-bottom: 2px solid gray;">
+                    <div style="text-align:left;line-height:50px;width:100%;font-size:24px;">各市2017年房价与收入的比对分析</div>
+                    <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	我们将2017年房价变动和居民平均收入精确到了以区为单位。
+                    </div>
+                    <div id="city-0" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-1" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-2" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-3" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-4" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-5" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-6" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-7" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-8" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-9" style="width:1000px;height:400px; display:inline-block; margin:0 auto;"></div>
+                    <div id="city-10" style="width:1000px;height:400px; display:inline-block;"></div>
+                    <div id="city-11" style="width:1000px;height:400px; display:inline-block;"></div>
+                    <div id="city-12" style="width:1000px;height:400px; display:inline-block;"></div>
+                    <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	总体来看， 2017年江苏省各市房价普遍持续增长，几乎所有城市都在年末突破1，0000元/平方米的关卡。尽管一些城市的某个区域（如无锡滨湖区，镇江扬中市、徐州贾汪区）受其特殊因素影响短暂下跌或上涨，也在次月迅速恢复正常水平。各个区的房价受其自身的地理位置、经济发展因素限制逐渐呈现出各自稳定的价格区间，波动变化不大。而像省会城市南京，最低房价一万/米左右，最高甚至达到五万/米以上，各个区都与其他城市拉开了巨大的差距。且各个区之间的差距也较大，基本差值上万，以及高于其他城市本身的房价。
+                    </div>
+                    <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	居民收入方面，房价远远高于其他城市的南京却不是收入最高的城市，位列苏州、无锡之后。各城市之间收入差异远没有房价差异那样悬殊，对选择适宜自己经济水平的城市购置房产有很大的指导意义。
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages" style="padding-bottom: 15px;border-bottom: 2px solid gray;">
+                	<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">一、展现形式呈现</div>
+                   	<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	1.计算：（房价*目标面积大小）/（收入-个人月开销）=购得理想住宅所需年份
+                    </div>
+                    <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	2.房价收入比：每户住房总价/每户家庭年总收入。这个比例，对于用户是不是马上买房，对于百姓自觉自发调节房产市场的供求，对于国家住房政策的把握，对于供给侧改革、需求侧改革，均具有重要意义。
+                    </div>
+                    <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	合理的房价收入比应该在4到6之间，2015年的南京房价收入比已经为11.3，位列全国第九。
+                    </div>
+                    <div style="text-align:center;"><img style="width:800px;" src="imgs/1.jpg" alt=""></div>
+                	<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">二、结论</div>
+                    <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;text-indent:2em;">
+                    	综合上述分析， 首先，未来的房价肯定是在增长的趋势上持续迈步，同时，江苏省内部房价的差异也会变大，一线城市可能会与三四线城市的房价差距越来越大。在居民收入方面，房价和收入比也不完全一致。合理的房价收入比应该在4-6之间，而江苏很多城市明显已经超过了这样的范围。同时房价最高的南京地区同样不是人均收入最多的地方。在最后，我们希望我们的研究对需要买房或者对买房感兴趣的人提供了有效的帮助。是选择房价飞高的南京？还是苏州无锡？重要的选择在于您。明年，你在江苏能买上房吗？
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script type="text/javascript" src="js/c.js"></script>
+    </body>
+
+</html>
