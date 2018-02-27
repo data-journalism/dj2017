@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+function randomData() {
+    return Math.round(Math.random()*1000);
+}
+
+option = {
+    title: {
+        text: '我国各地区国家财政性教育经费（单位：万元）',
+        subtext: '国家统计局2015年数据',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+  
+    visualMap: {
+        min: 0,
+        max: 23000000,
+        left: 'left',
+        top: 'bottom',
+        text: ['高','低'],           // 文本，默认为数值文本
+        calculable: true
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [
+        {
+            name: '国家财政性教育经费',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value: 9810774 },
+                {name: '天津',value:4775063 },
+                {name: '上海',value: 8264220 },
+                {name: '重庆',value: 6400963 },
+                {name: '河北',value: 10732988 },
+                {name: '河南',value: 13678565 },
+                {name: '云南',value: 9039569 },
+                {name: '辽宁',value: 7101812 },
+                {name: '黑龙江',value: 6078141 },
+                {name: '湖南',value: 9540802 },
+                {name: '安徽',value: 9572661 },
+                {name: '山东',value: 17346983 },
+                {name: '新疆',value: 6508191 },
+                {name: '江苏',value: 18190920 },
+                {name: '浙江',value: 12922271 },
+                {name: '江西',value: 8146382 },
+                {name: '湖北',value: 9035539 },
+                {name: '广西',value: 8467679 },
+                {name: '甘肃',value: 5518606 },
+                {name: '山西',value: 7733564 },
+                {name: '内蒙古',value: 6324669 },
+                {name: '陕西',value: 7246693 },
+                {name: '吉林',value: 5022614},
+                {name: '福建',value: 8100240 },
+                {name: '贵州',value: 8039152 },
+                {name: '广东',value: 22611396},
+                {name: '青海',value: 1906170},
+                {name: '西藏',value: 1892997},
+                {name: '四川',value: 13362232 },
+                {name: '宁夏',value: 1696500},
+                {name: '海南',value:2337554}
+            ]
+        },
+       
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

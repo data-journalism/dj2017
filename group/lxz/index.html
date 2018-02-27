@@ -1,0 +1,1108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<style>
+p{ line-height:30px}
+	</style>
+<title>全国幼儿园哪里最好？——我国各省学前教育水平状况调查</title>
+</head>
+
+<body>
+
+	<div style="padding-left:50px;padding-right:50px"><h1><h1 style="text-align: center;"><b>全国幼儿园哪里最好？</b><br>——我国各省学前教育水平状况调查<p style='font-size: data-add-back-btn="false";font-family:'中华中宋''></p></h1>
+		<p><p style="text-align: center;font-size: 15px;line-height: 5px">2018年2月15日</p>
+		<br>
+		<p><p style="text-align:center" "font-family: '黑体';font-size: 20px">(作者：陈必欣 陈景玥 彭书慧)</p>
+
+	<p><p style="text-indent:2em;color:chocolate;font-family:'黑体'">2017年是中国加入联合国《儿童权利保护公约》的第25周年。然而，作为一个拥有超过3亿少年儿童人口的发展中大国，中国在保障儿童权利、促进儿童发展方面的落实仍存在着许多缺陷。在过去的2017年里，上海携程亲子园事件、北京红黄蓝幼儿园事件等多起幼儿园虐童事件相继发生，引发舆论轰动。学龄前幼儿能否获得良好的教育资源关系到《儿童权利保护公约》所规定的儿童发展权问题，必须予以高度的重视。</p>
+		<p><p style="text-indent:2em;color:chocolate;font-family:'黑体'">据新京报2015年6月9日报道，2014年至2015年一年多时间，北京经媒体报道的幼儿园老师虐童事件多达6起，仅2015年就被曝出4起，呈增多趋势。在经济文化水平相对发达的大城市，学前教育情况尚且存在诸多问题，中国其他地区的幼儿园情况怎么样呢？</p>
+		<p><p style="text-indent:2em;color:chocolate;font-family:'黑体'">根据《中国学前教育综合发展水平研究》（刘占兰，高丙成），学前教育水平的评估可从教育资源、教育质量及教育投入等方面入手。下面将对这三方面内容进行以中国各省份地区为单位的分析，在高水平学前教育日益成为广大民众迫切需求的当下，哪个地区的幼儿园资源更为优质呢？</p></div>
+
+		<div style="text-align: center;"><img src="timg2017.jpg" alt="替换文本" style="height:250px;width:400px;"></div>
+
+
+<div style="padding-left:50px;padding-right:50px"><h3>一、教育资源</h3>
+	<p><p style="text-indent:2em;">2016年，全国共有幼儿园23.98万所，入园儿童1922.09万人。在园儿童（包括附设班）4413.86万人，整体比上年增加149.03万人。全国学前教育毛入园率达到77.4%，比上年提高2.4个百分点。从总体上看，我国幼儿园教育资源整体水平有所改善，但从分省情况分析来看，相对优质的教育资源仍较集中于东南沿海等经济发达地区。</p></p>
+
+	<p><p style="text-indent:2em;">从毛入园率来看，江浙沪粤等东南沿海省市的学前教育毛入园率均高达80%以上，其中浙江省高达96.35%，远超出全国水平；而在黑龙江和西藏，毛入园率甚至还不到50%。不难看出，毛入园率作为最能直观衡量教育资源的条件之一，在地区差异上的分化是较为显著的。</p></p></div>
+		 <div id="container6" style="height: 450px";"width:450px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container6");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+function randomData() {
+    return Math.round(Math.random()*1000);
+}
+
+option = {
+    title: {
+        text: '幼儿园毛入园率（百分比，%）',
+        subtext: '2016年国家统计局数据（不含港澳台地区）',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data:['iphone3','iphone4','iphone5']
+    },
+    visualMap: {
+        min: 0,
+        max: 100,
+        left: 'left',
+        top: 'bottom',
+        text: ['高','低'],           // 文本，默认为数值文本
+        calculable: true
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [
+        {
+            name: '2016年毛入园率',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value:71.48},
+                {name: '天津',value: 73.15},
+                {name: '上海',value:83.68},
+                {name: '重庆',value:71.51 },
+                {name: '河北',value: 60.06},
+                {name: '河南',value: 67.40 },
+                {name: '云南',value: 55.70},
+                {name: '辽宁',value: 71.60},
+                {name: '黑龙江',value: 46.69 },
+                {name: '湖南',value: 66.34},
+                {name: '安徽',value: 65.43 },
+                {name: '山东',value: 63.20 },
+                {name: '新疆',value: 73.93 },
+                {name: '江苏',value: 82.36 },
+                {name: '浙江',value: 96.35 },
+                {name: '江西',value: 55.15 },
+                {name: '湖北',value: 71.13 },
+                {name: '广西',value: 74.67 },
+                {name: '甘肃',value: 80.18 },
+                {name: '山西',value: 67.09 },
+                {name: '内蒙古',value: 66.42 },
+                {name: '陕西',value: 97.27 },
+                {name: '吉林',value: 51.38 },
+                {name: '福建',value: 90.69 },
+                {name: '贵州',value: 73.64 },
+                {name: '广东',value: 92.80 },
+                {name: '青海',value: 67.24 },
+                {name: '西藏',value: 48.14 },
+                {name: '四川',value: 73.33 },
+                {name: '宁夏',value: 60.34 },
+                {name: '海南',value: 71.87 },
+                {name: '台湾',value: 0 },
+                {name: '香港',value: 0},
+                {name: '澳门',value: 0}
+            ]
+        },
+
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+		<br>
+		<div style="padding-left:50px;padding-right:50px"><p><p style="text-indent:2em;">在硬件条件方面，我们将目光聚焦于各省市的幼儿园园数和图书数量。从中不难发现，幼儿园园数在一定程度上与当地适龄幼儿数、以及当地总人口数量的大小成正比，如在山东、河南为代表的此类人口大省，幼儿园园数及图书数量也相对较多；但除此之外，大量的硬件资源仍相对集中于江沪闽粤等东南沿海地区，广东省更是享有接近全国八分之一数量的图书和绝大部分的电子图书，充分凸显出经济发达省份在硬件资源方面所占有的绝对优势。</p></p></div>
+		<br>
+		  <div id="container7" style="height:450px";"width:450px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container7");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '水印 - ECharts 下载统计'
+
+var builderJson = {
+  "all": 30000,
+  "charts": {
+    "陕西": 7313,
+    "湖北": 7500,
+    "福建": 7791,
+    "安徽": 7895,
+    "贵州": 8008,
+    "浙江": 8771,
+    "辽宁": 10133,
+    "广西": 11013,
+    "四川": 12903,
+    "河北": 13635,
+    "江西": 14071,
+    "湖南": 14365,
+    "广东": 17288,
+    "河南": 18695,
+    "山东": 18853,
+    "sankey": 0
+  },
+  "components": {
+
+      "宁夏":889,
+      "西藏":1028,
+      "北京":1507,
+    "上海": 1553,
+    "青海": 1667,
+    "天津": 2092,
+    "海南": 2176,
+    "内蒙古": 3672,
+    "吉林": 4133,
+    "新疆": 4543,
+    "重庆": 5109,
+    "黑龙江": 5720,
+    "甘肃": 6441,
+    "山西": 6708,
+    "江苏": 6867,
+    "云南": 7310
+  },
+  "ie": 9743
+};
+
+var downloadJson = {
+  "广东": 38667521,
+  "江苏": 33341495,
+  "山东": 22318005,
+  "河南": 22201067,
+  "浙江": 19088727,
+  "其他": 189289992
+};
+
+var themeJson = {
+
+
+  "江苏": 38183452,
+  "广东": 1435716781,
+  "山东": 17459895,
+  "福建": 15195093,
+ "上海": 16603152,
+  "其他": 49540012,
+
+
+};
+var waterMarkText = 'ECHARTS';
+
+var canvas = document.createElement('canvas');
+var ctx = canvas.getContext('2d');
+canvas.width = canvas.height = 100;
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.globalAlpha = 0.08;
+ctx.font = '20px Microsoft Yahei';
+ctx.translate(50, 50);
+ctx.rotate(-Math.PI / 4);
+ctx.fillText(waterMarkText, 0, 0);
+
+option = {
+    backgroundColor: {
+        type: 'pattern',
+        image: canvas,
+        repeat: 'repeat'
+    },
+    tooltip: {},
+    title: [{
+        text: '各省幼儿园园数',
+        subtext: '2016年数据 ' + builderJson.all,
+        x: '25%',
+        textAlign: 'center'
+    }, {
+        text: '图书占有量',
+        subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
+            return all + downloadJson[key];
+        }, 0),
+        x: '75%',
+        textAlign: 'center'
+    }, {
+        text: '电子图书占有量',
+        subtext: '总计 ' + Object.keys(themeJson).reduce(function (all, key) {
+            return all + themeJson[key];
+        }, 0),
+        x: '75%',
+        y: '42%',
+        textAlign: 'center'
+    }],
+    grid: [{
+        top: 50,
+        width: '50%',
+        bottom: '45%',
+        left: 10,
+        containLabel: true
+    }, {
+        top: '55%',
+        width: '50%',
+        bottom: 0,
+        left: 10,
+        containLabel: true
+    }],
+    xAxis: [{
+        type: 'value',
+        max: builderJson.all,
+        splitLine: {
+            show: false
+        }
+    }, {
+        type: 'value',
+        max: builderJson.all,
+        gridIndex: 1,
+        splitLine: {
+            show: false
+        }
+    }],
+    yAxis: [{
+        type: 'category',
+        data: Object.keys(builderJson.charts),
+        axisLabel: {
+            interval: 0,
+            rotate: 30
+        },
+        splitLine: {
+            show: false
+        }
+    }, {
+        gridIndex: 1,
+        type: 'category',
+        data: Object.keys(builderJson.components),
+        axisLabel: {
+            interval: 0,
+            rotate: 30
+        },
+        splitLine: {
+            show: false
+        }
+    }],
+    series: [{
+        type: 'bar',
+        stack: 'chart',
+        z: 3,
+        label: {
+            normal: {
+                position: 'right',
+                show: true
+            }
+        },
+        data: Object.keys(builderJson.charts).map(function (key) {
+            return builderJson.charts[key];
+        })
+    }, {
+        type: 'bar',
+        stack: 'chart',
+        silent: true,
+        itemStyle: {
+            normal: {
+                color: '#eee'
+            }
+        },
+        data: Object.keys(builderJson.charts).map(function (key) {
+            return builderJson.all - builderJson.charts[key];
+        })
+    }, {
+        type: 'bar',
+        stack: 'component',
+        xAxisIndex: 1,
+        yAxisIndex: 1,
+        z: 3,
+        label: {
+            normal: {
+                position: 'right',
+                show: true
+            }
+        },
+        data: Object.keys(builderJson.components).map(function (key) {
+            return builderJson.components[key];
+        })
+    }, {
+        type: 'bar',
+        stack: 'component',
+        silent: true,
+        xAxisIndex: 1,
+        yAxisIndex: 1,
+        itemStyle: {
+            normal: {
+                color: '#eee'
+            }
+        },
+        data: Object.keys(builderJson.components).map(function (key) {
+            return builderJson.all - builderJson.components[key];
+        })
+    }, {
+        type: 'pie',
+        radius: [0, '30%'],
+        center: ['75%', '25%'],
+        data: Object.keys(downloadJson).map(function (key) {
+            return {
+                name: key.replace('.js', ''),
+                value: downloadJson[key]
+            }
+        })
+    }, {
+        type: 'pie',
+        radius: [0, '30%'],
+        center: ['75%', '75%'],
+        data: Object.keys(themeJson).map(function (key) {
+            return {
+                name: key.replace('.js', ''),
+                value: themeJson[key]
+            }
+        })
+    }]
+};
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+		<br>
+		<br>
+		<div style="padding-left:50px;padding-right:50px"><h3>二、教育质量</h3>
+		<p><p style="text-indent:2em;">本报道选择了生师比和教师学历两个结构性指标来反映学前教育质量，并用专科及以上学历教师指标作为教师学历结构的代表性指标。</p></p>
+<p><p style="text-indent:2em;">从生师比来看，东部明显高于中、西部地区。全国范围内，广西和西藏的水平最低，生师比为24：1，北京的水平最高，生师比为11：1，但仍远高于教育部在2013年规定的5：1至7：1的比例，中国幼师大多处于超负荷的工作状态。</p></p></div>
+		 <div id="container4" style="height: 450px";"width:450px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container4");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+function randomData() {
+    return Math.round(Math.random()*1000);
+}
+
+option = {
+    title: {
+        text: '2016年全国幼儿园生师比',
+
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data:['iphone3','iphone4','iphone5']
+    },
+    visualMap: {
+        min: 10,
+        max: 30,
+        left: 'left',
+        top: 'bottom',
+        text: ['高','低'],           // 文本，默认为数值文本
+        calculable: true
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [
+        {
+            name: '生师比',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value:11 },
+                {name: '天津',value: 14 },
+                {name: '上海',value: 14 },
+                {name: '重庆',value: 20 },
+                {name: '河北',value: 19 },
+                {name: '河南',value: 20 },
+                {name: '云南',value: 22 },
+                {name: '辽宁',value: 12 },
+                {name: '黑龙江',value: 13 },
+                {name: '湖南',value: 21 },
+                {name: '安徽',value: 23 },
+                {name: '山东',value: 15 },
+                {name: '新疆',value: 21 },
+                {name: '江苏',value: 17 },
+                {name: '浙江',value:15 },
+                {name: '江西',value: 18 },
+                {name: '湖北',value: 19 },
+                {name: '广西',value: 24 },
+                {name: '甘肃',value: 20 },
+                {name: '山西',value: 17 },
+                {name: '内蒙古',value:14},
+                {name: '陕西',value: 15 },
+                {name: '吉林',value: 13 },
+                {name: '福建',value: 18 },
+                {name: '贵州',value: 18 },
+                {name: '广东',value: 15 },
+                {name: '青海',value: 17 },
+                {name: '西藏',value: 24 },
+                {name: '四川',value: 21 },
+                {name: '宁夏',value: 19 },
+                {name: '海南',value: 20 },
+                {name: '台湾',value: 0 },
+                {name: '香港',value: 0 },
+                {name: '澳门',value: 0 }
+            ]
+        },
+
+
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+		<br>
+		<div style="padding-left:50px;padding-right:50px"><p><p style="text-indent:2em;">从教职工学历来看，专科及以上学历的教职工比例在90％以上的共有四个省，从高到低依次是上海、江苏、西藏、浙江，低于70％的共有两个省，从高到低是湖北和江西。</p></p></div>
+	 <div id="container5" style="height: 450px";"width:450px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container5");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+function randomData() {
+    return Math.round(Math.random()*1000);
+}
+
+option = {
+    title: {
+        text: '2016年全国幼儿园教职工中具有专科及以上学历的比例',
+        subtext: '单位：%',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data:['iphone3','iphone4','iphone5']
+    },
+    visualMap: {
+        min: 60,
+        max: 100,
+        left: 'left',
+        top: 'bottom',
+        text: ['高','低'],           // 文本，默认为数值文本
+        calculable: true
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [
+        {
+            name: '专科及以上学历占比',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value: 89.72 },
+                {name: '天津',value: 85.06 },
+                {name: '上海',value: 96.22 },
+                {name: '重庆',value:79 },
+                {name: '河北',value: 74.14 },
+                {name: '河南',value: 72.18 },
+                {name: '云南',value: 76.5 },
+                {name: '辽宁',value: 75.86 },
+                {name: '黑龙江',value: 80.8 },
+                {name: '湖南',value: 70.45 },
+                {name: '安徽',value: 85.37 },
+                {name: '山东',value: 75.65 },
+                {name: '新疆',value: 79.9 },
+                {name: '江苏',value: 94.19 },
+                {name: '浙江',value: 90.36 },
+                {name: '江西',value: 64.43 },
+                {name: '湖北',value: 67.96 },
+                {name: '广西',value: 72.09},
+                {name: '甘肃',value: 85.60 },
+                {name: '山西',value: 77.19 },
+                {name: '内蒙古',value: 88.23 },
+                {name: '陕西',value: 83.68 },
+                {name: '吉林',value: 78.13 },
+                {name: '福建',value: 70.5 },
+                {name: '贵州',value: 72.92 },
+                {name: '广东',value: 70.94 },
+                {name: '青海',value: 75.71 },
+                {name: '西藏',value: 91.99 },
+                {name: '四川',value: 80.01 },
+                {name: '宁夏',value: 85.23 },
+                {name: '海南',value: 73.79 },
+                {name: '台湾',value: 0 },
+                {name: '香港',value: 0 },
+                {name: '澳门',value: 0}
+            ]
+        },
+
+
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+<br>
+		<br>
+<div style="padding-left:50px;padding-right:50px"><h3>三、教育投入</h3>
+<p><p style="text-indent:2em;">十九大报告将“幼有所育”放在重要地位，明确提出要“办好学前教育”。在我国，0-6岁学前儿童有近1.13亿，要实现幼有所育，需要地方财政进行切实的教育投入，为幼儿提供有质量的学前教育。</p></p>
+<p><p style="text-indent:2em;">2013年至2015年间，我国各省市国家财政教育经费普遍呈上升趋势，至2015年（国家统计局最新数据），各地区国家财政性教育经费平均已达8626239万元，较2013年平均上升74.41%。</p><p></div>
+		<br>
+ <div id="container1" style="height: 450px";"width:260px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container1");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+function randomData() {
+    return Math.round(Math.random()*1000);
+}
+
+option = {
+    title: {
+        text: '我国各地区国家财政性教育经费（单位：万元）',
+        subtext: '国家统计局2015年数据',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+
+    visualMap: {
+        min: 0,
+        max: 23000000,
+        left: 'left',
+        top: 'bottom',
+        text: ['高','低'],           // 文本，默认为数值文本
+        calculable: true
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [
+        {
+            name: '国家财政性教育经费',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value: 9810774 },
+                {name: '天津',value:4775063 },
+                {name: '上海',value: 8264220 },
+                {name: '重庆',value: 6400963 },
+                {name: '河北',value: 10732988 },
+                {name: '河南',value: 13678565 },
+                {name: '云南',value: 9039569 },
+                {name: '辽宁',value: 7101812 },
+                {name: '黑龙江',value: 6078141 },
+                {name: '湖南',value: 9540802 },
+                {name: '安徽',value: 9572661 },
+                {name: '山东',value: 17346983 },
+                {name: '新疆',value: 6508191 },
+                {name: '江苏',value: 18190920 },
+                {name: '浙江',value: 12922271 },
+                {name: '江西',value: 8146382 },
+                {name: '湖北',value: 9035539 },
+                {name: '广西',value: 8467679 },
+                {name: '甘肃',value: 5518606 },
+                {name: '山西',value: 7733564 },
+                {name: '内蒙古',value: 6324669 },
+                {name: '陕西',value: 7246693 },
+                {name: '吉林',value: 5022614},
+                {name: '福建',value: 8100240 },
+                {name: '贵州',value: 8039152 },
+                {name: '广东',value: 22611396},
+                {name: '青海',value: 1906170},
+                {name: '西藏',value: 1892997},
+                {name: '四川',value: 13362232 },
+                {name: '宁夏',value: 1696500},
+                {name: '海南',value:2337554}
+            ]
+        },
+
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+		<br>
+<div style="padding-left:50px;padding-right:50px"><p><p style="text-indent:2em;">虽然近年来国家财政对教育的财政投入力度普遍增大，但各地区间仍存在较大的差异。国家对广东省、江苏省、山东省的教育经费投入分别超过2000亿、1800亿、1700亿元，均超过数字居于末五位的宁夏回族自治区、西藏自治区、青海省、海南省、天津市之和。</p></p></div>
+		<br>
+		<div id="container2" style="height: 300px";"width:80px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container2");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '堆叠条形图';
+
+option = {
+
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: ['广东省', '江苏省','山东省','天津市','海南省','青海省','西藏自治区','宁夏回族自治区']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: ['广东省','江苏省','山东省','津琼青藏宁']
+    },
+    series: [
+        {
+            name: '广东省',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [22611396,0,0,0]
+        },
+        {
+            name: '江苏省',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0, 18190920, 0, 0]
+        },
+        {
+            name: '山东省',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0, 0, 17346983, 0]
+        },
+        {
+            name: '天津市',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0, 0, 0, 4775063 ]
+        },
+        {
+            name: '海南省',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0, 0, 0, 2337554,]
+        },
+         {
+            name: '青海省',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0,0,0,1906170]
+        },
+         {
+            name: '西藏自治区',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0,0,0,1892997]
+        },
+         {
+            name: '宁夏回族自治区',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0,0,0,1696500]
+        }
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+<br>
+<div style="padding-left:50px;padding-right:50px"><p><p style="text-indent:2em;">地区财政教育支出同样不断增长，2016年全国各地区地方财政教育支出占比平均达到16.12%，山东省、贵州省、广西壮族自治区、浙江省的相关占比均超过19%，位列全国前位。</p></p></div>
+		<br>
+	 <div id="container3" style="height: 350px";"width:150px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container3");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '坐标轴刻度与标签对齐';
+
+option = {
+    title: {
+        text: '地方财政教育支出占比（单位：%）',
+        subtext: '国家统计局2015年数据',
+ },
+    color: ['#3398DB'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['山东', '贵州', '广西', '浙江', '福建', '河南', '河北','江苏','江西','山西','陕西','新疆','甘肃','四川','海南','安徽','云南','湖南','广东','天津','北京','湖北','吉林','重庆','黑龙江','辽宁','内蒙古','宁夏','上海','西藏','青海'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'地方财政教育投入占比（%）',
+            type:'bar',
+            barWidth: '60%',
+            data:[20.49, 19.62, 19.42, 19.03, 18.93, 18.69, 18.49,18.03,17.98,17.61,17.32,17.03,16.85,16.70,16.69,16.35,16.28,16.21,15.91,15.70,14.91,14.89,14.84,14.14,13.67,13.62,12.62,12.52,12.39,12.11,10.77]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+<br>
+
+<div style="padding-left:50px;padding-right:50px"><h3>四、学前教育发展指数计算</h3>
+<p><p style="text-indent:2em;">学前教育发展指数是综合多个指标衡量一地区学前教育发展水平的标准。本报道认为，学前教育机会、学前教育投入、学前教育质量同等重要，因此赋予这三项指标同等的权重，即分别为三分之一。因此，每个地区的<b>学前教育发展指数=1／3（学前教育机会指数+学前教育投入指数＋学前教育质量指数）</b>。</p>
+	<div style="font-family: '黑体';padding-left: 50px;padding-right: 50px"><table border="1">
+  <tr>
+    <th>一级指标</th>
+    <th>二级指标</th>
+	<th>操作定义</th>
+	  <th>指数计算和积分说明</th>
+  </tr>
+  <tr>
+    <td>教育机会</td>
+    <td>入园率</td>
+  <td>学前三年毛入园率</td>
+<td>按实际分值记分，如毛入园率为88.9％，记为0.889分</td>
+		</tr>
+  <tr>
+	  <tr>
+		<td>教育投入</td>
+		<td>教育财政投入比例</td>
+			<td>教育经费占财政支出的比例
+</td>
+			<td>按实际分值优化后记分，如教育经费占财政支出的比例为1.129％，经扩大10倍的优化处理记为0.113分
+</td>
+		</tr>
+    <td>教育质量</td>
+    <td>生师比</td>
+	  <td>在园幼儿数与专任教师的比例</td>
+	  <td>按实际分值优化后记分，如师幼比为1：11.84=0.08446，经扩大十倍的优化处理记为0.85</td>
+  </tr>
+		<tr>
+		<td> </td>
+		<td>教师学历</td>
+		<td>专科及以上学历教职工比例</td>
+			<td>按实际分值记分，如专科及以上学历教职工比例为78.83%，则按实际分值记为0.788分</td>
+		</tr>
+
+</table>
+<br>
+</div>
+	<div style="padding-left: 50px;padding-right: 50px"><p>根据计算，我国各地区学前教育发展指数如下。</p></div>
+
+		<div id="container10" style="height: 400px;width:auto"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container10");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var dataAxis = ['浙', '陕', '沪', '京', '粤', '苏', '闽', '辽', '甘', '津', '蒙', '贵', '琼', '新', '鲁', '川', '晋', '桂', '渝', '豫', '皖', '鄂', '青', '吉', '湘', '冀', '宁', '黑', '云', '赣', '藏'];
+var data = [648, 629, 601, 596, 592, 587, 577, 550,549, 544, 530, 525, 520, 517, 517, 511, 508, 503, 501, 489, 488, 487, 482, 475, 474, 471, 470, 464, 444, 444, 424];
+var yMax = 1000;
+var dataShadow = [];
+
+for (var i = 0; i < data.length; i++) {
+    dataShadow.push(yMax);
+}
+
+option = {
+    title: {
+        text: '全国学前教育综合发展水平指数排名',
+
+    },
+    xAxis: {
+        data: dataAxis,
+        axisLabel: {
+            inside: true,
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        axisTick: {
+            show: false
+        },
+        axisLine: {
+            show: false
+        },
+        z: 10
+    },
+    yAxis: {
+        axisLine: {
+            show: false
+        },
+        axisTick: {
+            show: false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#999'
+            }
+        }
+    },
+    dataZoom: [
+        {
+            type: 'inside'
+        }
+    ],
+    series: [
+        { // For shadow
+            type: 'bar',
+            itemStyle: {
+                normal: {color: 'rgba(0,0,0,0.05)'}
+            },
+            barGap:'-100%',
+            barCategoryGap:'40%',
+            data: dataShadow,
+            animation: false
+        },
+        {
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#83bff6'},
+                            {offset: 0.5, color: '#188df0'},
+                            {offset: 1, color: '#188df0'}
+                        ]
+                    )
+                },
+                emphasis: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#2378f7'},
+                            {offset: 0.7, color: '#2378f7'},
+                            {offset: 1, color: '#83bff6'}
+                        ]
+                    )
+                }
+            },
+            data: data
+        }
+    ]
+};
+
+// Enable data zoom when user click bar.
+var zoomSize = 6;
+myChart.on('click', function (params) {
+    console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+    myChart.dispatchAction({
+        type: 'dataZoom',
+        startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+        endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+    });
+});;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+<div style="padding-left: 30px;padding-right: 30px">
+	<p><p style="text-indent:2em;">由此可见，我国学前教育发展水平依然存在较为明显的区域差异，东部地区水平普遍较高，全国排名前五的地区中，四个来自东部地区（浙江、上海、北京、广东）。西南地区各方面指标普遍落后于全国平均水平，西藏、云南等地的幼儿园资源整体水平靠后。而以江西、山西、河北等省份为代表的广大中部地区也同样有着相当大的提升空间，在国家、地方财政投入等硬件资源优于西部部分地区的情况下，理应着力提高资源利用率，多方面提高办学质量。</p></div>
+	<br>
+<p><p style="text-align:right""font-family: '黑体';font-size: 20px">(作者：陈必欣 陈景玥 彭书慧)</p></div>
+</body>
+</html>

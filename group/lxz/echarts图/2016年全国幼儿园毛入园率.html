@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+function randomData() {
+    return Math.round(Math.random()*1000);
+}
+
+option = {
+    title: {
+        text: '幼儿园毛入园率（百分比，%）',
+        subtext: '2016年国家统计局数据（不含港澳台地区）',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data:['iphone3','iphone4','iphone5']
+    },
+    visualMap: {
+        min: 0,
+        max: 100,
+        left: 'left',
+        top: 'bottom',
+        text: ['高','低'],           // 文本，默认为数值文本
+        calculable: true
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [
+        {
+            name: '2016年毛入园率',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value:71.48},
+                {name: '天津',value: 73.15},
+                {name: '上海',value:83.68},
+                {name: '重庆',value:71.51 },
+                {name: '河北',value: 60.06},
+                {name: '河南',value: 67.40 },
+                {name: '云南',value: 55.70},
+                {name: '辽宁',value: 71.60},
+                {name: '黑龙江',value: 46.69 },
+                {name: '湖南',value: 66.34},
+                {name: '安徽',value: 65.43 },
+                {name: '山东',value: 63.20 },
+                {name: '新疆',value: 73.93 },
+                {name: '江苏',value: 82.36 },
+                {name: '浙江',value: 96.35 },
+                {name: '江西',value: 55.15 },
+                {name: '湖北',value: 71.13 },
+                {name: '广西',value: 74.67 },
+                {name: '甘肃',value: 80.18 },
+                {name: '山西',value: 67.09 },
+                {name: '内蒙古',value: 66.42 },
+                {name: '陕西',value: 97.27 },
+                {name: '吉林',value: 51.38 },
+                {name: '福建',value: 90.69 },
+                {name: '贵州',value: 73.64 },
+                {name: '广东',value: 92.80 },
+                {name: '青海',value: 67.24 },
+                {name: '西藏',value: 48.14 },
+                {name: '四川',value: 73.33 },
+                {name: '宁夏',value: 60.34 },
+                {name: '海南',value: 71.87 },
+                {name: '台湾',value: 0 },
+                {name: '香港',value: 0},
+                {name: '澳门',value: 0}
+            ]
+        },
+        
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
