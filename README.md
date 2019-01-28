@@ -2,6 +2,8 @@
 
 南京大学新闻传播学院数据新闻2017课程
 
+傻瓜式静态网站制作 https://mobirise.com/
+
 # Final Projects
 
 | Group          | Title         |
